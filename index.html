@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynextron Services OPC | Powering Your Digital Evolution</title>
+    <title>Dynextron Services OPC | Enterprise Digital Solutions</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -16,54 +16,94 @@
 
     <style>
         :root {
-            /* Brand Colors */
+            /* Core Brand Colors */
             --dynextron-purple: #8B5CF6; 
+            --dynextron-purple-dark: #6D28D9;
             --dynextron-gold: #FCD34D;
-            --dynextron-purple-light: #EDE9FE;
+            --dynextron-gold-light: #FDE68A;
+            --dynextron-light-purple: #EDE9FE;
             
             /* Light Theme Variables */
-            --bg-main: #FAFAFA;
-            --bg-secondary: #FFFFFF;
+            --bg-main: #FAFAFC;
+            --bg-alt: #FFFFFF;
             --text-main: #0F172A;
-            --text-muted: #475569;
-            --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-            --card-border: rgba(139, 92, 246, 0.1);
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            
+            /* Effects */
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow-sm: 0 10px 30px rgba(139, 92, 246, 0.05);
+            --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            cursor: none; /* Custom cursor applied */
         }
 
         body, html {
             width: 100%;
             background-color: var(--bg-main);
             color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* --- Preloader --- */
-        #preloader {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-secondary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.6s cubic-bezier(0.8, 0, 0.2, 1);
-        }
-        .spinner {
-            width: 60px; height: 60px;
-            border: 4px solid var(--dynextron-purple-light);
-            border-top-color: var(--dynextron-purple);
+        /* --- Custom Cursor --- */
+        .cursor-dot {
+            width: 8px; height: 8px;
+            background: var(--dynextron-purple);
             border-radius: 50%;
-            animation: spin 1s cubic-bezier(0.6, 0.2, 0.4, 0.8) infinite;
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 10000;
         }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .cursor-outline {
+            width: 40px; height: 40px;
+            border: 2px solid var(--dynextron-purple-dark);
+            border-radius: 50%;
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        /* --- Typography & Utilities --- */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple), var(--dynextron-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+        
+        .section-padding { padding: 140px 5%; }
+        .max-w { max-width: 1400px; margin: 0 auto; }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--dynextron-light-purple);
+            color: var(--dynextron-purple-dark);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
 
         /* --- Navigation --- */
         nav {
@@ -73,64 +113,46 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            transition: padding 0.3s ease;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.4s ease;
         }
-        nav.scrolled {
-            padding: 15px 5%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-        }
-        .logo img {
-            height: 45px;
-            transition: transform 0.3s ease;
-        }
-        .logo:hover img {
-            transform: scale(1.05);
-        }
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
+        nav.scrolled { padding: 12px 5%; box-shadow: var(--shadow-sm); }
+        .logo img { height: 45px; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .logo:hover img { transform: scale(1.08) rotate(-2deg); }
+        .nav-links { display: flex; gap: 40px; align-items: center; }
         .nav-links a {
             color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: color 0.3s;
             position: relative;
-        }
-        .nav-links a:hover {
-            color: var(--dynextron-purple);
+            overflow: hidden;
         }
         .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0; height: 3px;
-            bottom: -6px; left: 0;
-            background: linear-gradient(90deg, var(--dynextron-purple), var(--dynextron-gold));
-            border-radius: 2px;
-            transition: width 0.3s ease;
+            content: ''; position: absolute;
+            bottom: -2px; left: 0; width: 100%; height: 2px;
+            background: var(--dynextron-purple);
+            transform: translateX(-101%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .nav-cta {
+        .nav-links a:hover::after { transform: translateX(0); }
+        .btn-nav {
             background: var(--text-main);
-            color: white !important;
-            padding: 10px 24px;
-            border-radius: 30px;
+            color: #fff !important;
+            padding: 12px 28px;
+            border-radius: 50px;
             transition: all 0.3s ease !important;
         }
-        .nav-cta:hover {
+        .btn-nav:hover {
             background: var(--dynextron-purple);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
         }
-        .nav-cta::after { display: none !important; }
+        .btn-nav::after { display: none !important; }
 
         /* --- Hero Section --- */
         #hero {
@@ -140,310 +162,277 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
         }
         #canvas-container {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1;
-            opacity: 0.7; /* Soften the 3D effect for light theme */
+            opacity: 0.8;
+            pointer-events: none; /* Let clicks pass through */
         }
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
             text-align: center;
+            max-width: 1000px;
             padding: 0 20px;
         }
-        .hero-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: var(--dynextron-purple-light);
-            color: var(--dynextron-purple);
-            font-weight: 700;
-            font-size: 0.85rem;
-            border-radius: 50px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
         .hero-content h1 {
-            font-size: 5rem;
+            font-size: clamp(3.5rem, 6vw, 6.5rem);
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 25px;
+            line-height: 1.05;
+            letter-spacing: -2.5px;
+            margin-bottom: 30px;
             color: var(--text-main);
-            letter-spacing: -1.5px;
-        }
-        .hero-content h1 span {
-            background: linear-gradient(135deg, var(--dynextron-purple), #d946ef, var(--dynextron-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradientMove 5s linear infinite;
         }
         .hero-content p {
-            font-size: 1.25rem;
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
         }
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        .btn-primary, .btn-secondary {
-            padding: 16px 40px;
+        .hero-btns { display: flex; gap: 20px; justify-content: center; }
+        .btn {
+            padding: 18px 45px;
             font-size: 1.1rem;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
         .btn-primary {
             background: var(--dynextron-purple);
             color: white;
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+            border: 2px solid transparent;
         }
         .btn-primary:hover {
-            background: #7c3aed;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 45px rgba(139, 92, 246, 0.4);
+            background: var(--dynextron-purple-dark);
         }
         .btn-secondary {
-            background: white;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
             color: var(--text-main);
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 2px solid var(--border-color);
         }
         .btn-secondary:hover {
             border-color: var(--dynextron-purple);
-            color: var(--dynextron-purple);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* --- Services Section --- */
-        #services {
-            padding: 120px 5%;
-            background: var(--bg-secondary);
-            position: relative;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        .section-header h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 1300px;
-            margin: 0 auto;
-            perspective: 1000px;
-        }
-        .service-card {
-            background: white;
-            border: 1px solid var(--card-border);
-            padding: 50px 40px;
-            border-radius: 24px;
-            transform-style: preserve-3d;
-            box-shadow: var(--card-shadow);
-            transition: border-color 0.3s;
-            position: relative;
+        /* --- Tech Infinite Marquee --- */
+        .tech-marquee {
+            background: var(--bg-alt);
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+            position: relative;
         }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
-            background: linear-gradient(90deg, var(--dynextron-purple), var(--dynextron-gold));
-            opacity: 0;
-            transition: opacity 0.3s;
+        .tech-marquee::before, .tech-marquee::after {
+            content: ''; position: absolute; top: 0; width: 15%; height: 100%; z-index: 2;
         }
-        .service-card:hover::before { opacity: 1; }
-        .service-card:hover { border-color: transparent; }
-        
-        .icon-wrapper {
-            width: 70px; height: 70px;
-            background: var(--dynextron-purple-light);
-            border-radius: 20px;
+        .tech-marquee::before { left: 0; background: linear-gradient(to right, var(--bg-alt), transparent); }
+        .tech-marquee::after { right: 0; background: linear-gradient(to left, var(--bg-alt), transparent); }
+        .tech-track {
+            display: inline-flex;
+            animation: scroll 40s linear infinite;
+        }
+        .tech-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin: 0 40px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            transform: translateZ(40px);
-            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.1);
+            gap: 15px;
+            transition: color 0.3s;
         }
-        .service-card h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--text-main);
-            transform: translateZ(30px);
-        }
-        .service-card p {
-            color: var(--text-muted);
-            line-height: 1.7;
-            transform: translateZ(20px);
-            font-size: 1.05rem;
-        }
+        .tech-item:hover { color: var(--dynextron-purple); }
+        .tech-item span { color: var(--dynextron-gold); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* --- Contact Section --- */
-        #contact {
-            padding: 120px 5%;
-            background: var(--bg-main);
-            position: relative;
-        }
-        .contact-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 30px;
-            box-shadow: var(--card-shadow);
+        /* --- Services / Expertise --- */
+        #services { background: var(--bg-main); }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 20px; }
+        .services-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            overflow: hidden;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            perspective: 1200px;
         }
-        .contact-info {
-            background: linear-gradient(135deg, var(--dynextron-purple), #6d28d9);
-            padding: 60px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .contact-info h3 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        .contact-info p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-        .contact-form {
-            padding: 60px;
-        }
-        .input-group {
+        .service-card {
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            padding: 60px 40px;
+            border-radius: 30px;
+            transform-style: preserve-3d;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
             position: relative;
-            margin-bottom: 30px;
         }
-        .input-group input, .input-group textarea {
-            width: 100%;
-            padding: 15px 0;
-            font-size: 1rem;
-            color: var(--text-main);
-            border: none;
-            border-bottom: 2px solid #e2e8f0;
-            outline: none;
-            background: transparent;
-            transition: border-color 0.3s;
-            resize: none;
+        .service-card:hover {
+            border-color: var(--dynextron-purple);
+            box-shadow: var(--shadow-lg);
         }
-        .input-group label {
-            position: absolute;
-            top: 15px;
-            left: 0;
-            color: var(--text-muted);
-            transition: all 0.3s ease;
-            pointer-events: none;
+        .icon-box {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--dynextron-light-purple), #fff);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; margin-bottom: 30px;
+            transform: translateZ(50px);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.1);
         }
-        .input-group input:focus ~ label,
-        .input-group input:valid ~ label,
-        .input-group textarea:focus ~ label,
-        .input-group textarea:valid ~ label {
-            top: -10px;
-            font-size: 0.8rem;
-            color: var(--dynextron-purple);
-            font-weight: 600;
+        .service-card h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; transform: translateZ(40px); }
+        .service-card p { color: var(--text-muted); line-height: 1.7; font-size: 1.1rem; transform: translateZ(20px); }
+
+        /* --- Dynamic Process Timeline --- */
+        #process { background: var(--text-main); color: #fff; overflow: hidden; }
+        #process .badge { background: rgba(255,255,255,0.1); color: var(--dynextron-gold); border-color: rgba(252, 211, 77, 0.3); }
+        #process .section-header h2 { color: #fff; }
+        .timeline { position: relative; max-width: 1000px; margin: 0 auto; padding: 40px 0; }
+        /* The center line */
+        .timeline::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 4px; height: 100%; background: rgba(255,255,255,0.1); border-radius: 4px;
         }
-        .input-group input:focus, .input-group textarea:focus {
-            border-bottom-color: var(--dynextron-purple);
+        .timeline-progress {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 4px; background: linear-gradient(to bottom, var(--dynextron-gold), var(--dynextron-purple));
+            border-radius: 4px; height: 0; /* Animated via GSAP */
         }
-        .submit-btn {
-            width: 100%;
-            padding: 16px;
-            background: var(--text-main);
-            color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
+        .timeline-item {
+            display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: 80px;
         }
-        .submit-btn:hover {
-            background: var(--dynextron-purple);
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
-            transform: translateY(-2px);
+        .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
+        .timeline-content {
+            width: 80%; padding: 40px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px; backdrop-filter: blur(10px); position: relative;
         }
+        .timeline-item:nth-child(odd) .timeline-content { margin-right: 40px; text-align: right; }
+        .timeline-item:nth-child(even) .timeline-content { margin-left: 40px; }
+        /* The glowing dot */
+        .timeline-dot {
+            position: absolute; top: 50%; right: -56px; transform: translateY(-50%);
+            width: 24px; height: 24px; background: var(--text-main); border: 4px solid var(--dynextron-gold);
+            border-radius: 50%; z-index: 2; box-shadow: 0 0 20px var(--dynextron-gold);
+        }
+        .timeline-item:nth-child(even) .timeline-dot { left: -56px; right: auto; border-color: var(--dynextron-purple); box-shadow: 0 0 20px var(--dynextron-purple); }
+        .timeline-content h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--dynextron-gold); }
+        .timeline-item:nth-child(even) .timeline-content h3 { color: var(--dynextron-purple); }
+        .timeline-content p { color: #CBD5E1; line-height: 1.6; font-size: 1.1rem; }
+
+        /* --- Statistics Matrix --- */
+        #stats { padding: 100px 5%; background: var(--bg-alt); border-top: 1px solid var(--border-color); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+        .stat-item h4 { font-size: 4rem; font-weight: 900; color: var(--text-main); margin-bottom: 10px; font-family: 'JetBrains Mono', monospace;}
+        .stat-item p { font-size: 1.1rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
+
+        /* --- Robust Contact Form --- */
+        #contact { background: var(--bg-main); position: relative; overflow: hidden; }
+        .contact-layout {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px;
+            background: var(--bg-alt); border-radius: 40px; border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg); overflow: hidden;
+        }
+        .contact-visual {
+            background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple));
+            padding: 80px 60px; color: white; display: flex; flex-direction: column; justify-content: space-between;
+            position: relative; overflow: hidden;
+        }
+        .contact-visual::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(252,211,77,0.1) 0%, transparent 60%);
+            animation: pulse 10s linear infinite;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+        .contact-visual h3 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; z-index: 1; }
+        .contact-visual p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; z-index: 1; }
+        .contact-form { padding: 80px 60px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .input-box { position: relative; }
+        .input-box.full { grid-column: 1 / -1; }
+        .input-box input, .input-box textarea {
+            width: 100%; padding: 20px; background: var(--bg-main); border: 2px solid transparent;
+            border-radius: 16px; font-size: 1.1rem; color: var(--text-main); transition: all 0.3s;
+            outline: none; font-family: 'Inter', sans-serif; resize: none;
+        }
+        .input-box input:focus, .input-box textarea:focus {
+            border-color: var(--dynextron-purple); background: var(--bg-alt); box-shadow: var(--shadow-sm);
+        }
+        .input-box label {
+            position: absolute; top: 22px; left: 20px; color: var(--text-muted); font-weight: 500;
+            pointer-events: none; transition: 0.3s ease all;
+        }
+        .input-box input:focus ~ label, .input-box input:not(:placeholder-shown) ~ label,
+        .input-box textarea:focus ~ label, .input-box textarea:not(:placeholder-shown) ~ label {
+            top: -12px; left: 15px; font-size: 0.85rem; font-weight: 700; color: var(--dynextron-purple);
+            background: var(--bg-alt); padding: 0 10px; border-radius: 4px;
+        }
+        .submit-btn { width: 100%; border: none; cursor: pointer; }
 
         /* --- Footer --- */
         footer {
-            background: white;
-            padding: 40px 5%;
-            border-top: 1px solid #e2e8f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            background: var(--text-main); color: white; padding: 80px 5% 40px 5%;
+            border-top: 5px solid var(--dynextron-gold);
         }
-        footer p { color: var(--text-muted); font-weight: 500; }
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            margin-left: 20px;
-            transition: color 0.3s;
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px;
         }
-        .footer-links a:hover { color: var(--dynextron-purple); }
+        .footer-brand img { height: 50px; filter: brightness(0) invert(1); margin-bottom: 20px; }
+        .footer-brand p { color: #94A3B8; font-size: 1.1rem; line-height: 1.6; max-width: 400px; }
+        .footer-links h4 { font-size: 1.2rem; margin-bottom: 24px; color: var(--dynextron-gold); }
+        .footer-links ul { list-style: none; }
+        .footer-links ul li { margin-bottom: 12px; }
+        .footer-links ul li a { color: #94A3B8; text-decoration: none; transition: color 0.3s; }
+        .footer-links ul li a:hover { color: var(--dynextron-purple-light); padding-left: 5px; }
+        .footer-bottom {
+            padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex; justify-content: space-between; color: #64748B; font-size: 0.9rem;
+        }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero-content h1 { font-size: 4rem; }
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .contact-info { padding: 40px; }
-            .contact-form { padding: 40px; }
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .timeline::before { left: 40px; }
+            .timeline-progress { left: 40px; }
+            .timeline-item { justify-content: flex-start; padding-right: 0; padding-left: 100px; margin-bottom: 50px; }
+            .timeline-item:nth-child(even) { padding-left: 100px; }
+            .timeline-content { width: 100%; margin: 0 !important; text-align: left !important; }
+            .timeline-dot { left: -60px !important; right: auto !important; }
+            .contact-layout { grid-template-columns: 1fr; }
+            .contact-visual { padding: 60px 40px; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 20px; background: white; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
-            .hero-content h1 { font-size: 3rem; }
-            .hero-btns { flex-direction: column; }
-            footer { flex-direction: column; text-align: center; }
+            nav { padding: 15px 5%; }
+            .nav-links { display: none; } /* Add a hamburger menu for full implementation */
+            .form-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -451,141 +440,335 @@
             <a href="#"><img src="DynextronOPC (1).png" alt="Dynextron Services Logo"></a>
         </div>
         <div class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#services">Expertise</a>
-            <a href="#contact">Contact</a>
-            <a href="#contact" class="nav-cta">Start Project</a>
+            <a href="#hero">Overview</a>
+            <a href="#services">Capabilities</a>
+            <a href="#process">Methodology</a>
+            <a href="#stats">Impact</a>
+            <a href="#contact" class="btn-nav">Start Project</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero">
         <div id="canvas-container"></div>
-        <div class="hero-content gs-reveal">
-            <div class="hero-badge">Next-Gen IT Solutions</div>
-            <h1>Powering Your <br><span>Digital Evolution</span></h1>
-            <p>Dynextron Services OPC delivers advanced web, app, and enterprise technology solutions engineered for modern business performance and scale.</p>
-            <div class="hero-btns">
-                <a href="#services" class="btn-primary">Explore Solutions</a>
-                <a href="#contact" class="btn-secondary">Get a Consultation</a>
+        <div class="hero-content">
+            <div class="badge gs-fade">OPC Registration Complete</div>
+            <h1 class="gs-fade">Architecting The <br><span class="gradient-text">Future of Tech</span></h1>
+            <p class="gs-fade">Dynextron Services fuses elite engineering with stunning design to build highly scalable web, mobile, and enterprise infrastructure solutions.</p>
+            <div class="hero-btns gs-fade">
+                <a href="#services" class="btn btn-primary">Discover Capabilities</a>
+                <a href="#contact" class="btn btn-secondary">Initialize Project</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="section-header gs-reveal">
-            <h2>Our Core Expertise</h2>
-            <p>Robust, scalable, and beautifully designed technology services.</p>
+    <!-- Tech Marquee -->
+    <div class="tech-marquee">
+        <div class="tech-track">
+            <!-- Duplicated for seamless loop -->
+            <div class="tech-item"><span>//</span> React.js</div>
+            <div class="tech-item"><span>//</span> Node.js</div>
+            <div class="tech-item"><span>//</span> Python / Django</div>
+            <div class="tech-item"><span>//</span> PHP / Laravel</div>
+            <div class="tech-item"><span>//</span> AWS Cloud</div>
+            <div class="tech-item"><span>//</span> Google Apps Script</div>
+            <div class="tech-item"><span>//</span> React Native</div>
+            <div class="tech-item"><span>//</span> PostgreSQL</div>
+            <div class="tech-item"><span>//</span> React.js</div>
+            <div class="tech-item"><span>//</span> Node.js</div>
+            <div class="tech-item"><span>//</span> Python / Django</div>
+            <div class="tech-item"><span>//</span> PHP / Laravel</div>
+            <div class="tech-item"><span>//</span> AWS Cloud</div>
+            <div class="tech-item"><span>//</span> Google Apps Script</div>
+            <div class="tech-item"><span>//</span> React Native</div>
+            <div class="tech-item"><span>//</span> PostgreSQL</div>
         </div>
-        <div class="services-grid">
-            <div class="service-card gs-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                <div class="icon-wrapper">💻</div>
-                <h3>Web Engineering</h3>
-                <p>From complex data dashboards to lightning-fast frontend interfaces. We architect robust, highly scalable web applications tailored specifically to your unique business logic.</p>
+    </div>
+
+    <!-- Capabilities / Services -->
+    <section id="services" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge">Our DNA</div>
+                <h2>End-to-End Capabilities</h2>
             </div>
-            <div class="service-card gs-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                <div class="icon-wrapper">📱</div>
-                <h3>App Development</h3>
-                <p>Native and cross-platform mobile solutions built with cutting-edge frameworks. We deliver seamless user experiences and powerful backend functionality across all devices.</p>
+            <div class="services-grid">
+                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="icon-box">⚡</div>
+                    <h3>Full-Stack Web</h3>
+                    <p>From complex data dashboards in PHP to hyper-interactive React frontends. We build robust systems logic paired with pixel-perfect UI.</p>
+                </div>
+                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="icon-box">📱</div>
+                    <h3>Native & Hybrid Mobile</h3>
+                    <p>Deploying high-performance applications to iOS and Android. Cross-platform excellence that maintains native fluidity and hardware access.</p>
+                </div>
+                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="icon-box">☁️</div>
+                    <h3>Cloud & Automation</h3>
+                    <p>Serverless architectures, custom API integrations, and workflow automation using Google Apps Script and AWS to drastically cut operational overhead.</p>
+                </div>
             </div>
-            <div class="service-card gs-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
-                <div class="icon-wrapper">⚙️</div>
-                <h3>Tech Infrastructure</h3>
-                <p>End-to-end IT consulting, cloud system architecture, secure database management, and bespoke automation software designed to dramatically optimize your operations.</p>
+        </div>
+    </section>
+
+    <!-- Methodology / Process Timeline -->
+    <section id="process" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge">Execution</div>
+                <h2>The Dynextron Methodology</h2>
+            </div>
+            <div class="timeline" id="timeline-container">
+                <div class="timeline-progress" id="timeline-progress"></div>
+                
+                <div class="timeline-item gs-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>01. Discovery & Architecture</h3>
+                        <p>We don't just write code; we solve business problems. We map out database schemas, user flows, and tech stacks tailored to your exact scalability needs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item gs-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>02. UI/UX Prototyping</h3>
+                        <p>Translating logic into stunning visual interfaces. We create high-fidelity, interactive 3D and 2D prototypes ensuring the user journey is flawless.</p>
+                    </div>
+                </div>
+                <div class="timeline-item gs-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>03. Agile Engineering</h3>
+                        <p>Rigorous, sprint-based development. Writing clean, modular, and heavily tested code across frontend, backend, and cloud integrations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item gs-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>04. Deployment & Scale</h3>
+                        <p>Seamless CI/CD pipelines pushing to production. Post-launch, we monitor infrastructure to ensure 99.9% uptime as your user base expands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section id="stats">
+        <div class="max-w">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h4 class="counter" data-target="98">0</h4>
+                    <p>Performance Score</p>
+                </div>
+                <div class="stat-item">
+                    <h4 class="counter" data-target="500">0</h4><span>+</span>
+                    <p>Commits Pushed</p>
+                </div>
+                <div class="stat-item">
+                    <h4 class="counter" data-target="99">0</h4><span>%</span>
+                    <p>Client Retention</p>
+                </div>
+                <div class="stat-item">
+                    <h4>24/7</h4>
+                    <p>Systems Monitoring</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="contact-wrapper gs-reveal">
-            <div class="contact-info">
-                <h3>Let's Build the Future.</h3>
-                <p>Ready to upgrade your digital presence? Drop us a line with your project details, and our engineering team will get back to you within 24 hours.</p>
-                <div>
-                    <strong>Email:</strong> hello@dynextron.com<br><br>
-                    <strong>Location:</strong> Global Operations
+    <section id="contact" class="section-padding">
+        <div class="max-w">
+            <div class="contact-layout gs-reveal">
+                <div class="contact-visual">
+                    <div>
+                        <h3>Initiate <br>Connection.</h3>
+                        <p>Stop settling for off-the-shelf templates. Partner with Dynextron to engineer custom software that actively drives your revenue.</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;">hello@dynextron.com</div>
+                        <div style="color: var(--dynextron-gold);">Global Technology Operations</div>
+                    </div>
                 </div>
-            </div>
-            <div class="contact-form">
-                <form onsubmit="event.preventDefault(); alert('Form logic ready to be connected to your backend.');">
-                    <div class="input-group">
-                        <input type="text" id="name" required>
-                        <label for="name">Full Name</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" id="email" required>
-                        <label for="email">Email Address</label>
-                    </div>
-                    <div class="input-group">
-                        <textarea id="message" rows="4" required></textarea>
-                        <label for="message">Project Details</label>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+                <div class="contact-form">
+                    <form onsubmit="event.preventDefault(); alert('Dynextron backend route triggered.');">
+                        <div class="form-grid">
+                            <div class="input-box">
+                                <input type="text" id="fname" placeholder=" " required>
+                                <label for="fname">First Name</label>
+                            </div>
+                            <div class="input-box">
+                                <input type="text" id="lname" placeholder=" " required>
+                                <label for="lname">Last Name</label>
+                            </div>
+                            <div class="input-box full">
+                                <input type="email" id="email" placeholder=" " required>
+                                <label for="email">Corporate Email</label>
+                            </div>
+                            <div class="input-box full">
+                                <input type="text" id="subject" placeholder=" " required>
+                                <label for="subject">Project Scope / Subject</label>
+                            </div>
+                            <div class="input-box full">
+                                <textarea id="message" rows="5" placeholder=" " required></textarea>
+                                <label for="message">Technical Requirements</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">Transmit Request</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Dynextron Services OPC. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+        <div class="max-w">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="DynextronOPC (1).png" alt="Dynextron White Logo">
+                    <p>Dynextron Services OPC is a premier technology firm specializing in sophisticated web architecture, mobile applications, and enterprise digital transformation.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Core Services</h4>
+                    <ul>
+                        <li><a href="#">Frontend Engineering</a></li>
+                        <li><a href="#">Backend Architecture</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">Cloud Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Dynextron</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 Dynextron Services OPC. All rights reserved.</div>
+                <div>Engineered with precision.</div>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script>
-        // --- 1. Preloader & Nav Scroll Logic ---
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            preloader.style.opacity = '0';
-            setTimeout(() => { preloader.style.display = 'none'; }, 600);
+        // --- Custom Cursor Logic ---
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            // Subtle delay for the outline
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 150, fill: "forwards" });
         });
 
+        // Hover effects for cursor
+        const interactiveElements = document.querySelectorAll('a, button, input, textarea, .service-card');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.style.width = '60px';
+                cursorOutline.style.height = '60px';
+                cursorOutline.style.backgroundColor = 'rgba(139, 92, 246, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.style.width = '40px';
+                cursorOutline.style.height = '40px';
+                cursorOutline.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // --- Navbar Scroll Logic ---
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
         });
 
-        // --- 2. GSAP Scroll Animations ---
+        // --- Number Counter Animation ---
+        const counters = document.querySelectorAll('.counter');
+        const runCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / 50; // Speed adjustment
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(runCounters, 30);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        };
+
+        // --- GSAP Animations ---
         gsap.registerPlugin(ScrollTrigger);
+
+        // Hero initial load
+        gsap.fromTo('.gs-fade', 
+            { y: 40, opacity: 0 }, 
+            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power4.out", delay: 0.2 }
+        );
 
         // Reveal standard elements
         gsap.utils.toArray('.gs-reveal').forEach(function(elem) {
             gsap.fromTo(elem, 
                 { y: 50, opacity: 0 }, 
-                {
-                    y: 0, opacity: 1, duration: 1, ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: elem,
-                        start: "top 85%", // Trigger when element is 85% down the viewport
-                    }
-                }
+                { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: elem, start: "top 85%" } }
             );
         });
 
         // Staggered reveal for service cards
         gsap.fromTo('.gs-card', 
             { y: 50, opacity: 0 },
-            {
-                y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out",
-                scrollTrigger: {
-                    trigger: ".services-grid",
-                    start: "top 80%",
-                }
-            }
+            { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: ".services-grid", start: "top 80%" } }
         );
 
-        // --- 3. Three.js Premium Interactive Background ---
-        // Creating an abstract, tech-focused "Data Knot" for the light theme
+        // Trigger Counters on scroll
+        ScrollTrigger.create({
+            trigger: "#stats",
+            start: "top 80%",
+            onEnter: runCounters
+        });
+
+        // Dynamic Process Timeline Animation
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#timeline-container",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1 // Link animation to scroll bar
+            }
+        });
+        
+        // Animate the line filling up
+        tl.to("#timeline-progress", { height: "100%", ease: "none" });
+
+        // Pop in timeline elements as the line passes them
+        gsap.utils.toArray('.gs-timeline').forEach((item, index) => {
+            gsap.fromTo(item, 
+                { x: index % 2 === 0 ? 50 : -50, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.8, ease: "back.out(1.7)",
+                  scrollTrigger: { trigger: item, start: "top 60%" }
+                }
+            );
+        });
+
+        // --- Three.js Advanced Interactive Background ---
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -594,59 +777,84 @@
         renderer.setPixelRatio(window.devicePixelRatio);
         document.getElementById('canvas-container').appendChild(renderer.domElement);
 
-        // Complex geometry: TorusKnot to represent network/connectivity
-        const geometry = new THREE.TorusKnotGeometry(10, 3, 200, 32);
-        
-        // Use Points instead of solid mesh for a "data particle" look
-        const material = new THREE.PointsMaterial({
-            size: 0.05,
-            color: 0x8B5CF6, // Dynextron Purple
-            transparent: true,
-            opacity: 0.6
+        // 1. Core Sphere (The "Digital Brain")
+        const coreGeo = new THREE.IcosahedronGeometry(12, 2);
+        const coreMat = new THREE.MeshBasicMaterial({ 
+            color: 0x8B5CF6, 
+            wireframe: true, 
+            transparent: true, 
+            opacity: 0.15 
         });
+        const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+        scene.add(coreMesh);
 
-        const dataKnot = new THREE.Points(geometry, material);
-        scene.add(dataKnot);
+        // 2. Floating Data Particles
+        const particlesGeo = new THREE.BufferGeometry();
+        const particlesCount = 800;
+        const posArray = new Float32Array(particlesCount * 3);
 
-        camera.position.z = 25;
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 60; // Spread widely
+        }
+        particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
-        // Mouse Parallax Logic
+        // Use custom circular particle
+        const particleMat = new THREE.PointsMaterial({
+            size: 0.15,
+            color: 0xFCD34D, // Gold particles
+            transparent: true,
+            opacity: 0.6,
+            blending: THREE.AdditiveBlending
+        });
+        const particlesMesh = new THREE.Points(particlesGeo, particleMat);
+        scene.add(particlesMesh);
+
+        camera.position.z = 30;
+
+        // Mouse Parallax & Interaction
         let mouseX = 0;
         let mouseY = 0;
         let targetX = 0;
         let targetY = 0;
-        const windowHalfX = window.innerWidth / 2;
-        const windowHalfY = window.innerHeight / 2;
 
         document.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX - windowHalfX);
-            mouseY = (event.clientY - windowHalfY);
+            mouseX = (event.clientX - window.innerWidth / 2);
+            mouseY = (event.clientY - window.innerHeight / 2);
         });
 
-        // Animation Loop
         const clock = new THREE.Clock();
 
         function animate() {
             requestAnimationFrame(animate);
             const elapsedTime = clock.getElapsedTime();
 
-            // Smooth, slow idle rotation
-            dataKnot.rotation.y = elapsedTime * 0.05;
-            dataKnot.rotation.x = elapsedTime * 0.03;
-            
-            // Subtle breathing effect
-            dataKnot.scale.setScalar(1 + Math.sin(elapsedTime * 0.5) * 0.05);
+            // Rotate core
+            coreMesh.rotation.y = elapsedTime * 0.1;
+            coreMesh.rotation.x = elapsedTime * 0.05;
 
-            // Parallax interaction
-            targetX = mouseX * 0.001;
-            targetY = mouseY * 0.001;
+            // Rotate and wave particles
+            particlesMesh.rotation.y = elapsedTime * 0.02;
+            const positions = particlesMesh.geometry.attributes.position.array;
+            for(let i = 0; i < particlesCount; i++) {
+                const i3 = i * 3;
+                // Add subtle sine wave motion to particles
+                positions[i3 + 1] += Math.sin(elapsedTime + positions[i3]) * 0.005;
+            }
+            particlesMesh.geometry.attributes.position.needsUpdate = true;
+
+            // Smooth parallax based on mouse
+            targetX = mouseX * 0.002;
+            targetY = mouseY * 0.002;
             
-            dataKnot.rotation.y += 0.05 * (targetX - dataKnot.rotation.y);
-            dataKnot.rotation.x += 0.05 * (targetY - dataKnot.rotation.x);
+            coreMesh.rotation.y += 0.05 * (targetX - coreMesh.rotation.y);
+            coreMesh.rotation.x += 0.05 * (targetY - coreMesh.rotation.x);
+            
+            camera.position.x += (mouseX * 0.01 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 0.01 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
 
             renderer.render(scene, camera);
         }
-
         animate();
 
         // Responsive Canvas
