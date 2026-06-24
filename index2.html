@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8477091822273839" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="canonical" href="https://dynextron.qzz.io/index.html" />
+    <meta name="theme-color" content="#0a0e17">
+    <meta name="description" content="Dynextron Services fuses elite engineering with stunning design to build highly scalable web, mobile, and enterprise infrastructure solutions.">
+    <meta name="keywords" content="Dynextron, Web Development, Technology, Python, PHP, Laravel, App Development, Technology, AI, Machine Learning">
+    <meta name="author" content="shauryasingh">
+    <meta property="og:title" content="Dynextron Services OPC | Engineering for the world">
+    <meta property="og:description" content="Making the world better through geographical research. Join us in exploring Varanasi's landscape through modern tech and field surveys.">
+    <meta property="og:image" content="LINK_TO_A_COOL_IMAGE_OF_YOUR_SOCIETY.jpg">
+    <meta property="og:url" content="https://dynextron.qzz.io">
+    <meta property="og:type" content="website">
+    
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Dynextron Services OPC",
+      "url": "https://dynextron.qzz.io",
+      "description": "MyGeography Society is a research initiative by the Dept. of Geography, Shri Baldeo P.G. College, focusing on GIS, urban planning, and environmental sustainability in Varanasi.",
+      "foundingDate": "2024",
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "Shri Baldeo P.G. College"
+      }
+    }</script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0RNLR61VZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F0RNLR61VZ');
+    </script>
+
+    <title>Dynextron Services OPC | Enterprise Digital Solutions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            /* Core Brand Colors */
+            --dynextron-purple: #8B5CF6; 
+            --dynextron-purple-dark: #6D28D9;
+            --dynextron-gold: #FCD34D;
+            --dynextron-gold-light: #FDE68A;
+            --dynextron-light-purple: #EDE9FE;
+            
+            /* Light Theme Variables */
+            --bg-main: #FAFAFC;
+            --bg-alt: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            
+            /* Effects */
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow-sm: 0 10px 30px rgba(139, 92, 246, 0.05);
+            --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Typography & Utilities --- */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple), var(--dynextron-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+        
+        .section-padding { padding: 140px 5%; }
+        .max-w { max-width: 1400px; margin: 0 auto; }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--dynextron-light-purple);
+            color: var(--dynextron-purple-dark);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+        }
+        nav.scrolled { padding: 12px 5%; box-shadow: var(--shadow-sm); }
+        .logo img { height: 45px; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .logo:hover img { transform: scale(1.08) rotate(-2deg); }
+        .nav-links { display: flex; gap: 40px; align-items: center; }
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute;
+            bottom: -2px; left: 0; width: 100%; height: 2px;
+            background: var(--dynextron-purple);
+            transform: translateX(-101%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-links a:hover::after { transform: translateX(0); }
+        .btn-nav {
+            background: var(--text-main);
+            color: #fff !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: all 0.3s ease !important;
+        }
+        .btn-nav:hover {
+            background: var(--dynextron-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+        }
+        .btn-nav::after { display: none !important; }
+
+        /* --- Hero Section --- */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        #canvas-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+        .hero-content h1 {
+            font-size: clamp(3.5rem, 6vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -2.5px;
+            margin-bottom: 30px;
+            color: var(--text-main);
+        }
+        .hero-content p {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+        .hero-btns { display: flex; gap: 20px; justify-content: center; }
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-primary {
+            background: var(--dynextron-purple);
+            color: white;
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+            border: 2px solid transparent;
+        }
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 45px rgba(139, 92, 246, 0.4);
+            background: var(--dynextron-purple-dark);
+        }
+        .btn-secondary {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            color: var(--text-main);
+            border: 2px solid var(--border-color);
+        }
+        .btn-secondary:hover {
+            border-color: var(--dynextron-purple);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* --- Tech Infinite Marquee --- */
+        .tech-marquee {
+            background: var(--bg-alt);
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+            position: relative;
+        }
+        .tech-marquee::before, .tech-marquee::after {
+            content: ''; position: absolute; top: 0; width: 15%; height: 100%; z-index: 2;
+        }
+        .tech-marquee::before { left: 0; background: linear-gradient(to right, var(--bg-alt), transparent); }
+        .tech-marquee::after { right: 0; background: linear-gradient(to left, var(--bg-alt), transparent); }
+        .tech-track {
+            display: inline-flex;
+            animation: scroll 40s linear infinite;
+        }
+        .tech-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin: 0 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: color 0.3s;
+        }
+        .tech-item:hover { color: var(--dynextron-purple); }
+        .tech-item span { color: var(--dynextron-gold); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* --- Services / Expertise --- */
+        #services { background: var(--bg-main); }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 20px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            perspective: 1200px;
+        }
+        .service-card {
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            padding: 60px 40px;
+            border-radius: 30px;
+            transform-style: preserve-3d;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .service-card:hover {
+            border-color: var(--dynextron-purple);
+            box-shadow: var(--shadow-lg);
+        }
+        .icon-box {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--dynextron-light-purple), #fff);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; margin-bottom: 30px;
+            transform: translateZ(50px);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.1);
+        }
+        .service-card h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; transform: translateZ(40px); }
+        .service-card p { color: var(--text-muted); line-height: 1.7; font-size: 1.1rem; transform: translateZ(20px); }
+
+        /* --- Dynamic Process Timeline --- */
+        #process { background: var(--text-main); color: #fff; overflow: hidden; }
+        #process .badge { background: rgba(255,255,255,0.1); color: var(--dynextron-gold); border-color: rgba(252, 211, 77, 0.3); }
+        #process .section-header h2 { color: #fff; }
+        .timeline { position: relative; max-width: 1000px; margin: 0 auto; padding: 40px 0; }
+        .timeline::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 4px; height: 100%; background: rgba(255,255,255,0.1); border-radius: 4px;
+        }
+        .timeline-progress {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 4px; background: linear-gradient(to bottom, var(--dynextron-gold), var(--dynextron-purple));
+            border-radius: 4px; height: 0;
+        }
+        .timeline-item {
+            display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: 80px;
+        }
+        .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
+        .timeline-content {
+            width: 80%; padding: 40px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px; backdrop-filter: blur(10px); position: relative;
+        }
+        .timeline-item:nth-child(odd) .timeline-content { margin-right: 40px; text-align: right; }
+        .timeline-item:nth-child(even) .timeline-content { margin-left: 40px; }
+        .timeline-dot {
+            position: absolute; top: 50%; right: -56px; transform: translateY(-50%);
+            width: 24px; height: 24px; background: var(--text-main); border: 4px solid var(--dynextron-gold);
+            border-radius: 50%; z-index: 2; box-shadow: 0 0 20px var(--dynextron-gold);
+        }
+        .timeline-item:nth-child(even) .timeline-dot { left: -56px; right: auto; border-color: var(--dynextron-purple); box-shadow: 0 0 20px var(--dynextron-purple); }
+        .timeline-content h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--dynextron-gold); }
+        .timeline-item:nth-child(even) .timeline-content h3 { color: var(--dynextron-purple); }
+        .timeline-content p { color: #CBD5E1; line-height: 1.6; font-size: 1.1rem; }
+
+        /* --- Statistics Matrix --- */
+        #stats { padding: 100px 5%; background: var(--bg-alt); border-top: 1px solid var(--border-color); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+        .stat-item h4 { font-size: 4rem; font-weight: 900; color: var(--text-main); margin-bottom: 10px; font-family: 'JetBrains Mono', monospace;}
+        .stat-item p { font-size: 1.1rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
+
+        /* --- Robust Contact Form --- */
+        #contact { background: var(--bg-main); position: relative; overflow: hidden; }
+        .contact-layout {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px;
+            background: var(--bg-alt); border-radius: 40px; border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg); overflow: hidden;
+        }
+        .contact-visual {
+            background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple));
+            padding: 80px 60px; color: white; display: flex; flex-direction: column; justify-content: space-between;
+            position: relative; overflow: hidden;
+        }
+        .contact-visual::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(252,211,77,0.1) 0%, transparent 60%);
+            animation: pulse 10s linear infinite;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+        .contact-visual h3 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; z-index: 1; }
+        .contact-visual p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; z-index: 1; }
+        .contact-form { padding: 80px 60px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .input-box { position: relative; }
+        .input-box.full { grid-column: 1 / -1; }
+        .input-box input, .input-box textarea {
+            width: 100%; padding: 20px; background: var(--bg-main); border: 2px solid transparent;
+            border-radius: 16px; font-size: 1.1rem; color: var(--text-main); transition: all 0.3s;
+            outline: none; font-family: 'Inter', sans-serif; resize: none;
+        }
+        .input-box input:focus, .input-box textarea:focus {
+            border-color: var(--dynextron-purple); background: var(--bg-alt); box-shadow: var(--shadow-sm);
+        }
+        .input-box label {
+            position: absolute; top: 22px; left: 20px; color: var(--text-muted); font-weight: 500;
+            pointer-events: none; transition: 0.3s ease all;
+        }
+        .input-box input:focus ~ label, .input-box input:not(:placeholder-shown) ~ label,
+        .input-box textarea:focus ~ label, .input-box textarea:not(:placeholder-shown) ~ label {
+            top: -12px; left: 15px; font-size: 0.85rem; font-weight: 700; color: var(--dynextron-purple);
+            background: var(--bg-alt); padding: 0 10px; border-radius: 4px;
+        }
+        .submit-btn { width: 100%; border: none; cursor: pointer; }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--text-main); color: white; padding: 80px 5% 40px 5%;
+            border-top: 5px solid var(--dynextron-gold);
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px;
+        }
+        .footer-brand img { height: 50px; filter: brightness(0) invert(1); margin-bottom: 20px; }
+        .footer-brand p { color: #94A3B8; font-size: 1.1rem; line-height: 1.6; max-width: 400px; }
+        .footer-links h4 { font-size: 1.2rem; margin-bottom: 24px; color: var(--dynextron-gold); }
+        .footer-links ul { list-style: none; }
+        .footer-links ul li { margin-bottom: 12px; }
+        .footer-links ul li a { color: #94A3B8; text-decoration: none; transition: color 0.3s; }
+        .footer-links ul li a:hover { color: var(--dynextron-purple-light); padding-left: 5px; }
+        .footer-bottom {
+            padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex; justify-content: space-between; color: #64748B; font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .timeline::before { left: 40px; }
+            .timeline-progress { left: 40px; }
+            .timeline-item { justify-content: flex-start; padding-right: 0; padding-left: 100px; margin-bottom: 50px; }
+            .timeline-item:nth-child(even) { padding-left: 100px; }
+            .timeline-content { width: 100%; margin: 0 !important; text-align: left !important; }
+            .timeline-dot { left: -60px !important; right: auto !important; }
+            .contact-layout { grid-template-columns: 1fr; }
+            .contact-visual { padding: 60px 40px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 15px 5%; }
+            .nav-links { display: none; }
+            .form-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">
+            <a href="#"><img src="logo.png" alt="Dynextron Services Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="#hero">Overview</a>
+            <a href="#services">Capabilities</a>
+            <a href="#process">Methodology</a>
+            <a href="#stats">Impact</a>
+            <a href="#contact" class="btn-nav">Start Project</a>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div id="aurora-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.35; pointer-events: none;"></div>
+        
+        <div id="canvas-container"></div>
+
+        <div class="hero-content">
+            <div class="badge gs-fade">OPC Registration Complete</div>
+            <h1 class="gs-fade">Architecting The <br><span class="gradient-text">Future of Tech</span></h1>
+            <p class="gs-fade">Dynextron Services fuses elite engineering with stunning design to build highly scalable web, mobile, and enterprise infrastructure solutions.</p>
+            <div class="hero-btns gs-fade">
+                <a href="#services" class="btn btn-primary">Discover Capabilities</a>
+                <a href="#contact" class="btn btn-secondary">Initialize Project</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="tech-marquee">
+        <div class="tech-track">
+            <div class="tech-item"><span>//</span> React.js</div>
+            <div class="tech-item"><span>//</span> Node.js</div>
+            <div class="tech-item"><span>//</span> Python / Django</div>
+            <div class="tech-item"><span>//</span> PHP / Laravel</div>
+            <div class="tech-item"><span>//</span> AWS Cloud</div>
+            <div class="tech-item"><span>//</span> Google Apps Script</div>
+            <div class="tech-item"><span>//</span> React Native</div>
+            <div class="tech-item"><span>//</span> PostgreSQL</div>
+            <div class="tech-item"><span>//</span> React.js</div>
+            <div class="tech-item"><span>//</span> Node.js</div>
+            <div class="tech-item"><span>//</span> Python / Django</div>
+            <div class="tech-item"><span>//</span> PHP / Laravel</div>
+            <div class="tech-item"><span>//</span> AWS Cloud</div>
+            <div class="tech-item"><span>//</span> Google Apps Script</div>
+            <div class="tech-item"><span>//</span> React Native</div>
+            <div class="tech-item"><span>//</span> PostgreSQL</div>
+        </div>
+    </div>
+
+    <section id="services" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge">Our DNA</div>
+                <h2>End-to-End Capabilities</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="icon-box">⚡</div>
+                    <h3>Full-Stack Web</h3>
+                    <p>From complex data dashboards in PHP to hyper-interactive React frontends. We build robust systems logic paired with pixel-perfect UI.</p>
+                </div>
+                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="icon-box">📱</div>
+                    <h3>Native & Hybrid Mobile</h3>
+                    <p>Deploying high-performance applications to iOS and Android. Cross-platform excellence that maintains native fluidity and hardware access.</p>
+                </div>
+                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="icon-box">☁️</div>
+                    <h3>Cloud & Automation</h3>
+                    <p>Serverless architectures, custom API integrations, and workflow automation using Google Apps Script and AWS to drastically cut operational overhead.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge">Execution</div>
+                <h2>The Dynextron Methodology</h2>
+            </div>
+            <div class="timeline" id="timeline-container">
+                <div class="timeline-progress" id="timeline-progress"></div>
+                
+                <div class="timeline-item gs-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>01. Discovery & Architecture</h3>
+                        <p>We don't just write code; we solve business problems. We map out database schemas, user flows, and tech stacks tailored to your exact scalability needs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item gs-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>02. UI/UX Prototyping</h3>
+                        <p>Translating logic into stunning visual interfaces. We create high-fidelity, interactive 3D and 2D prototypes ensuring the user journey is flawless.</p>
+                    </div>
+                </div>
+                <div class="timeline-item gs-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>03. Agile Engineering</h3>
+                        <p>Rigorous, sprint-based development. Writing clean, modular, and heavily tested code across frontend, backend, and cloud integrations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item gs-timeline">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>04. Deployment & Scale</h3>
+                        <p>Seamless CI/CD pipelines pushing to production. Post-launch, we monitor infrastructure to ensure 99.9% uptime as your user base expands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <div class="max-w">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h4 class="counter" data-target="98">0</h4>
+                    <p>Performance Score</p>
+                </div>
+                <div class="stat-item">
+                    <h4 class="counter" data-target="500">0</h4><span>+</span>
+                    <p>Commits Pushed</p>
+                </div>
+                <div class="stat-item">
+                    <h4 class="counter" data-target="99">0</h4><span>%</span>
+                    <p>Client Retention</p>
+                </div>
+                <div class="stat-item">
+                    <h4>24/7</h4>
+                    <p>Systems Monitoring</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="max-w">
+            <div class="contact-layout gs-reveal">
+                <div class="contact-visual">
+                    <div>
+                        <h3>Initiate <br>Connection.</h3>
+                        <p>Stop settling for off-the-shelf templates. Partner with Dynextron to engineer custom software that actively drives your revenue.</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fdf0f9f9fad5f1ecfbf0ede1e7fafbbbf6faf8">[email&#160;protected]</a></div>
+                        <div style="color: var(--dynextron-gold);">Global Technology Operations</div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="event.preventDefault(); alert('Dynextron backend route triggered.');">
+                        <div class="form-grid">
+                            <div class="input-box">
+                                <input type="text" id="fname" placeholder=" " required>
+                                <label for="fname">First Name</label>
+                            </div>
+                            <div class="input-box">
+                                <input type="text" id="lname" placeholder=" " required>
+                                <label for="lname">Last Name</label>
+                            </div>
+                            <div class="input-box full">
+                                <input type="email" id="email" placeholder=" " required>
+                                <label for="email">Corporate Email</label>
+                            </div>
+                            <div class="input-box full">
+                                <input type="text" id="subject" placeholder=" " required>
+                                <label for="subject">Project Scope / Subject</label>
+                            </div>
+                            <div class="input-box full">
+                                <textarea id="message" rows="5" placeholder=" " required></textarea>
+                                <label for="message">Technical Requirements</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">Transmit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="max-w">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="DynextronOPC (1).png" alt="Dynextron White Logo">
+                    <p>Dynextron Services OPC is a premier technology firm specializing in sophisticated web architecture, mobile applications, and enterprise digital transformation.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Core Services</h4>
+                    <ul>
+                        <li><a href="#">Frontend Engineering</a></li>
+                        <li><a href="#">Backend Architecture</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">Cloud Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Dynextron</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 Dynextron Services OPC. All rights reserved.</div>
+                <div>Engineered with precision.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // --- Navbar Scroll Logic ---
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // --- Number Counter Animation ---
+        const counters = document.querySelectorAll('.counter');
+        const runCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / 50; 
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(runCounters, 30);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        };
+
+        // --- GSAP Animations ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.fromTo('.gs-fade', 
+             { y: 40, opacity: 0 }, 
+             { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power4.out", delay: 0.2 }
+        );
+
+        gsap.utils.toArray('.gs-reveal').forEach(function(elem) {
+            gsap.fromTo(elem, 
+                 { y: 50, opacity: 0 }, 
+                 { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: elem, start: "top 85%" } }
+            );
+        });
+
+        gsap.fromTo('.gs-card', 
+             { y: 50, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: ".services-grid", start: "top 80%" } }
+        );
+
+        ScrollTrigger.create({
+            trigger: "#stats",
+            start: "top 80%",
+            onEnter: runCounters
+        });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#timeline-container",
+                start: "top center",
+                end: "bottom center",
+                scrub: 1 
+            }
+        });        
+        tl.to("#timeline-progress", { height: "100%", ease: "none" });
+
+        gsap.utils.toArray('.gs-timeline').forEach((item, index) => {
+            gsap.fromTo(item, 
+                 { x: index % 2 === 0 ? 50 : -50, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.8, ease: "back.out(1.7)", 
+                  scrollTrigger: { trigger: item, start: "top 60%" }
+                }
+            );
+        });
+
+        // --- Three.js Advanced Interactive Background ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        const coreGeo = new THREE.IcosahedronGeometry(12, 2);
+        const coreMat = new THREE.MeshBasicMaterial({ 
+             color: 0x8B5CF6, 
+             wireframe: true, 
+             transparent: true, 
+             opacity: 0.15 
+         });
+        const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+        scene.add(coreMesh);
+
+        const particlesGeo = new THREE.BufferGeometry();
+        const particlesCount = 800;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 60; 
+        }
+        particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const particleMat = new THREE.PointsMaterial({
+            size: 0.15,
+            color: 0xFCD34D, 
+            transparent: true,
+            opacity: 0.6,
+            blending: THREE.AdditiveBlending
+        });
+        const particlesMesh = new THREE.Points(particlesGeo, particleMat);
+        scene.add(particlesMesh);
+
+        camera.position.z = 30;
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX - window.innerWidth / 2);
+            mouseY = (event.clientY - window.innerHeight / 2);
+        });
+
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+
+            coreMesh.rotation.y = elapsedTime * 0.1;
+            coreMesh.rotation.x = elapsedTime * 0.05;
+
+            particlesMesh.rotation.y = elapsedTime * 0.02;
+            const positions = particlesMesh.geometry.attributes.position.array;
+            for(let i = 0; i < particlesCount; i++) {
+                const i3 = i * 3;
+                positions[i3 + 1] += Math.sin(elapsedTime + positions[i3]) * 0.005;
+            }
+            particlesMesh.geometry.attributes.position.needsUpdate = true;
+
+            targetX = mouseX * 0.002;
+            targetY = mouseY * 0.002;
+            
+            coreMesh.rotation.y += 0.05 * (targetX - coreMesh.rotation.y);
+            coreMesh.rotation.x += 0.05 * (targetY - coreMesh.rotation.x);
+            
+            camera.position.x += (mouseX * 0.01 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 0.01 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+
+    <script type="module">
+        import { Renderer, Program, Mesh, Color, Triangle } from 'https://cdn.skypack.dev/ogl';
+
+        const VERT = `#version 300 es
+        in vec2 position;
+        void main() {
+            gl_Position = vec4(position, 0.0, 1.0);
+        }`;
+
+        const FRAG = `#version 300 es
+        precision highp float;
+        
+        uniform float uTime;
+        uniform float uAmplitude;
+        uniform vec3 uColorStops[3];
+        uniform vec2 uResolution;
+        uniform float uBlend;
+        
+        out vec4 fragColor;
+        
+        vec3 permute(vec3 x) {
+          return mod(((x * 34.0) + 1.0) * x, 289.0);
+        }
+        
+        float snoise(vec2 v){
+          const vec4 C = vec4(
+              0.211324865405187, 0.366025403784439,
+              -0.577350269189626, 0.024390243902439
+          );
+          vec2 i  = floor(v + dot(v, C.yy));
+          vec2 x0 = v - i + dot(i, C.xx);
+          vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+          vec4 x12 = x0.xyxy + C.xxzz;
+          x12.xy -= i1;
+          i = mod(i, 289.0);
+        
+          vec3 p = permute(
+               permute(i.y + vec3(0.0, i1.y, 1.0))
+             + i.x + vec3(0.0, i1.x, 1.0)
+          );
+        
+          vec3 m = max(
+               0.5 - vec3(
+                   dot(x0, x0),
+                   dot(x12.xy, x12.xy),
+                   dot(x12.zw, x12.zw)
+               ), 
+               0.0
+          );
+          m = m * m;
+          m = m * m;
+        
+          vec3 x = 2.0 * fract(p * C.www) - 1.0;
+          vec3 h = abs(x) - 0.5;
+          vec3 ox = floor(x + 0.5);
+          vec3 a0 = x - ox;
+          m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+        
+          vec3 g;
+          g.x  = a0.x * x0.x  + h.x  * x0.y;
+          g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+          return 130.0 * dot(m, g);
+        }
+        
+        struct ColorStop {
+          vec3 color;
+          float position;
+        };
+        
+        #define COLOR_RAMP(colors, factor, finalColor) {              \
+          int index = 0;                                                \
+          for (int i = 0; i < 2; i++) {                              \
+             ColorStop currentColor = colors[i];                   \
+             bool isInBetween = currentColor.position <= factor;   \
+             index = int(mix(float(index), float(i), float(isInBetween))); \
+          }                                                             \
+          ColorStop currentColor = colors[index];                  \
+          ColorStop nextColor = colors[index + 1];                  \
+          float range = nextColor.position - currentColor.position; \
+          float lerpFactor = (factor - currentColor.position) / range; \
+          finalColor = mix(currentColor.color, nextColor.color, lerpFactor); \
+        }
+        
+        void main() {
+          vec2 uv = gl_FragCoord.xy / uResolution;
+          
+          ColorStop colors[3];
+          colors[0] = ColorStop(uColorStops[0], 0.0);
+          colors[1] = ColorStop(uColorStops[1], 0.5);
+          colors[2] = ColorStop(uColorStops[2], 1.0);
+          
+          vec3 rampColor;
+          COLOR_RAMP(colors, uv.x, rampColor);
+          
+          float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
+          height = exp(height);
+          height = (uv.y * 2.0 - height + 0.2);
+          float intensity = 0.6 * height;
+          
+          float midPoint = 0.20;
+          float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
+          
+          vec3 auroraColor = intensity * rampColor;
+          
+          fragColor = vec4(auroraColor * auroraAlpha, auroraAlpha);
+        }
+        `;
+
+        function initAurora() {
+            const ctn = document.getElementById('aurora-container');
+            if (!ctn) return;
+
+            const renderer = new Renderer({ alpha: true, premultipliedAlpha: true, antialias: true });
+            const gl = renderer.gl;
+            gl.clearColor(0, 0, 0, 0);
+            gl.enable(gl.BLEND);
+            gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+            gl.canvas.style.backgroundColor = 'transparent';
+            gl.canvas.style.width = '100%';
+            gl.canvas.style.height = '100%';
+
+            // Palette mapped to your brand CSS root variables
+            const colorStops = ['#6D28D9', '#FCD34D', '#8B5CF6'];
+            const colorStopsArray = colorStops.map(hex => {
+                const c = new Color(hex);
+                return [c.r, c.g, c.b];
+            });
+
+            let program;
+
+            function resize() {
+                const width = ctn.offsetWidth;
+                const height = ctn.offsetHeight;
+                renderer.setSize(width, height);
+                if (program) {
+                    program.uniforms.uResolution.value = [width, height];
+                }
+            }
+            window.addEventListener('resize', resize);
+
+            const geometry = new Triangle(gl);
+            if (geometry.attributes.uv) delete geometry.attributes.uv;
+
+            const amplitude = 1.0;
+            const blend = 0.5;
+            const speed = 0.5; // Translated speed prop
+
+            program = new Program(gl, {
+                vertex: VERT,
+                fragment: FRAG,
+                uniforms: {
+                    uTime: { value: 0 },
+                    uAmplitude: { value: amplitude },
+                    uColorStops: { value: colorStopsArray },
+                    uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
+                    uBlend: { value: blend }
+                }
+            });
+
+            const mesh = new Mesh(gl, { geometry, program });
+            ctn.appendChild(gl.canvas);
+            resize();
+
+            let animateId = 0;
+            const update = t => {
+                animateId = requestAnimationFrame(update);
+                program.uniforms.uTime.value = (t * 0.01) * speed * 0.1;
+                renderer.render({ scene: mesh });
+            };
+            animateId = requestAnimationFrame(update);
+        }
+
+        initAurora();
+    </script>
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"ee7693b48a444aaf94f5b34d18d05f38","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
