@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynextron Call Engine Proto</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; background: #f9f9f9; }
+        .box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        video { width: 100%; background: #222; border-radius: 6px; transform: scaleX(-1); }
+        input, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:disabled { background: #ccc; }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+
+    <h2>Dynextron Infrastructure Sandbox</h2>
+
+    <div class="box">
+        <h3>Step 1: Test Scheduler (Google Apps Script API)</h3>
+        <input type="text" id="clientName" placeholder="Client Name" value="Jane Doe">
+        <button id="bookBtn" onclick="testSchedule()">Book Test Meeting</button>
+        <p id="scheduleResult" style="word-break: break-all; color: green;"></p>
+    </div>
+
+    <div class="box">
+        <h3>Step 2: P2P Video Call System (WebRTC + Firebase)</h3>
+        <input type="text" id="roomIdInput" placeholder="Paste Generated Room ID here">
+        <div style="display:flex; gap:10px;">
+            <button id="createBtn" onclick="createRoom()">Host Call</button>
+            <button id="joinBtn" onclick="joinRoom()">Join Call</button>
+        </div>
+        
+        <div class="video-grid">
+            <div>
+                <label>Local Preview (You)</label>
+                <video id="localVideo" autoplay playsinline muted></video>
+            </div>
+            <div>
+                <label>Remote Stream (Client)</label>
+                <video id="remoteVideo" autoplay playsinline></video>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // --- CONFIGURATIONS ---
+    // 1. Paste your deployed Google Apps Script Web App URL here
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCqptpM2SZOMt_mV3hBgJas8lYJg2HJcOXbW5k7Iilsde-BFe4z11usHnXZUq8ysPm4w/exec"; 
+
+    // 2. Paste your Firebase project configurations here
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        databaseURL: "YOUR_DATABASE_URL",
+        projectId: "YOUR_PROJECT_ID"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Standard WebRTC configuration using free public Google STUN server
+    const rtcConfig = {
+        iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
+    };
+
+    let localStream;
+    let remoteStream;
+    let peerConnection;
+
+    // --- SCHEDULING FLOW ---
+    async function testSchedule() {
+        const btn = document.getElementById('bookBtn');
+        const resText = document.getElementById('scheduleResult');
+        btn.disabled = true;
+        resText.innerText = "Contacting Serverless Endpoint...";
+
+        const payload = {
+            name: document.getElementById('clientName').value,
+            time: new Date().toISOString()
+        };
+
+        try {
+            // We send payload as plain text to completely bypass strict preflight OPTIONS filters
+            const response = await fetch(APPS_SCRIPT_URL, {
+                method: "POST",
+                mode: "cors",
+                body: JSON.stringify(payload)
+            });
+            const data = await response.json();
+            
+            resText.innerText = `Success! Room ID Created: ${data.roomId}`;
+            document.getElementById('roomIdInput').value = data.roomId;
+        } catch (error) {
+            resText.innerText = "Error linking to Apps Script. Check URL or CORS settings.";
+            console.error(error);
+        } finally {
+            btn.disabled = false;
+        }
+    }
+
+    // --- WebRTC MEDIA CORE FLOW ---
+    async function setupMedia() {
+        localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        document.getElementById('localVideo').srcObject = localStream;
+        
+        remoteStream = new MediaStream();
+        document.getElementById('remoteVideo').srcObject = remoteStream;
+
+        peerConnection = new RTCPeerConnection(rtcConfig);
+
+        // Add local tracks to send to peer
+        localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+
+        // Listen for incoming remote media tracks
+        peerConnection.ontrack = (event) => {
+            event.streams[0].getTracks().forEach(track => remoteStream.addTrack(track));
+        };
+    }
+
+    // HOST ROOM
+    async function createRoom() {
+        const roomId = document.getElementById('roomIdInput').value;
+        if (!roomId) return alert("Please generate or enter a Room ID first!");
+        
+        await setupMedia();
+        const roomRef = db.ref("rooms/" + roomId);
+
+        // Exchange connection route pathways (ICE candidates)
+        peerConnection.onicecandidate = (event) => {
+            if (event.candidate) roomRef.child("hostCandidates").push(event.candidate.toJSON());
+        };
+
+        // Create the WebRTC Connection Offer
+        const offer = await peerConnection.createOffer();
+        await peerConnection.setLocalDescription(offer);
+        
+        await roomRef.set({ offer: { type: offer.type, sdp: offer.sdp } });
+
+        // Listen for client answering back
+        roomRef.child("answer").on("value", async (snapshot) => {
+            const answer = snapshot.val();
+            if (answer && !peerConnection.currentRemoteDescription) {
+                await peerConnection.setRemoteDescription(new RTCSessionDescription(answer));
+                // Disconnect signaling layer as connection is safely P2P now!
+                roomRef.child("answer").off();
+            }
+        });
+
+        // Listen for client ICE candidates
+        roomRef.child("clientCandidates").on("child_added", (snapshot) => {
+            const candidate = new RTCIceCandidate(snapshot.val());
+            peerConnection.addIceCandidate(candidate);
+        });
+    }
+
+    // JOIN ROOM
+    async function joinRoom() {
+        const roomId = document.getElementById('roomIdInput').value;
+        if (!roomId) return alert("Enter the Room ID to join!");
+
+        await setupMedia();
+        const roomRef = db.ref("rooms/" + roomId);
+
+        // Exchange connection route pathways (ICE candidates)
+        peerConnection.onicecandidate = (event) => {
+            if (event.candidate) roomRef.child("clientCandidates").push(event.candidate.toJSON());
+        };
+
+        // Fetch host's offer
+        const roomSnapshot = await roomRef.once("value");
+        const roomData = roomSnapshot.val();
+        if (!roomData || !roomData.offer) return alert("Room not found or host has not initiated call.");
+
+        await peerConnection.setRemoteDescription(new RTCSessionDescription(roomData.offer));
+        
+        // Generate connection response (Answer)
+        const answer = await peerConnection.createAnswer();
+        await peerConnection.setLocalDescription(answer);
+        await roomRef.update({ answer: { type: answer.type, sdp: answer.sdp } });
+
+        // Listen for host ICE candidates
+        roomRef.child("hostCandidates").on("child_added", (snapshot) => {
+            const candidate = new RTCIceCandidate(snapshot.val());
+            peerConnection.addIceCandidate(candidate);
+        });
+    }
+</script>
+</body>
+</html>
