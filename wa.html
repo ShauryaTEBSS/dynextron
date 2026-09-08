@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Authentication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .auth-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #0056b3; }
+        .wa-btn {
+            background-color: #25D366;
+            display: none;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .wa-btn:hover { background-color: #128C7E; }
+        #loader { display: none; margin-top: 15px; color: #555; }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <h2>Secure Login</h2>
+        <p>Click below to generate your secure WhatsApp verification link.</p>
+        
+        <button id="generateBtn">Sign Up / Login</button>
+        <div id="loader">Generating secure code and connecting to server...</div>
+        
+        <!-- This link will become visible after the code is generated -->
+        <a id="waVerifyBtn" href="#" target="_blank" class="wa-btn">Click to Verify via WhatsApp</a>
+    </div>
+
+    <script>
+        // --- CONFIGURATION ---
+        // Replace with your newly deployed Google Apps Script Web App URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxgyZuN3R1bnmX-vAAje2TnFPqIpez9-ZHKKxJhGOd27esoTEvoOSYvPicXjVak9cSs/exec'; 
+        // Replace with your registered WhatsApp Business API Number (include country code, no '+')
+        const WA_PHONE_NUMBER = '306975684950'; 
+
+        // Generates a random 64-character alphanumeric string
+        function generate64CharCode() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < 64; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+
+        document.getElementById('generateBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('generateBtn');
+            const loader = document.getElementById('loader');
+            const waBtn = document.getElementById('waVerifyBtn');
+
+            // UI updates
+            btn.style.display = 'none';
+            loader.style.display = 'block';
+
+            const authCode = generate64CharCode();
+
+            try {
+                // Send the code to Google Apps Script to save in the Google Sheet
+                const response = await fetch(`${SCRIPT_URL}?action=register&code=${authCode}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    // Update UI and create the WhatsApp click-to-chat link
+                    loader.style.display = 'none';
+                    waBtn.href = `https://wa.me/${WA_PHONE_NUMBER}?text=${authCode}`;
+                    waBtn.style.display = 'inline-block';
+                } else {
+                    alert('Failed to connect to the database. Please try again.');
+                    btn.style.display = 'inline-block';
+                    loader.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Network error occurred.');
+                btn.style.display = 'inline-block';
+                loader.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
