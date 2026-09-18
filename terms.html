@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#030712">
+    <meta name="description" content="Official Terms of Service for Dynextron Services OPC.">
+    <title>Terms of Service | Dynextron Services OPC</title>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            /* Futuristic Cyberpunk Palette */
+            --dynextron-purple: #8B5CF6; 
+            --dynextron-purple-dark: #4C1D95;
+            --dynextron-neon-cyan: #00f0ff;
+            --dynextron-neon-pink: #bf00ff;
+            
+            --bg-deep: #030712;
+            --bg-glass: rgba(17, 24, 39, 0.6);
+            --bg-glass-light: rgba(31, 41, 55, 0.4);
+            
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --border-glow: rgba(0, 240, 255, 0.3);
+            
+            cursor: none; 
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body, html { 
+            width: 100%; 
+            background-color: var(--bg-deep); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth; 
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-deep); }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 240, 255, 0.3); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--dynextron-neon-cyan); }
+
+        /* --- Custom Cursor --- */
+        .cursor { width: 8px; height: 8px; background: var(--dynextron-neon-cyan); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; box-shadow: 0 0 10px var(--dynextron-neon-cyan); transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s; }
+        .cursor-follower { width: 40px; height: 40px; border: 1px solid rgba(0, 240, 255, 0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: 0.1s ease-out; }
+        .cursor.hovering { width: 20px; height: 20px; background: rgba(0, 240, 255, 0.2); border: 1px solid var(--dynextron-neon-cyan); }
+
+        /* --- Navigation --- */
+        nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { font-family: 'Syncopate', sans-serif; font-weight: 900; font-size: 1.5rem; color: #fff; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo i { color: var(--dynextron-neon-cyan); text-shadow: 0 0 10px var(--dynextron-neon-cyan); }
+        
+        .btn-neon { background: transparent; color: var(--dynextron-neon-cyan); padding: 10px 24px; border: 1px solid var(--dynextron-neon-cyan); border-radius: 4px; text-transform: uppercase; font-family: 'JetBrains Mono'; transition: 0.3s; box-shadow: 0 0 10px rgba(0, 240, 255, 0.2) inset; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+        .btn-neon:hover { background: var(--dynextron-neon-cyan); color: #000; box-shadow: 0 0 20px var(--dynextron-neon-cyan); }
+
+        /* --- Header --- */
+        .page-header { padding: 150px 5% 80px 5%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 100%; height: 200%; background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 60%); z-index: 0; pointer-events: none; }
+        .page-header h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 2px; color: #fff; margin-bottom: 20px; position: relative; z-index: 1; text-shadow: 0 0 20px rgba(0, 240, 255, 0.3); }
+        .page-header p { font-family: 'JetBrains Mono', monospace; color: var(--dynextron-neon-cyan); font-size: 1rem; position: relative; z-index: 1; }
+
+        /* --- Layout: Sidebar + Content --- */
+        .container { display: grid; grid-template-columns: 300px 1fr; gap: 50px; max-width: 1400px; margin: 0 auto; padding: 60px 5%; position: relative; }
+        
+        /* Sidebar TOC */
+        .toc { position: sticky; top: 120px; height: max-content; max-height: calc(100vh - 150px); overflow-y: auto; background: var(--bg-glass-light); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; backdrop-filter: blur(10px); }
+        .toc h3 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; margin-bottom: 20px; color: var(--text-main); letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 12px; }
+        .toc a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; display: block; border-left: 2px solid transparent; padding-left: 10px; }
+        .toc a:hover, .toc a.active { color: var(--dynextron-neon-cyan); border-left-color: var(--dynextron-neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.5); }
+
+        /* Main Content */
+        .content { background: var(--bg-glass-light); border: 1px solid rgba(255,255,255,0.05); padding: 60px; border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .content section { margin-bottom: 60px; }
+        .content h2 { font-family: 'Syncopate', sans-serif; font-size: 1.5rem; color: var(--dynextron-neon-cyan); margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        .content h2::before { content: '//'; color: var(--dynextron-neon-pink); }
+        .content h3 { font-size: 1.1rem; color: #fff; margin: 30px 0 15px 0; }
+        .content p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 15px; }
+        .content ul { margin-left: 20px; margin-bottom: 20px; }
+        .content li { color: var(--text-muted); line-height: 1.8; margin-bottom: 10px; }
+        .content strong { color: #E5E7EB; }
+        
+        .highlight-box { background: rgba(0, 240, 255, 0.05); border-left: 4px solid var(--dynextron-neon-cyan); padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .highlight-box p { margin: 0; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr; }
+            .toc { display: none; } /* Hide TOC on mobile for better reading */
+            .content { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo hover-target"><i class="fas fa-network-wired"></i> DYNEXTRON</a>
+        <a href="index.html" class="btn-neon hover-target"><i class="fas fa-arrow-left"></i> Return to Hub</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <h1>Terms of Service</h1>
+        <p>LAST UPDATED: SEPTEMBER 18, 2026 // PROTOCOL IDENTIFIER: DYN-TOS-V2.6</p>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="container">
+        
+        <!-- Table of Contents -->
+        <aside class="toc">
+            <h3><i class="fas fa-list"></i> Index</h3>
+            <ul>
+                <li><a href="#acceptance" class="hover-target">1. Acceptance of Terms</a></li>
+                <li><a href="#definitions" class="hover-target">2. Definitions</a></li>
+                <li><a href="#services" class="hover-target">3. Scope of Services</a></li>
+                <li><a href="#obligations" class="hover-target">4. Client Obligations</a></li>
+                <li><a href="#payments" class="hover-target">5. Fees, Payments & Retainers</a></li>
+                <li><a href="#ip" class="hover-target">6. Intellectual Property & Code</a></li>
+                <li><a href="#confidentiality" class="hover-target">7. Confidentiality & Security</a></li>
+                <li><a href="#ai-cloud" class="hover-target">8. AI Models & Cloud Providers</a></li>
+                <li><a href="#warranties" class="hover-target">9. Warranties & 6-Month SLA</a></li>
+                <li><a href="#liability" class="hover-target">10. Limitation of Liability</a></li>
+                <li><a href="#termination" class="hover-target">11. Term & Termination</a></li>
+                <li><a href="#jurisdiction" class="hover-target">12. Governing Law</a></li>
+            </ul>
+        </aside>
+
+        <!-- Content -->
+        <main class="content">
+            
+            <div class="highlight-box">
+                <p>WARNING: By initializing a project, issuing a payment, or accessing the Dynextron Services OPC architecture, you (the "Client") agree to be bound unconditionally by these Terms of Service. If you do not agree, disconnect immediately.</p>
+            </div>
+
+            <section id="acceptance">
+                <h2>1. Acceptance of Terms</h2>
+                <p>These Terms of Service ("Agreement") constitute a legally binding contract between you (the "Client", "You", or "Your") and <strong>Dynextron Services OPC</strong> ("Dynextron", "We", "Us", or "Our"), a One Person Company registered and headquartered in Varanasi, Uttar Pradesh, India. This Agreement governs your acquisition and use of our web development, software engineering, artificial intelligence (AI) integration, and cloud architecture services (collectively, the "Services").</p>
+            </section>
+
+            <section id="definitions">
+                <h2>2. Definitions</h2>
+                <ul>
+                    <li><strong>"Deliverables"</strong>: The final, compiled, or source code, software, UI/UX designs, APIs, and systems delivered to the Client pursuant to an agreed-upon Statement of Work (SOW) or invoice.</li>
+                    <li><strong>"Statement of Work" (SOW)</strong>: A document, email thread, or accepted quote outlining the specific scope, timeline, and fees for a particular Project.</li>
+                    <li><strong>"Background Technology"</strong>: Pre-existing code, libraries, frameworks (e.g., React, Laravel, Node.js), and proprietary algorithms owned by Dynextron or third-party open-source licensors that are incorporated into the Deliverables.</li>
+                    <li><strong>"Retainer"</strong>: A recurring monthly fee paid by the Client to secure a dedicated allocation of engineering hours and priority queue status.</li>
+                </ul>
+            </section>
+
+            <section id="services">
+                <h2>3. Scope of Services</h2>
+                <p>Dynextron provides elite, high-performance digital solutions, including but not limited to:</p>
+                <ul>
+                    <li>Custom Full-Stack Web and Enterprise Applications.</li>
+                    <li>API Design, Development, and Third-Party Integrations.</li>
+                    <li>Workflow and Business Logic Automation.</li>
+                    <li>Integration of Large Language Models (LLMs) and Machine Learning algorithms (e.g., OpenAI, Anthropic, custom models).</li>
+                    <li>Cloud Infrastructure Architecture (AWS, GCP) and Database scaling.</li>
+                </ul>
+                <p>Any services outside the explicitly agreed SOW will be subject to a Change Order and additional billing. We do not provide "unlimited revisions" unless explicitly defined in a Retainer agreement. Design and architectural approvals are final once signed off in the designated phase.</p>
+            </section>
+
+            <section id="obligations">
+                <h2>4. Client Obligations</h2>
+                <p>To ensure the rapid deployment of our architecture, the Client agrees to:</p>
+                <ul>
+                    <li>Provide timely access to necessary credentials, APIs, server environments, and brand assets.</li>
+                    <li>Respond to architectural approval requests, prototype reviews, and milestone sign-offs within three (3) business days. Delays on the Client's end will result in project timeline extensions.</li>
+                    <li>Ensure that any materials, data, or media provided to Dynextron do not infringe on the intellectual property rights of any third party.</li>
+                    <li>Use the Deliverables strictly for lawful purposes. Dynextron reserves the right to immediately terminate projects involving illegal, malicious, or highly unethical operations.</li>
+                </ul>
+            </section>
+
+            <section id="payments">
+                <h2>5. Fees, Payments & Retainers</h2>
+                <h3>5.1 Milestone Payments</h3>
+                <p>For fixed-scope projects (MVP / Enterprise packages), payments are divided into milestones. A non-refundable initialization deposit (typically 30% to 50%) is required before engineering commences. Subsequent payments are tied to explicit project phases (e.g., UI Approval, Backend Completion, Deployment).</p>
+                
+                <h3>5.2 Dev Retainers</h3>
+                <p>Retainer agreements are billed on the 1st of every month. Unused hours do not roll over to the following month unless explicitly stated in your contract. Retainer cancellations require a 30-day written notice to <code>admin@dynextron.qzz.io</code>.</p>
+
+                <h3>5.3 Late Fees and Source Code Release</h3>
+                <p>Source code, server credentials, and final IP transfer will <strong>not</strong> be released until the final invoice is paid in full. Invoices outstanding beyond 14 days will accrue a late penalty of 1.5% per month, and Dynextron reserves the right to suspend all active cloud services and development until the balance is cleared.</p>
+            </section>
+
+            <section id="ip">
+                <h2>6. Intellectual Property & Code Ownership</h2>
+                <p>Upon receipt of full and final payment, Dynextron transfers to the Client all intellectual property rights to the custom-written code and bespoke UI/UX elements created specifically for the Project.</p>
+                <p><strong>Exceptions:</strong></p>
+                <ul>
+                    <li><strong>Background Technology:</strong> Dynextron retains full ownership of any proprietary internal libraries, boilerplate code, or foundational architecture used across multiple projects. The Client is granted a worldwide, royalty-free, perpetual, non-exclusive license to use this Background Technology solely as integrated into the Deliverables.</li>
+                    <li><strong>Open Source:</strong> Deliverables may contain open-source software (e.g., React, Tailwind, Three.js). Such software remains subject to its respective MIT, Apache, or GPL licenses.</li>
+                </ul>
+            </section>
+
+            <section id="confidentiality">
+                <h2>7. Confidentiality & Security</h2>
+                <p>Both parties agree to treat all proprietary algorithms, business strategies, API keys, and unreleased source code shared during the engagement as strictly confidential. Dynextron utilizes enterprise-grade encryption (AES-256) and secure pipelines to handle Client data. However, the Client acknowledges that absolute security over the internet cannot be guaranteed.</p>
+            </section>
+
+            <section id="ai-cloud">
+                <h2>8. AI Models & Third-Party Cloud Providers</h2>
+                <p>Dynextron frequently integrates third-party services (AWS, Google Cloud, Vercel, OpenAI, Anthropic, Stripe). Dynextron is not liable for:</p>
+                <ul>
+                    <li>Downtime, latency, or API deprecations originating from third-party providers.</li>
+                    <li>Hallucinations, biased outputs, or erratic behavior generated by third-party AI/Machine Learning models integrated into your software.</li>
+                    <li>Billing fluctuations incurred on your third-party cloud accounts due to sudden traffic spikes or heavy API usage.</li>
+                </ul>
+            </section>
+
+            <section id="warranties">
+                <h2>9. Warranties & 6-Month Support SLA</h2>
+                <p>Dynextron warrants that the Deliverables will perform substantially in accordance with the agreed SOW upon deployment. We stand by our engineering.</p>
+                <div class="highlight-box">
+                    <p>6-MONTH WARRANTY: Every custom build includes a 6-month free bug-fix warranty. If a fatal error, security vulnerability, or broken function is discovered in the code we wrote within 6 months of the deployment date, we will patch it free of charge.</p>
+                </div>
+                <p><strong>Exceptions to Warranty:</strong> This warranty is immediately voided if the Client or a third-party developer alters, modifies, or breaks the source code or database schemas after our handover.</p>
+            </section>
+
+            <section id="liability">
+                <h2>10. Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL DYNEXTRON SERVICES OPC, ITS FOUNDER(S), EMPLOYEES, OR CONTRACTORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS, LOST REVENUE, OR DATA LOSS, ARISING OUT OF OR IN CONNECTION WITH THE SERVICES OR DELIVERABLES.</p>
+                <p>Our total cumulative liability for any claims arising out of this Agreement shall be strictly capped at the total amount paid by the Client to Dynextron for the specific Project giving rise to the claim during the three (3) months preceding the event.</p>
+            </section>
+
+            <section id="termination">
+                <h2>11. Term & Termination</h2>
+                <p>Either party may terminate a project with immediate effect if the other party materially breaches this Agreement and fails to cure such breach within 14 days of written notice.</p>
+                <p>If the Client terminates a project for convenience prior to completion, Dynextron retains all deposits paid. The Client will be billed for all engineering hours logged up to the exact moment of termination. Upon termination, Dynextron will deliver the current state of the unfinished source code, provided all outstanding invoices are cleared.</p>
+            </section>
+
+            <section id="jurisdiction">
+                <h2>12. Governing Law & Dispute Resolution</h2>
+                <p>As a company headquartered in India, this Agreement, and any disputes arising out of it, shall be governed by and construed in accordance with the laws of the Republic of India. Both parties irrevocably agree that the courts located in <strong>Varanasi, Uttar Pradesh, India</strong> shall have exclusive jurisdiction to settle any dispute or claim.</p>
+            </section>
+
+            <section id="contact">
+                <h2>// End of Document</h2>
+                <p>For legal inquiries, scope adjustments, or questions regarding these Terms, transmit a message to our command center:</p>
+                <p><strong>Email:</strong> <a href="mailto:admin@dynextron.qzz.io" class="hover-target" style="color: var(--dynextron-neon-cyan); text-decoration: none;">admin@dynextron.qzz.io</a></p>
+                <p><strong>Entity:</strong> Dynextron Services OPC</p>
+                <p><strong>HQ:</strong> Varanasi, Uttar Pradesh, India</p>
+            </section>
+            
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // --- Custom Magnetic Cursor ---
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+        let posX = 0, posY = 0, mouseX = 0, mouseY = 0;
+        
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
+        });
+        
+        // Use requestAnimationFrame for smooth follower interpolation
+        function renderCursor() {
+            posX += (mouseX - posX) * 0.15;
+            posY += (mouseY - posY) * 0.15;
+            follower.style.left = posX + 'px';
+            follower.style.top = posY + 'px';
+            requestAnimationFrame(renderCursor);
+        }
+        renderCursor();
+
+        // Cursor Hover Effects
+        document.querySelectorAll('.hover-target, button, a').forEach(el => {
+            el.addEventListener('mouseenter', () => { 
+                cursor.classList.add('hovering'); 
+                follower.style.transform = 'translate(-50%, -50%) scale(1.5)'; 
+                follower.style.borderColor = 'var(--dynextron-neon-pink)'; 
+            });
+            el.addEventListener('mouseleave', () => { 
+                cursor.classList.remove('hovering'); 
+                follower.style.transform = 'translate(-50%, -50%) scale(1)'; 
+                follower.style.borderColor = 'rgba(0, 240, 255, 0.5)'; 
+            });
+        });
+
+        // --- Table of Contents Active State Highlighting ---
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.toc a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
