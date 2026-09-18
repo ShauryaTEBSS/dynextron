@@ -973,25 +973,27 @@
                 </div>
                 <div class="contact-form">
                     <form action="https://formsubmit.co/08a3ca1e4f5cd2cf73521634a03eecc6" method="POST">
+                        <input type="hidden" name="_subject" value="Secure Protocol Alert: Dynextron Request">
+                    <input type="hidden" name="_captcha" value="true">
                         <div class="form-grid">
                             <div class="input-box">
-                                <input type="text" id="fname" placeholder=" " required>
+                                <input type="text" id="fname" placeholder=" " name="Auth_Name" required>
                                 <label for="fname">First Name</label>
                             </div>
                             <div class="input-box">
-                                <input type="text" id="lname" placeholder=" " required>
+                                <input type="text" id="lname" placeholder=" " name="Auth_Name" required>
                                 <label for="lname">Last Name</label>
                             </div>
                             <div class="input-box full">
-                                <input type="email" id="email" placeholder=" " required>
+                                <input type="email" id="email" placeholder=" " name="Auth_Email" required>
                                 <label for="email">Corporate Email</label>
                             </div>
                             <div class="input-box full">
-                                <input type="text" id="subject" placeholder=" " required>
+                                <input type="text" id="subject" placeholder=" "  required>
                                 <label for="subject">Project Scope / Subject</label>
                             </div>
                             <div class="input-box full">
-                                <textarea id="message" rows="5" placeholder=" " required></textarea>
+                                <textarea id="message" rows="5" placeholder=" " name="Payload_Data" required></textarea>
                                 <label for="message">Technical Requirements</label>
                             </div>
                         </div>
