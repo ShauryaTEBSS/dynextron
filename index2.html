@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8477091822273839" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="canonical" href="https://dynextron.qzz.io/index.html" />
-    <meta name="theme-color" content="#0a0e17">
-    <meta name="description" content="Dynextron Services fuses elite engineering with stunning design to build highly scalable web, mobile, and enterprise infrastructure solutions.">
-    <meta name="keywords" content="Dynextron, Web Development, Technology, Python, PHP, Laravel, App Development, Technology, AI, Machine Learning">
-    <meta name="author" content="shauryasingh">
-    <meta property="og:title" content="Dynextron Services OPC | Engineering for the world">
-    <meta property="og:description" content="Making the world better through geographical research. Join us in exploring Varanasi's landscape through modern tech and field surveys.">
-    <meta property="og:image" content="LINK_TO_A_COOL_IMAGE_OF_YOUR_SOCIETY.jpg">
+    <meta name="theme-color" content="#07090E">
+    <meta name="description" content="Dynextron Services India Limited fuses elite software engineering with resilient infrastructure design to deliver mission-critical web, mobile, cloud, and embedded enterprise solutions.">
+    <meta name="keywords" content="Dynextron Services India Limited, Enterprise Web Architecture, Cloud Infrastructure, Python, PHP, Laravel, React, TiDB, AI Automation, Embedded Systems, Varanasi, ROC Lucknow">
+    <meta name="author" content="Shaurya Singh | Dynextron Services India Limited">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Dynextron Services India Limited | Enterprise Digital & Cloud Architecture">
+    <meta property="og:description" content="Engineering mission-critical software, distributed cloud clusters, and high-concurrency enterprise platforms.">
+    <meta property="og:image" content="https://placehold.co/1200x630/4C1D95/FCD34D?text=Dynextron+Services+India+Limited">
     <meta property="og:url" content="https://dynextron.qzz.io">
     <meta property="og:type" content="website">
     
-    <script type="application/ld+json">{
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Dynextron Services OPC",
+      "@type": "Corporation",
+      "name": "Dynextron Services India Limited",
+      "alternateName": "Dynextron Services OPC",
       "url": "https://dynextron.qzz.io",
-      "description": "MyGeography Society is a research initiative by the Dept. of Geography, Shri Baldeo P.G. College, focusing on GIS, urban planning, and environmental sustainability in Varanasi.",
+      "description": "Dynextron Services India Limited specializes in enterprise web architecture, distributed database systems, AI workflow automation, and bespoke software engineering.",
       "foundingDate": "2024",
-      "parentOrganization": {
-        "@type": "CollegeOrUniversity",
-        "name": "Shri Baldeo P.G. College"
-      }
-    }</script>
-
+      "email": "admin@dynextron.qzz.io"
+    }
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0RNLR61VZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -37,37 +42,66 @@
       gtag('js', new Date());
       gtag('config', 'G-F0RNLR61VZ');
     </script>
-
-    <title>Dynextron Services OPC | Enterprise Digital Solutions</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
+    
+    <title>Dynextron Services India Limited | Enterprise Digital Architecture</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- External Libraries: Three.js, Vanilla-Tilt, GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <style>
+        /* ==========================================================================
+           1. CORE DESIGN TOKENS & DUAL-THEME ARCHITECTURE
+           ========================================================================== */
         :root {
-            /* Core Brand Colors */
-            --dynextron-purple: #8B5CF6; 
+            /* Brand Royal Purple & Imperial Gold */
+            --dynextron-purple: #8B5CF6;
             --dynextron-purple-dark: #6D28D9;
+            --dynextron-purple-deep: #4C1D95;
+            --dynextron-purple-glow: rgba(139, 92, 246, 0.35);
             --dynextron-gold: #FCD34D;
             --dynextron-gold-light: #FDE68A;
-            --dynextron-light-purple: #EDE9FE;
-            
-            /* Light Theme Variables */
+            --dynextron-gold-accent: #F59E0B;
+            --dynextron-gold-glow: rgba(252, 211, 77, 0.28);
+            --dynextron-light-purple: rgba(139, 92, 246, 0.12);
+
+            /* Default: Deep Obsidian Enterprise Dark Theme */
+            --bg-main: #07090E;
+            --bg-alt: #0D111A;
+            --bg-elevated: #131926;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: rgba(148, 163, 184, 0.14);
+            --border-highlight: rgba(139, 92, 246, 0.45);
+            --glass-bg: rgba(13, 17, 26, 0.78);
+            --glass-card: rgba(19, 25, 38, 0.65);
+            --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.35);
+            --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(139, 92, 246, 0.12);
+            --terminal-bg: #05070B;
+            --grid-line: rgba(139, 92, 246, 0.05);
+        }
+
+        [data-theme="light"] {
             --bg-main: #FAFAFC;
             --bg-alt: #FFFFFF;
+            --bg-elevated: #F1F5F9;
             --text-main: #0F172A;
-            --text-muted: #64748B;
+            --text-muted: #475569;
             --border-color: #E2E8F0;
-            
-            /* Effects */
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --shadow-sm: 0 10px 30px rgba(139, 92, 246, 0.05);
-            --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+            --border-highlight: #8B5CF6;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-card: rgba(255, 255, 255, 0.92);
+            --shadow-sm: 0 10px 30px rgba(139, 92, 246, 0.06);
+            --shadow-lg: 0 25px 55px rgba(15, 23, 42, 0.09);
+            --terminal-bg: #0F172A;
+            --grid-line: rgba(109, 40, 217, 0.04);
+            --dynextron-light-purple: #EDE9FE;
         }
 
         * {
@@ -76,49 +110,213 @@
             box-sizing: border-box;
         }
 
-        body, html {
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
             width: 100%;
             background-color: var(--bg-main);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow-x: hidden;
-            scroll-behavior: smooth;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            background-image: 
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: 64px 64px;
         }
 
-        /* --- Typography & Utilities --- */
+        /* Top Scroll Progress Indicator */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--dynextron-purple), var(--dynextron-gold), var(--dynextron-purple-dark));
+            z-index: 9999;
+            box-shadow: 0 0 12px var(--dynextron-gold);
+        }
+
+        /* ==========================================================================
+           2. TYPOGRAPHY & REUSABLE UTILITIES
+           ========================================================================== */
         .gradient-text {
-            background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple), var(--dynextron-gold));
+            background: linear-gradient(135deg, #C4B5FD 0%, var(--dynextron-purple) 35%, var(--dynextron-gold) 75%, #FFFBEB 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% auto;
-            animation: shine 5s linear infinite;
+            animation: shine 6s linear infinite;
         }
-        @keyframes shine { to { background-position: 200% center; } }
-        
-        .section-padding { padding: 140px 5%; }
-        .max-w { max-width: 1400px; margin: 0 auto; }
-        
+        [data-theme="light"] .gradient-text {
+            background: linear-gradient(135deg, var(--dynextron-purple-deep) 0%, var(--dynextron-purple) 45%, var(--dynextron-gold-accent) 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .section-padding {
+            padding: 130px 5%;
+            position: relative;
+        }
+
+        .max-w {
+            max-width: 1380px;
+            margin: 0 auto;
+        }
+
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
+            gap: 10px;
+            padding: 8px 18px;
             background: var(--dynextron-light-purple);
-            color: var(--dynextron-purple-dark);
+            color: var(--dynextron-purple);
             border-radius: 50px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 24px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            letter-spacing: 1.8px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.12);
+        }
+        [data-theme="light"] .badge {
+            color: var(--dynextron-purple-dark);
         }
 
-        /* --- Navigation --- */
+        .badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--dynextron-gold);
+            box-shadow: 0 0 10px var(--dynextron-gold);
+            animation: statusPulse 2s infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.35); opacity: 0.65; }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 75px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.25rem, 4vw, 3.6rem);
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            line-height: 1.12;
+            margin-bottom: 18px;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 740px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Spotlight Card Effect */
+        .spotlight-card {
+            position: relative;
+            background: var(--glass-card);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 26px;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .spotlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139, 92, 246, 0.14), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
+
+        .spotlight-card:hover {
+            border-color: var(--border-highlight);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .spotlight-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==========================================================================
+           3. TOP CORPORATE TELEMETRY BAR & GLASS NAVIGATION
+           ========================================================================== */
+        .top-telemetry-bar {
+            background: linear-gradient(90deg, #05070B 0%, #160C2E 50%, #05070B 100%);
+            color: #CBD5E1;
+            font-size: 0.76rem;
+            padding: 8px 5%;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1001;
+            position: relative;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .telemetry-left, .telemetry-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .telemetry-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .telemetry-item i {
+            color: var(--dynextron-gold);
+        }
+
+        .telemetry-link {
+            color: var(--dynextron-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .telemetry-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
         nav {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 16px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -127,123 +325,434 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
-            transition: all 0.4s ease;
+            transition: all 0.35s ease;
         }
-        nav.scrolled { padding: 12px 5%; box-shadow: var(--shadow-sm); }
-        .logo img { height: 45px; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .logo:hover img { transform: scale(1.08) rotate(-2deg); }
-        .nav-links { display: flex; gap: 40px; align-items: center; }
+
+        nav.scrolled {
+            padding: 12px 5%;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .brand-logo img {
+            height: 44px;
+            width: auto;
+            transition: transform 0.35s ease;
+        }
+
+        .brand-emblem-fallback {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple));
+            border: 1px solid var(--dynextron-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.35rem;
+            color: var(--dynextron-gold);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-weight: 900;
+            font-size: 1.15rem;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .brand-subtitle {
+            font-size: 0.68rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--dynextron-gold-accent);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        [data-theme="dark"] .brand-subtitle {
+            color: var(--dynextron-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+
         .nav-links a {
             color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             position: relative;
-            overflow: hidden;
+            padding: 6px 0;
+            transition: color 0.25s ease;
         }
+
+        .nav-links a:hover {
+            color: var(--dynextron-purple);
+        }
+
         .nav-links a::after {
-            content: ''; position: absolute;
-            bottom: -2px; left: 0; width: 100%; height: 2px;
-            background: var(--dynextron-purple);
-            transform: translateX(-101%);
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--dynextron-purple), var(--dynextron-gold));
+            transform: scaleX(0);
+            transform-origin: right;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .nav-links a:hover::after { transform: translateX(0); }
-        .btn-nav {
-            background: var(--text-main);
-            color: #fff !important;
-            padding: 12px 28px;
-            border-radius: 50px;
-            transition: all 0.3s ease !important;
-        }
-        .btn-nav:hover {
-            background: var(--dynextron-purple);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
-        }
-        .btn-nav::after { display: none !important; }
 
-        /* --- Hero Section --- */
-        #hero {
-            position: relative;
-            height: 100vh;
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: var(--bg-elevated);
+            color: var(--dynextron-gold-accent);
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        [data-theme="dark"] .theme-toggle-btn {
+            color: var(--dynextron-gold);
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--dynextron-purple);
+            transform: rotate(15deg) scale(1.06);
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple));
+            color: #ffffff !important;
+            padding: 10px 22px !important;
+            border-radius: 50px;
+            font-weight: 700 !important;
+            font-size: 0.88rem !important;
+            border: 1px solid rgba(252, 211, 77, 0.35);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease !important;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(139, 92, 246, 0.5);
+        }
+        .btn-nav::after { display: none !important; }
+
+        .mobile-menu-btn {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            font-size: 1.15rem;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mobile Drawer */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: min(340px, 85vw);
+            height: 100vh;
+            background: var(--bg-alt);
+            border-left: 1px solid var(--border-color);
+            z-index: 2000;
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: -20px 0 50px rgba(0,0,0,0.5);
+        }
+        .mobile-drawer.open {
+            right: 0;
+        }
+        .mobile-drawer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .mobile-drawer-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 10px 12px;
+            border-radius: 10px;
+            transition: background 0.2s;
+        }
+        .mobile-drawer-links a:hover {
+            background: var(--dynextron-light-purple);
+            color: var(--dynextron-purple);
+        }
+
+        /* ==========================================================================
+           4. HERO SECTION & INTERACTIVE ARCHITECTURE TERMINAL
+           ========================================================================== */
+        #hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 90px 5% 100px 5%;
             overflow: hidden;
         }
+
         #canvas-container {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: 1;
-            opacity: 0.8;
             pointer-events: none;
         }
-        .hero-content {
+
+        .hero-grid {
             position: relative;
             z-index: 2;
-            text-align: center;
-            max-width: 1000px;
-            padding: 0 20px;
+            max-width: 1380px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 50px;
+            align-items: center;
         }
+
         .hero-content h1 {
-            font-size: clamp(3.5rem, 6vw, 6.5rem);
+            font-size: clamp(2.8rem, 5vw, 4.9rem);
             font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -2.5px;
-            margin-bottom: 30px;
+            line-height: 1.06;
+            letter-spacing: -2.2px;
+            margin-bottom: 26px;
             color: var(--text-main);
         }
+
         .hero-content p {
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            font-size: clamp(1.05rem, 1.5vw, 1.22rem);
             color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 50px auto;
-            line-height: 1.6;
+            max-width: 650px;
+            margin-bottom: 38px;
+            line-height: 1.75;
         }
-        .hero-btns { display: flex; gap: 20px; justify-content: center; }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 38px;
+        }
+
         .btn {
-            padding: 18px 45px;
-            font-size: 1.1rem;
+            padding: 16px 34px;
+            font-size: 0.98rem;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .btn-primary {
-            background: var(--dynextron-purple);
-            color: white;
-            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
-            border: 2px solid transparent;
-        }
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 45px rgba(139, 92, 246, 0.4);
-            background: var(--dynextron-purple-dark);
-        }
-        .btn-secondary {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            color: var(--text-main);
-            border: 2px solid var(--border-color);
-        }
-        .btn-secondary:hover {
-            border-color: var(--dynextron-purple);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            gap: 10px;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 1px solid transparent;
         }
 
-        /* --- Tech Infinite Marquee --- */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple));
+            color: #ffffff;
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.35);
+            border-color: rgba(252, 211, 77, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 45px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--dynextron-gold), var(--dynextron-gold-accent));
+            color: #0F172A;
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.25);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 45px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--glass-card);
+            backdrop-filter: blur(12px);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--dynextron-purple);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .trust-strip {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .trust-strip span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-strip i {
+            color: var(--dynextron-gold-accent);
+        }
+        [data-theme="dark"] .trust-strip i {
+            color: var(--dynextron-gold);
+        }
+
+        /* Hero Interactive Command Terminal */
+        .hero-terminal {
+            background: var(--terminal-bg);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 22px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65), 0 0 50px rgba(139, 92, 246, 0.18);
+            overflow: hidden;
+            color: #E2E8F0;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .terminal-header {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
+        }
+        .terminal-dots span {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #EF4444; }
+        .dot-amber { background: #F59E0B; }
+        .dot-green { background: #10B981; }
+
+        .terminal-title {
+            font-size: 0.75rem;
+            color: #94A3B8;
+            letter-spacing: 0.5px;
+        }
+
+        .terminal-body {
+            padding: 24px;
+            font-size: 0.82rem;
+            line-height: 1.75;
+        }
+
+        .term-line {
+            margin-bottom: 8px;
+            display: flex;
+            gap: 10px;
+        }
+        .term-prompt { color: var(--dynextron-gold); font-weight: 700; }
+        .term-cmd { color: #C4B5FD; }
+        .term-success { color: #34D399; }
+        .term-info { color: #60A5FA; }
+
+        .terminal-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .term-metric-box {
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .term-metric-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dynextron-gold);
+        }
+        .term-metric-lbl {
+            font-size: 0.68rem;
+            color: #94A3B8;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        /* ==========================================================================
+           5. INFINITE ENTERPRISE TECH STACK MARQUEE
+           ========================================================================== */
         .tech-marquee {
             background: var(--bg-alt);
-            padding: 40px 0;
+            padding: 32px 0;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             overflow: hidden;
@@ -251,273 +760,1771 @@
             white-space: nowrap;
             position: relative;
         }
+
         .tech-marquee::before, .tech-marquee::after {
-            content: ''; position: absolute; top: 0; width: 15%; height: 100%; z-index: 2;
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 12%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
         }
         .tech-marquee::before { left: 0; background: linear-gradient(to right, var(--bg-alt), transparent); }
         .tech-marquee::after { right: 0; background: linear-gradient(to left, var(--bg-alt), transparent); }
+
         .tech-track {
             display: inline-flex;
-            animation: scroll 40s linear infinite;
+            animation: scrollMarquee 42s linear infinite;
         }
+
         .tech-item {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--text-muted);
-            margin: 0 40px;
+            margin: 0 36px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            transition: color 0.3s;
+            gap: 12px;
+            transition: color 0.3s, transform 0.3s;
         }
-        .tech-item:hover { color: var(--dynextron-purple); }
-        .tech-item span { color: var(--dynextron-gold); }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* --- Services / Expertise --- */
-        #services { background: var(--bg-main); }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 20px; }
+        .tech-item:hover {
+            color: var(--dynextron-purple);
+            transform: translateY(-2px);
+        }
+
+        .tech-item span {
+            color: var(--dynextron-gold-accent);
+            font-size: 1.35rem;
+        }
+        [data-theme="dark"] .tech-item span {
+            color: var(--dynextron-gold);
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ==========================================================================
+           6. EXPANDED CORE CAPABILITIES (6 BENTO/TILT CARDS)
+           ========================================================================== */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
             perspective: 1200px;
         }
+
         .service-card {
+            padding: 46px 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-top-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 26px;
+        }
+
+        .icon-box {
+            width: 68px;
+            height: 68px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(252, 211, 77, 0.08));
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            color: var(--dynextron-purple);
+            box-shadow: 0 12px 24px rgba(139, 92, 246, 0.15);
+        }
+
+        .service-index {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--dynextron-gold-accent);
+            background: rgba(252, 211, 77, 0.1);
+            border: 1px solid rgba(252, 211, 77, 0.3);
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+        [data-theme="dark"] .service-index {
+            color: var(--dynextron-gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 26px;
+        }
+
+        .svc-feats {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .svc-feat {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .svc-feat i {
+            color: var(--dynextron-gold-accent);
+            font-size: 0.85rem;
+        }
+        [data-theme="dark"] .svc-feat i {
+            color: var(--dynextron-gold);
+        }
+
+        /* ==========================================================================
+           7. INTERACTIVE ENTERPRISE ARCHITECTURE BLUEPRINT (NEW)
+           ========================================================================== */
+        #architecture {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .arch-blueprint-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .arch-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .arch-tab-btn {
+            text-align: left;
+            padding: 24px 28px;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-main);
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .arch-tab-btn:hover {
+            border-color: var(--dynextron-purple);
+        }
+
+        .arch-tab-btn.active {
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.18), rgba(139, 92, 246, 0.05));
+            border-color: var(--dynextron-purple);
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.15);
+        }
+
+        .arch-tab-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--dynextron-gold-accent);
+            background: rgba(252, 211, 77, 0.12);
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(252, 211, 77, 0.3);
+        }
+        [data-theme="dark"] .arch-tab-num {
+            color: var(--dynextron-gold);
+        }
+
+        .arch-tab-btn h4 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .arch-tab-btn p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .arch-display-panel {
+            background: var(--bg-main);
+            border: 1px solid var(--border-highlight);
+            border-radius: 26px;
+            padding: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arch-spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .arch-spec-item {
             background: var(--bg-alt);
             border: 1px solid var(--border-color);
-            padding: 60px 40px;
-            border-radius: 30px;
-            transform-style: preserve-3d;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s ease;
-            position: relative;
+            padding: 18px;
+            border-radius: 16px;
         }
-        .service-card:hover {
-            border-color: var(--dynextron-purple);
-            box-shadow: var(--shadow-lg);
-        }
-        .icon-box {
-            width: 80px; height: 80px;
-            background: linear-gradient(135deg, var(--dynextron-light-purple), #fff);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2.5rem; margin-bottom: 30px;
-            transform: translateZ(50px);
-            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.1);
-        }
-        .service-card h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; transform: translateZ(40px); }
-        .service-card p { color: var(--text-muted); line-height: 1.7; font-size: 1.1rem; transform: translateZ(20px); }
 
-        /* --- Dynamic Process Timeline --- */
-        #process { background: var(--text-main); color: #fff; overflow: hidden; }
-        #process .badge { background: rgba(255,255,255,0.1); color: var(--dynextron-gold); border-color: rgba(252, 211, 77, 0.3); }
-        #process .section-header h2 { color: #fff; }
-        .timeline { position: relative; max-width: 1000px; margin: 0 auto; padding: 40px 0; }
+        .arch-spec-item span {
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--dynextron-purple);
+            text-transform: uppercase;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .arch-spec-item strong {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        /* ==========================================================================
+           8. PORTFOLIO / FEATURED CASE STUDIES WITH FILTERING
+           ========================================================================== */
+        .portfolio-filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .filter-btn {
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-alt);
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--dynextron-purple);
+            color: #ffffff;
+            border-color: var(--dynextron-purple);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 32px;
+        }
+
+        .portfolio-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 210px;
+            background: linear-gradient(135deg, var(--dynextron-purple-deep), var(--dynextron-purple-dark), #1E1B4B);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dynextron-gold);
+            font-size: 3.2rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .portfolio-status-pill {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(7, 9, 14, 0.75);
+            backdrop-filter: blur(8px);
+            color: var(--dynextron-gold);
+            border: 1px solid rgba(252, 211, 77, 0.35);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        .portfolio-content {
+            padding: 32px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.38rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-content p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.65;
+            font-size: 0.96rem;
+            flex: 1;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 22px;
+        }
+
+        .portfolio-tags span {
+            background: var(--dynextron-light-purple);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.76rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--dynextron-purple);
+        }
+        [data-theme="light"] .portfolio-tags span {
+            color: var(--dynextron-purple-dark);
+        }
+
+        .portfolio-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .portfolio-btn {
+            text-align: center;
+            padding: 12px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.86rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .portfolio-btn:hover {
+            background: var(--dynextron-purple);
+            color: #ffffff;
+            border-color: var(--dynextron-purple);
+        }
+
+        /* ==========================================================================
+           9. INTERACTIVE SCOPE ESTIMATOR & TRANSPARENT PACKAGES (INR/USD)
+           ========================================================================== */
+        .estimator-box {
+            background: linear-gradient(145deg, var(--bg-alt), var(--bg-elevated));
+            border: 1px solid var(--border-highlight);
+            border-radius: 30px;
+            padding: 48px;
+            margin-bottom: 90px;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 44px;
+            align-items: center;
+        }
+
+        .estimator-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+
+        .est-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .est-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .est-opt-btn {
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-main);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .est-opt-btn.selected {
+            background: var(--dynextron-purple);
+            color: #ffffff;
+            border-color: var(--dynextron-gold);
+            box-shadow: 0 6px 18px rgba(139, 92, 246, 0.35);
+        }
+
+        .estimator-output {
+            background: var(--terminal-bg);
+            border: 1px solid rgba(252, 211, 77, 0.35);
+            border-radius: 24px;
+            padding: 36px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .est-price-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--dynextron-gold);
+            margin: 14px 0;
+        }
+
+        .currency-switch-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .currency-pill {
+            display: inline-flex;
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            padding: 5px;
+            border-radius: 50px;
+        }
+
+        .curr-btn {
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.86rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .curr-btn.active {
+            background: var(--dynextron-purple);
+            color: #ffffff;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            padding: 48px 38px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--dynextron-gold);
+            background: linear-gradient(180deg, rgba(139, 92, 246, 0.16) 0%, var(--glass-card) 100%);
+            transform: translateY(-10px);
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--dynextron-gold), var(--dynextron-gold-accent));
+            color: #0F172A;
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-icon {
+            font-size: 2.2rem;
+            color: var(--dynextron-gold-accent);
+            margin-bottom: 18px;
+        }
+        [data-theme="dark"] .pricing-icon {
+            color: var(--dynextron-gold);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.65rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .pricing-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            min-height: 48px;
+        }
+
+        .pricing-price-label {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .pricing-price {
+            font-size: 2.75rem;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 28px;
+            color: var(--text-main);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 36px;
+            flex: 1;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.94rem;
+            line-height: 1.45;
+        }
+
+        .pricing-features li i {
+            color: var(--dynextron-purple);
+            margin-top: 4px;
+        }
+
+        /* ==========================================================================
+           10. DYNAMIC PROCESS TIMELINE
+           ========================================================================== */
+        #process {
+            background: #05070B;
+            color: #ffffff;
+            border-top: 1px solid rgba(139, 92, 246, 0.25);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+            overflow: hidden;
+        }
+
+        #process .section-header h2 { color: #ffffff; }
+        #process .section-header p { color: #94A3B8; }
+
+        .timeline {
+            position: relative;
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
         .timeline::before {
-            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 4px; height: 100%; background: rgba(255,255,255,0.1); border-radius: 4px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
         }
+
         .timeline-progress {
-            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 4px; background: linear-gradient(to bottom, var(--dynextron-gold), var(--dynextron-purple));
-            border-radius: 4px; height: 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            background: linear-gradient(to bottom, var(--dynextron-gold), var(--dynextron-purple));
+            border-radius: 4px;
+            height: 0;
         }
+
         .timeline-item {
-            display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: 80px;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 65px;
         }
-        .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
         .timeline-content {
-            width: 80%; padding: 40px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px; backdrop-filter: blur(10px); position: relative;
+            width: 86%;
+            padding: 36px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            transition: border-color 0.3s;
         }
+        .timeline-content:hover {
+            border-color: var(--dynextron-gold);
+        }
+
         .timeline-item:nth-child(odd) .timeline-content { margin-right: 40px; text-align: right; }
         .timeline-item:nth-child(even) .timeline-content { margin-left: 40px; }
+
         .timeline-dot {
-            position: absolute; top: 50%; right: -56px; transform: translateY(-50%);
-            width: 24px; height: 24px; background: var(--text-main); border: 4px solid var(--dynextron-gold);
-            border-radius: 50%; z-index: 2; box-shadow: 0 0 20px var(--dynextron-gold);
+            position: absolute;
+            top: 50%;
+            right: -52px;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            background: #05070B;
+            border: 4px solid var(--dynextron-gold);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 18px var(--dynextron-gold);
         }
-        .timeline-item:nth-child(even) .timeline-dot { left: -56px; right: auto; border-color: var(--dynextron-purple); box-shadow: 0 0 20px var(--dynextron-purple); }
-        .timeline-content h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--dynextron-gold); }
-        .timeline-item:nth-child(even) .timeline-content h3 { color: var(--dynextron-purple); }
-        .timeline-content p { color: #CBD5E1; line-height: 1.6; font-size: 1.1rem; }
 
-        /* --- Statistics Matrix --- */
-        #stats { padding: 100px 5%; background: var(--bg-alt); border-top: 1px solid var(--border-color); }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
-        .stat-item h4 { font-size: 4rem; font-weight: 900; color: var(--text-main); margin-bottom: 10px; font-family: 'JetBrains Mono', monospace;}
-        .stat-item p { font-size: 1.1rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
-
-        /* --- Robust Contact Form --- */
-        #contact { background: var(--bg-main); position: relative; overflow: hidden; }
-        .contact-layout {
-            display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px;
-            background: var(--bg-alt); border-radius: 40px; border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-lg); overflow: hidden;
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -52px;
+            right: auto;
+            border-color: var(--dynextron-purple);
+            box-shadow: 0 0 18px var(--dynextron-purple);
         }
-        .contact-visual {
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--dynextron-gold);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content h3 {
+            color: #C4B5FD;
+        }
+
+        .timeline-content p {
+            color: #CBD5E1;
+            line-height: 1.65;
+            font-size: 1rem;
+        }
+
+        /* ==========================================================================
+           11. TESTIMONIALS, TELEMETRY STATS & FAQ ACCORDION
+           ========================================================================== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .test-card {
+            padding: 38px;
+        }
+
+        .test-stars {
+            color: var(--dynextron-gold-accent);
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+        [data-theme="dark"] .test-stars {
+            color: var(--dynextron-gold);
+        }
+
+        .test-text {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: var(--text-main);
+            margin-bottom: 28px;
+        }
+
+        .test-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .test-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
             background: linear-gradient(135deg, var(--dynextron-purple-dark), var(--dynextron-purple));
-            padding: 80px 60px; color: white; display: flex; flex-direction: column; justify-content: space-between;
-            position: relative; overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dynextron-gold);
+            font-weight: 800;
+            font-size: 1.15rem;
         }
-        .contact-visual::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(252,211,77,0.1) 0%, transparent 60%);
-            animation: pulse 10s linear infinite;
+
+        .test-meta h4 {
+            font-size: 1.02rem;
+            font-weight: 700;
         }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
-        .contact-visual h3 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; z-index: 1; }
-        .contact-visual p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; z-index: 1; }
-        .contact-form { padding: 80px 60px; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
-        .input-box { position: relative; }
-        .input-box.full { grid-column: 1 / -1; }
+
+        .test-meta p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Statistics Matrix */
+        #stats {
+            padding: 90px 5%;
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 36px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 28px;
+            border-radius: 22px;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-value-wrap {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .stat-item h4 {
+            font-size: 3.4rem;
+            font-weight: 900;
+            color: var(--dynextron-purple);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-suffix {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--dynextron-gold-accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        [data-theme="dark"] .stat-suffix {
+            color: var(--dynextron-gold);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-alt);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 24px 28px;
+            background: none;
+            border: none;
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .faq-question:hover {
+            color: var(--dynextron-purple);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--dynextron-gold-accent);
+        }
+        [data-theme="dark"] .faq-icon {
+            color: var(--dynextron-gold);
+        }
+
+        .faq-answer {
+            padding: 0 28px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.98rem;
+        }
+
+        .faq-item.active {
+            border-color: var(--dynextron-purple);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 28px 26px 28px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* ==========================================================================
+           12. FORMAL CONTACT PORTAL & SYSTEM MIGRATION NOTICE
+           ========================================================================== */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            background: var(--bg-alt);
+            border-radius: 32px;
+            border: 1px solid var(--border-highlight);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        .contact-visual {
+            background: linear-gradient(145deg, var(--dynextron-purple-deep), var(--dynextron-purple-dark), #1E1B4B);
+            padding: 64px 50px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-visual h3 {
+            font-size: 2.6rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .contact-visual p {
+            font-size: 1.05rem;
+            color: #E2E8F0;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .corporate-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .channel-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.95rem;
+        }
+
+        .channel-row i {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(252, 211, 77, 0.15);
+            color: var(--dynextron-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form {
+            padding: 64px 50px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box.full {
+            grid-column: 1 / -1;
+        }
+
         .input-box input, .input-box textarea {
-            width: 100%; padding: 20px; background: var(--bg-main); border: 2px solid transparent;
-            border-radius: 16px; font-size: 1.1rem; color: var(--text-main); transition: all 0.3s;
-            outline: none; font-family: 'Inter', sans-serif; resize: none;
+            width: 100%;
+            padding: 18px 20px;
+            background: var(--bg-main);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            font-size: 1rem;
+            color: var(--text-main);
+            transition: all 0.3s;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            resize: none;
         }
+
         .input-box input:focus, .input-box textarea:focus {
-            border-color: var(--dynextron-purple); background: var(--bg-alt); box-shadow: var(--shadow-sm);
+            border-color: var(--dynextron-purple);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
         }
+
         .input-box label {
-            position: absolute; top: 22px; left: 20px; color: var(--text-muted); font-weight: 500;
-            pointer-events: none; transition: 0.3s ease all;
+            position: absolute;
+            top: 19px;
+            left: 18px;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            pointer-events: none;
+            transition: 0.25s ease all;
         }
+
         .input-box input:focus ~ label, .input-box input:not(:placeholder-shown) ~ label,
         .input-box textarea:focus ~ label, .input-box textarea:not(:placeholder-shown) ~ label {
-            top: -12px; left: 15px; font-size: 0.85rem; font-weight: 700; color: var(--dynextron-purple);
-            background: var(--bg-alt); padding: 0 10px; border-radius: 4px;
+            top: -10px;
+            left: 14px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--dynextron-purple);
+            background: var(--bg-alt);
+            padding: 0 8px;
+            border-radius: 4px;
         }
-        .submit-btn { width: 100%; border: none; cursor: pointer; }
 
-        /* --- Footer --- */
+        .system-notice-banner {
+            margin-top: 38px;
+            padding: 22px 28px;
+            border-radius: 18px;
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .system-notice-text {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .system-notice-text i {
+            font-size: 1.4rem;
+            color: var(--dynextron-gold-accent);
+        }
+
+        /* ==========================================================================
+           13. ENTERPRISE MODAL & FOOTER
+           ========================================================================== */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 7, 11, 0.82);
+            backdrop-filter: blur(12px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-backdrop.active {
+            display: flex;
+        }
+
+        .modal-window {
+            background: var(--bg-alt);
+            border: 1px solid var(--border-highlight);
+            border-radius: 26px;
+            max-width: 680px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: var(--bg-main);
+            color: var(--text-main);
+            cursor: pointer;
+        }
+
         footer {
-            background: var(--text-main); color: white; padding: 80px 5% 40px 5%;
-            border-top: 5px solid var(--dynextron-gold);
-        }
-        .footer-grid {
-            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px;
-        }
-        .footer-brand img { height: 50px; filter: brightness(0) invert(1); margin-bottom: 20px; }
-        .footer-brand p { color: #94A3B8; font-size: 1.1rem; line-height: 1.6; max-width: 400px; }
-        .footer-links h4 { font-size: 1.2rem; margin-bottom: 24px; color: var(--dynextron-gold); }
-        .footer-links ul { list-style: none; }
-        .footer-links ul li { margin-bottom: 12px; }
-        .footer-links ul li a { color: #94A3B8; text-decoration: none; transition: color 0.3s; }
-        .footer-links ul li a:hover { color: var(--dynextron-purple-light); padding-left: 5px; }
-        .footer-bottom {
-            padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex; justify-content: space-between; color: #64748B; font-size: 0.9rem;
+            background: #05070B;
+            color: #ffffff;
+            padding: 85px 5% 40px 5%;
+            border-top: 4px solid var(--dynextron-gold);
         }
 
-        /* --- Responsive Design --- */
-        @media (max-width: 1024px) {
-            .timeline::before { left: 40px; }
-            .timeline-progress { left: 40px; }
-            .timeline-item { justify-content: flex-start; padding-right: 0; padding-left: 100px; margin-bottom: 50px; }
-            .timeline-item:nth-child(even) { padding-left: 100px; }
-            .timeline-content { width: 100%; margin: 0 !important; text-align: left !important; }
-            .timeline-dot { left: -60px !important; right: auto !important; }
-            .contact-layout { grid-template-columns: 1fr; }
-            .contact-visual { padding: 60px 40px; }
-            .footer-grid { grid-template-columns: 1fr; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+            gap: 48px;
+            margin-bottom: 60px;
         }
-        @media (max-width: 768px) {
-            nav { padding: 15px 5%; }
+
+        .footer-brand p {
+            color: #94A3B8;
+            font-size: 0.96rem;
+            line-height: 1.7;
+            max-width: 380px;
+            margin-top: 18px;
+        }
+
+        .footer-links h4 {
+            font-size: 1.05rem;
+            margin-bottom: 22px;
+            color: var(--dynextron-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.94rem;
+            transition: all 0.25s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--dynextron-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: #64748B;
+            font-size: 0.88rem;
+        }
+
+        /* ==========================================================================
+           14. RESPONSIVE MEDIA QUERIES
+           ========================================================================== */
+        @media (max-width: 1100px) {
+            .hero-grid, .arch-blueprint-layout, .estimator-box, .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .pricing-card.featured {
+                transform: none;
+            }
+            .timeline::before, .timeline-progress { left: 30px; }
+            .timeline-item, .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-right: 0;
+                padding-left: 80px;
+            }
+            .timeline-content {
+                width: 100%;
+                margin: 0 !important;
+                text-align: left !important;
+            }
+            .timeline-dot, .timeline-item:nth-child(even) .timeline-dot {
+                left: -61px !important;
+                right: auto !important;
+            }
+        }
+
+        @media (max-width: 820px) {
+            .top-telemetry-bar { display: none; }
             .nav-links { display: none; }
-            .form-grid { grid-template-columns: 1fr; }
-            .contact-form { padding: 40px 20px; }
+            .mobile-menu-btn { display: inline-flex; }
+            .section-padding { padding: 90px 5%; }
+            .form-grid, .arch-spec-grid { grid-template-columns: 1fr; }
+            .contact-visual, .contact-form, .estimator-box { padding: 36px 24px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <nav id="navbar">
-        <div class="logo">
-            <a href="#"><img src="logo.png" alt="Dynextron Services Logo"></a>
-        </div>
-        <div class="nav-links">
-            <a href="#hero">Overview</a>
-            <a href="#services">Capabilities</a>
-            <a href="#process">Methodology</a>
-            <a href="#stats">Impact</a>
-            <a href="#contact" class="btn-nav">Start Project</a>
-        </div>
-    </nav>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
 
-    <section id="hero">
-        <div id="aurora-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.35; pointer-events: none;"></div>
-        
-        <div id="canvas-container"></div>
-
-        <div class="hero-content">
-            <div class="badge gs-fade">OPC Registration Complete</div>
-            <h1 class="gs-fade">Architecting The <br><span class="gradient-text">Future of Tech</span></h1>
-            <p class="gs-fade">Dynextron Services fuses elite engineering with stunning design to build highly scalable web, mobile, and enterprise infrastructure solutions.</p>
-            <div class="hero-btns gs-fade">
-                <a href="#services" class="btn btn-primary">Discover Capabilities</a>
-                <a href="#contact" class="btn btn-secondary">Initialize Project</a>
-            </div>
+    <!-- Top Corporate Identity & Live Telemetry Bar -->
+    <div class="top-telemetry-bar">
+        <div class="telemetry-left">
+            <span class="telemetry-item"><i class="fas fa-building-shield"></i> CORPORATE ENTITY: DYNEXTRON SERVICES INDIA LIMITED</span>
+            <span class="telemetry-item"><i class="fas fa-circle-check"></i> ROC LUCKNOW REGISTERED</span>
         </div>
-    </section>
-
-    <div class="tech-marquee">
-        <div class="tech-track">
-            <div class="tech-item"><span>//</span> React.js</div>
-            <div class="tech-item"><span>//</span> Node.js</div>
-            <div class="tech-item"><span>//</span> Python / Django</div>
-            <div class="tech-item"><span>//</span> PHP / Laravel</div>
-            <div class="tech-item"><span>//</span> AWS Cloud</div>
-            <div class="tech-item"><span>//</span> Google Apps Script</div>
-            <div class="tech-item"><span>//</span> React Native</div>
-            <div class="tech-item"><span>//</span> PostgreSQL</div>
-            <div class="tech-item"><span>//</span> React.js</div>
-            <div class="tech-item"><span>//</span> Node.js</div>
-            <div class="tech-item"><span>//</span> Python / Django</div>
-            <div class="tech-item"><span>//</span> PHP / Laravel</div>
-            <div class="tech-item"><span>//</span> AWS Cloud</div>
-            <div class="tech-item"><span>//</span> Google Apps Script</div>
-            <div class="tech-item"><span>//</span> React Native</div>
-            <div class="tech-item"><span>//</span> PostgreSQL</div>
+        <div class="telemetry-right">
+            <span class="telemetry-item"><i class="fas fa-server"></i> ALL CLOUD CLUSTERS OPERATIONAL (99.98% SLA)</span>
+            <a href="https://seva.fwh.is" target="_blank" rel="noopener" class="telemetry-link"><i class="fas fa-arrow-up-right-from-square"></i> Seva Administration Portal</a>
         </div>
     </div>
 
-    <section id="services" class="section-padding">
-        <div class="max-w">
-            <div class="section-header gs-reveal">
-                <div class="badge">Our DNA</div>
-                <h2>End-to-End Capabilities</h2>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="brand-logo">
+            <img src="logo.png" alt="Dynextron Services India Limited Logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+            <div id="logo-fallback" class="brand-emblem-fallback" style="display: none;">D</div>
+            <div class="brand-text">
+                <span class="brand-title">DYNEXTRON <span style="color: var(--dynextron-purple);">INDIA LTD.</span></span>
+                <span class="brand-subtitle">Enterprise Engineering</span>
             </div>
-            <div class="services-grid">
-                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
-                    <div class="icon-box">⚡</div>
-                    <h3>Full-Stack Web</h3>
-                    <p>From complex data dashboards in PHP to hyper-interactive React frontends. We build robust systems logic paired with pixel-perfect UI.</p>
+        </a>
+
+        <div class="nav-links">
+            <a href="#services">Capabilities</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#portfolio">Case Studies</a>
+            <a href="#estimator">Estimator</a>
+            <a href="#pricing">Packages</a>
+            <a href="#process">Methodology</a>
+            <a href="#faq">Governance & FAQ</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">
+                <i class="fas fa-sun" id="themeIcon"></i>
+            </button>
+            <a href="#contact" class="btn-nav"><i class="fas fa-terminal"></i> Initialize Engagement</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="mono" style="font-weight: 800; color: var(--dynextron-gold);">NAVIGATION MATRIX</span>
+                <button class="theme-toggle-btn" id="closeDrawerBtn" aria-label="Close Menu"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="mobile-drawer-links">
+                <a href="#services" onclick="closeMobileDrawer()">Capabilities</a>
+                <a href="#architecture" onclick="closeMobileDrawer()">System Architecture</a>
+                <a href="#portfolio" onclick="closeMobileDrawer()">Case Studies</a>
+                <a href="#estimator" onclick="closeMobileDrawer()">Scope Estimator</a>
+                <a href="#pricing" onclick="closeMobileDrawer()">Investment Packages</a>
+                <a href="#process" onclick="closeMobileDrawer()">Execution Methodology</a>
+                <a href="#faq" onclick="closeMobileDrawer()">FAQ & Governance</a>
+                <a href="https://seva.fwh.is" target="_blank">Visit Seva Portal</a>
+            </div>
+        </div>
+        <a href="#contact" onclick="closeMobileDrawer()" class="btn btn-primary" style="width: 100%;">Transmit Requirements</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div id="canvas-container"></div>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="badge gs-fade">
+                    <span class="pulse-dot"></span>
+                    <span>Dynextron Services India Limited &bull; Enterprise Division</span>
                 </div>
-                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
-                    <div class="icon-box">📱</div>
-                    <h3>Native & Hybrid Mobile</h3>
-                    <p>Deploying high-performance applications to iOS and Android. Cross-platform excellence that maintains native fluidity and hardware access.</p>
+                <h1 class="gs-fade">Architecting <br><span class="gradient-text">Mission-Critical</span> Digital Systems.</h1>
+                <p class="gs-fade">Dynextron Services India Limited fuses rigorous software engineering with resilient cloud and hardware infrastructure to deliver high-concurrency web platforms, enterprise ERPs, and intelligent automation.</p>
+                <div class="hero-btns gs-fade">
+                    <a href="#pricing" class="btn btn-primary"><i class="fas fa-layer-group"></i> Explore Enterprise Tiers</a>
+                    <a href="#contact" class="btn btn-gold"><i class="fas fa-paper-plane"></i> Commission Architecture</a>
+                    <a href="https://seva.fwh.is" class="btn btn-secondary"><i class="fas fa-id-badge"></i> Seva Portal</a>
                 </div>
-                <div class="service-card gs-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-perspective="1000">
-                    <div class="icon-box">☁️</div>
-                    <h3>Cloud & Automation</h3>
-                    <p>Serverless architectures, custom API integrations, and workflow automation using Google Apps Script and AWS to drastically cut operational overhead.</p>
+                <div class="trust-strip gs-fade">
+                    <span><i class="fas fa-shield-halved"></i> Zero-Trust Passkey Ready</span>
+                    <span><i class="fas fa-bolt"></i> High-Concurrency Backends</span>
+                    <span><i class="fas fa-code-branch"></i> 100% IP & Source Ownership</span>
+                </div>
+            </div>
+
+            <!-- Live Interactive Architecture Telemetry Terminal -->
+            <div class="hero-terminal gs-fade" data-tilt data-tilt-max="4" data-tilt-speed="400">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot-red"></span>
+                        <span class="dot-amber"></span>
+                        <span class="dot-green"></span>
+                    </div>
+                    <span class="terminal-title">dynextron-core-cluster // v4.8-enterprise</span>
+                    <span class="mono" style="font-size: 0.7rem; color: #34D399;">● ONLINE</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="term-line">
+                        <span class="term-prompt">root@dynextron:~$</span>
+                        <span class="term-cmd">systemctl status enterprise-mesh.service</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-success">✔</span>
+                        <span>Identity: <strong>Dynextron Services India Limited</strong></span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-success">✔</span>
+                        <span>Edge Security: Cloudflare WAF + SPF/DKIM/DMARC Enforced</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-success">✔</span>
+                        <span>Database Cluster: TiDB &amp; PostgreSQL Multi-Region Sync</span>
+                    </div>
+                    <div class="term-line">
+                        <span class="term-success">✔</span>
+                        <span>Seva &amp; POS Verification Engine: Active &amp; Authenticated</span>
+                    </div>
+                    <div class="term-line" style="margin-top: 10px;">
+                        <span class="term-prompt">telemetry&gt;</span>
+                        <span class="term-info" id="liveTerminalLog">Executing automated zero-downtime health verification...</span>
+                    </div>
+
+                    <div class="terminal-metrics-grid">
+                        <div class="term-metric-box">
+                            <div class="term-metric-val" id="latencyMetric">11.4ms</div>
+                            <div class="term-metric-lbl">Edge Latency</div>
+                        </div>
+                        <div class="term-metric-box">
+                            <div class="term-metric-val">99.98%</div>
+                            <div class="term-metric-lbl">Cluster SLA</div>
+                        </div>
+                        <div class="term-metric-box">
+                            <div class="term-metric-val">TLS 1.3</div>
+                            <div class="term-metric-lbl">Encryption</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Infinite Enterprise Tech Stack Marquee -->
+    <div class="tech-marquee">
+        <div class="tech-track">
+            <div class="tech-item"><span><i class="fab fa-react"></i></span> React.js &amp; Next.js</div>
+            <div class="tech-item"><span><i class="fab fa-node-js"></i></span> Node.js Runtime</div>
+            <div class="tech-item"><span><i class="fab fa-python"></i></span> Python / FastAPI / Django</div>
+            <div class="tech-item"><span><i class="fab fa-php"></i></span> PHP 8 / Laravel</div>
+            <div class="tech-item"><span><i class="fas fa-database"></i></span> TiDB &amp; PostgreSQL</div>
+            <div class="tech-item"><span><i class="fab fa-aws"></i></span> AWS &amp; Cloud Infrastructure</div>
+            <div class="tech-item"><span><i class="fas fa-shield-halved"></i></span> Cloudflare Enterprise DNS</div>
+            <div class="tech-item"><span><i class="fab fa-docker"></i></span> Docker &amp; Containers</div>
+            <div class="tech-item"><span><i class="fas fa-microchip"></i></span> Embedded IoT &amp; RFID</div>
+            <!-- Duplicated for seamless loop -->
+            <div class="tech-item"><span><i class="fab fa-react"></i></span> React.js &amp; Next.js</div>
+            <div class="tech-item"><span><i class="fab fa-node-js"></i></span> Node.js Runtime</div>
+            <div class="tech-item"><span><i class="fab fa-python"></i></span> Python / FastAPI / Django</div>
+            <div class="tech-item"><span><i class="fab fa-php"></i></span> PHP 8 / Laravel</div>
+            <div class="tech-item"><span><i class="fas fa-database"></i></span> TiDB &amp; PostgreSQL</div>
+            <div class="tech-item"><span><i class="fab fa-aws"></i></span> AWS &amp; Cloud Infrastructure</div>
+            <div class="tech-item"><span><i class="fas fa-shield-halved"></i></span> Cloudflare Enterprise DNS</div>
+            <div class="tech-item"><span><i class="fab fa-docker"></i></span> Docker &amp; Containers</div>
+            <div class="tech-item"><span><i class="fas fa-microchip"></i></span> Embedded IoT &amp; RFID</div>
+        </div>
+    </div>
+
+    <!-- Expanded Capabilities / Services -->
+    <section id="services" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge"><span class="pulse-dot"></span> Core Engineering Divisions</div>
+                <h2>Comprehensive Enterprise Capabilities</h2>
+                <p>From distributed cloud applications and financial management platforms to hardware-linked telemetry systems, our engineering standards are built for institutional scale.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Capability 01 -->
+                <div class="service-card spotlight-card gs-card" data-tilt data-tilt-max="4" data-tilt-speed="400">
+                    <div>
+                        <div class="service-top-meta">
+                            <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                            <span class="service-index">DIV // 01</span>
+                        </div>
+                        <h3>Full-Stack Web Architecture</h3>
+                        <p>Engineering high-concurrency enterprise portals, custom CRMs, and responsive React/PHP applications backed by resilient relational database schemas.</p>
+                    </div>
+                    <div class="svc-feats">
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Granular Role-Based Access Control (RBAC)</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Real-time analytical &amp; CRUD dashboards</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Zero-Trust Passkey &amp; OAuth2 authentication</span>
+                    </div>
+                </div>
+
+                <!-- Capability 02 -->
+                <div class="service-card spotlight-card gs-card" data-tilt data-tilt-max="4" data-tilt-speed="400">
+                    <div>
+                        <div class="service-top-meta">
+                            <div class="icon-box"><i class="fas fa-mobile-screen-button"></i></div>
+                            <span class="service-index">DIV // 02</span>
+                        </div>
+                        <h3>Native &amp; Cross-Platform Mobile</h3>
+                        <p>Deploying low-latency iOS and Android ecosystems with offline-first synchronization, biometric security, and native hardware acceleration.</p>
+                    </div>
+                    <div class="svc-feats">
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> React Native &amp; Flutter enterprise builds</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Encrypted local storage &amp; offline sync</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Real-time WebSocket push telemetry</span>
+                    </div>
+                </div>
+
+                <!-- Capability 03 -->
+                <div class="service-card spotlight-card gs-card" data-tilt data-tilt-max="4" data-tilt-speed="400">
+                    <div>
+                        <div class="service-top-meta">
+                            <div class="icon-box"><i class="fas fa-cloud-bolt"></i></div>
+                            <span class="service-index">DIV // 03</span>
+                        </div>
+                        <h3>Cloud, DevOps &amp; Distributed DBs</h3>
+                        <p>Containerized microservices, serverless deployments, and fault-tolerant database clusters engineered to eliminate operational bottlenecks.</p>
+                    </div>
+                    <div class="svc-feats">
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> AWS, Google Cloud &amp; Docker orchestration</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> TiDB, PostgreSQL &amp; MySQL high-availability</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Automated CI/CD &amp; infrastructure monitoring</span>
+                    </div>
+                </div>
+
+                <!-- Capability 04 -->
+                <div class="service-card spotlight-card gs-card" data-tilt data-tilt-max="4" data-tilt-speed="400">
+                    <div>
+                        <div class="service-top-meta">
+                            <div class="icon-box"><i class="fas fa-brain"></i></div>
+                            <span class="service-index">DIV // 04</span>
+                        </div>
+                        <h3>AI &amp; Quantitative Automation</h3>
+                        <p>Integrating Large Language Models, algorithmic data pipelines, and intelligent document parsing into your core corporate workflows.</p>
+                    </div>
+                    <div class="svc-feats">
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Custom Python &amp; LLM API orchestration</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Automated reporting &amp; anomaly detection</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> High-frequency data ingestion pipelines</span>
+                    </div>
+                </div>
+
+                <!-- Capability 05 -->
+                <div class="service-card spotlight-card gs-card" data-tilt data-tilt-max="4" data-tilt-speed="400">
+                    <div>
+                        <div class="service-top-meta">
+                            <div class="icon-box"><i class="fas fa-microchip"></i></div>
+                            <span class="service-index">DIV // 05</span>
+                        </div>
+                        <h3>Embedded IoT &amp; POS Telemetry</h3>
+                        <p>Bridging physical hardware with cloud dashboards—featuring RFID verification, microcontroller firmware, and retail Point-of-Sale ecosystems.</p>
+                    </div>
+                    <div class="svc-feats">
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> RFID/NFC membership &amp; access verification</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Custom microcontroller &amp; sensor telemetry</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Integrated loyalty, credits &amp; POS administration</span>
+                    </div>
+                </div>
+
+                <!-- Capability 06 -->
+                <div class="service-card spotlight-card gs-card" data-tilt data-tilt-max="4" data-tilt-speed="400">
+                    <div>
+                        <div class="service-top-meta">
+                            <div class="icon-box"><i class="fas fa-user-shield"></i></div>
+                            <span class="service-index">DIV // 06</span>
+                        </div>
+                        <h3>Cybersecurity &amp; Domain Governance</h3>
+                        <p>Hardening corporate digital assets with cryptographic authentication, enterprise email deliverability protocols, and edge WAF rules.</p>
+                    </div>
+                    <div class="svc-feats">
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Cloudflare DNS, WAF &amp; DDoS mitigation</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Strict SPF, DKIM &amp; DMARC mail governance</span>
+                        <span class="svc-feat"><i class="fas fa-check-circle"></i> Comprehensive code &amp; penetration auditing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Interactive Enterprise Architecture Blueprint -->
+    <section id="architecture" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge"><span class="pulse-dot"></span> Systems Engineering Standard</div>
+                <h2>The 4-Layer Dynextron Stack</h2>
+                <p>Inspect how Dynextron Services India Limited structures every production deployment for institutional security, horizontal scalability, and sub-second response times.</p>
+            </div>
+
+            <div class="arch-blueprint-layout gs-reveal">
+                <div class="arch-tabs">
+                    <button class="arch-tab-btn active" onclick="selectArchLayer(0, this)">
+                        <span class="arch-tab-num">L01</span>
+                        <div>
+                            <h4>Edge Network &amp; Zero-Trust Perimeter</h4>
+                            <p>Cloudflare Enterprise DNS, WAF filtering, TLS 1.3 termination, and cryptographic Passkey authentication.</p>
+                        </div>
+                    </button>
+                    <button class="arch-tab-btn" onclick="selectArchLayer(1, this)">
+                        <span class="arch-tab-num">L02</span>
+                        <div>
+                            <h4>High-Concurrency Application Mesh</h4>
+                            <p>Decoupled React/Next.js frontends communicating with modular Node.js, Python, and Laravel API clusters.</p>
+                        </div>
+                    </button>
+                    <button class="arch-tab-btn" onclick="selectArchLayer(2, this)">
+                        <span class="arch-tab-num">L03</span>
+                        <div>
+                            <h4>Distributed Persistence &amp; Data Integrity</h4>
+                            <p>ACID-compliant TiDB, PostgreSQL, and MySQL instances with automated point-in-time recovery.</p>
+                        </div>
+                    </button>
+                    <button class="arch-tab-btn" onclick="selectArchLayer(3, this)">
+                        <span class="arch-tab-num">L04</span>
+                        <div>
+                            <h4>Containerized CI/CD &amp; 24/7 Telemetry</h4>
+                            <p>Dockerized deployment pipelines, automated regression suites, and real-time anomaly alerting.</p>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="arch-display-panel" id="archDisplayPanel">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <span class="badge" id="archLayerBadge" style="margin-bottom: 0;">LAYER 01 // PERIMETER DEFENSE</span>
+                            <span class="mono" style="color: var(--dynextron-gold); font-size: 0.85rem;"><i class="fas fa-lock"></i> ISO-ALIGNED TOPOLOGY</span>
+                        </div>
+                        <h3 id="archLayerTitle" style="font-size: 2rem; font-weight: 900; margin-bottom: 16px;">Edge Network &amp; Zero-Trust Perimeter</h3>
+                        <p id="archLayerDesc" style="color: var(--text-muted); line-height: 1.75; font-size: 1.05rem;">Every packet entering a Dynextron-engineered platform is inspected at the network edge. We implement strict DNSSEC, automated DDoS mitigation, and hardware-backed WebAuthn Passkeys to eliminate credential stuffing and unauthorized access before traffic ever reaches your application servers.</p>
+                    </div>
+
+                    <div class="arch-spec-grid">
+                        <div class="arch-spec-item">
+                            <span>Primary Protocol</span>
+                            <strong id="archSpec1">Cloudflare WAF + Anycast DNS</strong>
+                        </div>
+                        <div class="arch-spec-item">
+                            <span>Identity Standard</span>
+                            <strong id="archSpec2">FIDO2 Passkeys / JWT / RBAC</strong>
+                        </div>
+                        <div class="arch-spec-item">
+                            <span>Mail Governance</span>
+                            <strong id="archSpec3">Hardened SPF, DKIM &amp; DMARC</strong>
+                        </div>
+                        <div class="arch-spec-item">
+                            <span>Target Benchmark</span>
+                            <strong id="archSpec4">&lt; 15ms Global Edge Handshake</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Featured Case Studies -->
+    <section id="portfolio" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge"><span class="pulse-dot"></span> Production Deployments</div>
+                <h2>Engineered Systems &amp; Case Studies</h2>
+                <p>Explore a curated selection of enterprise platforms, administrative suites, and automated ecosystems architected by our team.</p>
+            </div>
+
+            <div class="portfolio-filter-bar gs-reveal">
+                <button class="filter-btn active" onclick="filterPortfolio('all', this)">All Deployments</button>
+                <button class="filter-btn" onclick="filterPortfolio('enterprise', this)">Enterprise Web &amp; ERP</button>
+                <button class="filter-btn" onclick="filterPortfolio('fintech', this)">Retail &amp; Verification</button>
+                <button class="filter-btn" onclick="filterPortfolio('ai', this)">AI &amp; Automation</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Case Study 1 -->
+                <div class="portfolio-card spotlight-card gs-card" data-category="enterprise">
+                    <div class="portfolio-img">
+                        <span class="portfolio-status-pill">PRODUCTION READY</span>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Dynamic Enterprise CRUD &amp; Telemetry</h3>
+                        <p>A high-concurrency executive portal featuring live KPI streaming, bulk CSV/JSON data ingestion, audit logging, and multi-tier role permissions.</p>
+                        <div class="portfolio-tags">
+                            <span>React.js</span><span>Node.js</span><span>PostgreSQL</span><span>RBAC</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="portfolio-btn" onclick="openArchModal('crud')"><i class="fas fa-sitemap"></i> Specs</button>
+                            <a href="#contact" class="portfolio-btn">Request Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="portfolio-card spotlight-card gs-card" data-category="enterprise">
+                    <div class="portfolio-img">
+                        <span class="portfolio-status-pill">ENTERPRISE ERP</span>
+                        <i class="fas fa-users-gear"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Enterprise HR, Attendance &amp; Payroll Suite</h3>
+                        <p>End-to-end institutional workforce management system automating biometric/geofenced attendance, statutory compliance, and single-click payroll disbursements.</p>
+                        <div class="portfolio-tags">
+                            <span>PHP / Laravel</span><span>MySQL</span><span>Automated PDF</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="portfolio-btn" onclick="openArchModal('hr')"><i class="fas fa-sitemap"></i> Specs</button>
+                            <a href="#contact" class="portfolio-btn">Request Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="portfolio-card spotlight-card gs-card" data-category="ai">
+                    <div class="portfolio-img">
+                        <span class="portfolio-status-pill">AI PIPELINE</span>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>AI Workflow &amp; Intelligent Document Parser</h3>
+                        <p>Autonomous enterprise pipeline utilizing LLM embeddings and Python workers to extract structured ledger entries from unstructured invoices and trigger alerts.</p>
+                        <div class="portfolio-tags">
+                            <span>Python</span><span>OpenAI API</span><span>AWS Lambda</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="portfolio-btn" onclick="openArchModal('ai')"><i class="fas fa-sitemap"></i> Specs</button>
+                            <a href="#contact" class="portfolio-btn">Request Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 4: Seva & POS Ecosystem -->
+                <div class="portfolio-card spotlight-card gs-card" data-category="fintech">
+                    <div class="portfolio-img">
+                        <span class="portfolio-status-pill">LIVE ECOSYSTEM</span>
+                        <i class="fas fa-id-card-clip"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Seva &amp; POS Verification Platform</h3>
+                        <p>Integrated customer verification, membership points ledger, store credit administration, and Point-of-Sale checkout suite engineered for zero-latency retail operations.</p>
+                        <div class="portfolio-tags">
+                            <span>TiDB / MySQL</span><span>Cloudflare</span><span>POS &amp; Loyalty</span>
+                        </div>
+                        <div class="portfolio-actions">
+                            <button class="portfolio-btn" onclick="openArchModal('seva')"><i class="fas fa-sitemap"></i> Specs</button>
+                            <a href="https://seva.fwh.is" target="_blank" class="portfolio-btn">Launch Portal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Estimator & Transparent Project Packages -->
+    <section id="pricing" class="section-padding">
+        <div class="max-w">
+            <div id="estimator" class="section-header gs-reveal">
+                <div class="badge"><span class="pulse-dot"></span> Commercial Governance</div>
+                <h2>Interactive Scope Estimator &amp; Packages</h2>
+                <p>Configure your technical parameters below for an instant architectural estimate, or select one of our standardized institutional engagement tiers.</p>
+            </div>
+
+            <!-- Interactive Project Calculator -->
+            <div class="estimator-box gs-reveal">
+                <div class="estimator-controls">
+                    <div class="est-group">
+                        <label>01. Select Primary Architecture Domain</label>
+                        <div class="est-options" id="estDomainGroup">
+                            <button type="button" class="est-opt-btn selected" data-val="500" onclick="updateEstimator(this, 'domain')">Web Application / Portal</button>
+                            <button type="button" class="est-opt-btn" data-val="1200" onclick="updateEstimator(this, 'domain')">Mobile Ecosystem (iOS/Android)</button>
+                            <button type="button" class="est-opt-btn" data-val="1800" onclick="updateEstimator(this, 'domain')">Enterprise ERP / CRM Suite</button>
+                            <button type="button" class="est-opt-btn" data-val="900" onclick="updateEstimator(this, 'domain')">AI &amp; Cloud Automation</button>
+                        </div>
+                    </div>
+
+                    <div class="est-group">
+                        <label>02. System Scale &amp; Database Complexity</label>
+                        <div class="est-options" id="estScaleGroup">
+                            <button type="button" class="est-opt-btn selected" data-mult="1" data-weeks="3-4 Weeks" onclick="updateEstimator(this, 'scale')">MVP / Departmental</button>
+                            <button type="button" class="est-opt-btn" data-mult="2.2" data-weeks="6-8 Weeks" onclick="updateEstimator(this, 'scale')">Multi-Tenant / High Concurrency</button>
+                            <button type="button" class="est-opt-btn" data-mult="3.5" data-weeks="10-14 Weeks" onclick="updateEstimator(this, 'scale')">Mission-Critical Distributed</button>
+                        </div>
+                    </div>
+
+                    <div class="est-group">
+                        <label>03. Post-Deployment SLA &amp; Security Governance</label>
+                        <div class="est-options" id="estSlaGroup">
+                            <button type="button" class="est-opt-btn selected" data-add="0" onclick="updateEstimator(this, 'sla')">Standard 30-Day Warranty</button>
+                            <button type="button" class="est-opt-btn" data-add="400" onclick="updateEstimator(this, 'sla')">6-Month Priority Support</button>
+                            <button type="button" class="est-opt-btn" data-add="900" onclick="updateEstimator(this, 'sla')">Dedicated 24/7 SLA + Security Audit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="estimator-output">
+                    <span class="mono" style="font-size: 0.78rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1.5px;">Estimated Investment Baseline</span>
+                    <div class="est-price-display" id="estPriceResult">$500</div>
+                    <div style="font-size: 0.92rem; color: #CBD5E1; margin-bottom: 24px;">
+                        Estimated Delivery Window: <strong style="color: var(--dynextron-gold);" id="estTimelineResult">3-4 Weeks</strong>
+                    </div>
+                    <p style="font-size: 0.82rem; color: #94A3B8; line-height: 1.6; margin-bottom: 24px;">Includes full unencrypted source code transfer, architectural documentation, and automated deployment setup.</p>
+                    <a href="#contact" onclick="prefillEstimateToForm()" class="btn btn-gold" style="width: 100%;"><i class="fas fa-bolt"></i> Lock Estimate &amp; Consult</a>
+                </div>
+            </div>
+
+            <!-- Currency Switcher for Packages -->
+            <div class="currency-switch-bar gs-reveal">
+                <span class="mono" style="font-size: 0.85rem; color: var(--text-muted);">DISPLAY CURRENCY:</span>
+                <div class="currency-pill">
+                    <button class="curr-btn active" id="btnUSD" onclick="setCurrency('USD')">USD ($)</button>
+                    <button class="curr-btn" id="btnINR" onclick="setCurrency('INR')">INR (₹)</button>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- MVP Package -->
+                <div class="pricing-card spotlight-card gs-card">
+                    <i class="fas fa-rocket pricing-icon"></i>
+                    <h3>MVP / Blueprint</h3>
+                    <p class="pricing-desc">Designed for agile startups and departmental operations requiring a rapid, production-grade prototype or automation utility.</p>
+                    <div class="pricing-price-label">Starts From</div>
+                    <div class="pricing-price" data-usd="$500" data-inr="₹42,000">$500</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Custom Web Application or Automation Script</li>
+                        <li><i class="fas fa-check"></i> Responsive, Executive-Grade UI/UX</li>
+                        <li><i class="fas fa-check"></i> Core REST API &amp; Database Integration</li>
+                        <li><i class="fas fa-check"></i> 1 Month Post-Launch Bug Warranty</li>
+                        <li><i class="fas fa-check"></i> 100% Intellectual Property &amp; Source Ownership</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Commission Blueprint</a>
+                </div>
+
+                <!-- Enterprise Package -->
+                <div class="pricing-card spotlight-card gs-card featured">
+                    <div class="featured-tag">Institutional Standard</div>
+                    <i class="fas fa-gem pricing-icon"></i>
+                    <h3>Full-Stack Enterprise System</h3>
+                    <p class="pricing-desc">Comprehensive end-to-end engineering for bespoke CRMs, ERPs, financial ledgers, and high-concurrency platforms.</p>
+                    <div class="pricing-price-label">Starts From</div>
+                    <div class="pricing-price" data-usd="$2,500" data-inr="₹2,10,000">$2,500</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Custom Frontend &amp; High-Concurrency Backend</li>
+                        <li><i class="fas fa-check"></i> Granular Role-Based Access &amp; Passkey Auth</li>
+                        <li><i class="fas fa-check"></i> Payment Gateways &amp; Third-Party Webhooks</li>
+                        <li><i class="fas fa-check"></i> Optimized TiDB / PostgreSQL / MySQL Cluster</li>
+                        <li><i class="fas fa-check"></i> 6 Months Priority Engineering Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Initialize Enterprise Build</a>
+                </div>
+
+                <!-- Retainer Package -->
+                <div class="pricing-card spotlight-card gs-card">
+                    <i class="fas fa-infinity pricing-icon"></i>
+                    <h3>Dedicated Engineering Retainer</h3>
+                    <p class="pricing-desc">Allocated senior systems engineers for continuous feature velocity, cloud governance, and 24/7 infrastructure reliability.</p>
+                    <div class="pricing-price-label">Bespoke Allocation</div>
+                    <div class="pricing-price" style="font-size: 2.2rem;">Custom / Mo</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Dedicated Full-Stack Engineering Pod</li>
+                        <li><i class="fas fa-check"></i> Bi-Weekly Agile Sprint Governance</li>
+                        <li><i class="fas fa-check"></i> 24/7 Uptime Telemetry &amp; Incident Response</li>
+                        <li><i class="fas fa-check"></i> DevOps, Cloudflare &amp; Database Administration</li>
+                        <li><i class="fas fa-check"></i> Executive Technical Advisory Sessions</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Request Retainer Charter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology / Process Timeline -->
     <section id="process" class="section-padding">
         <div class="max-w">
             <div class="section-header gs-reveal">
-                <div class="badge">Execution</div>
-                <h2>The Dynextron Methodology</h2>
+                <div class="badge" style="background: rgba(252, 211, 77, 0.12); color: var(--dynextron-gold); border-color: rgba(252, 211, 77, 0.35);">Execution Lifecycle</div>
+                <h2>The Dynextron Engineering Protocol</h2>
+                <p>A transparent, milestone-governed lifecycle from initial architectural discovery to production handover.</p>
             </div>
             <div class="timeline" id="timeline-container">
                 <div class="timeline-progress" id="timeline-progress"></div>
@@ -525,183 +2532,631 @@
                 <div class="timeline-item gs-timeline">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>01. Discovery & Architecture</h3>
-                        <p>We don't just write code; we solve business problems. We map out database schemas, user flows, and tech stacks tailored to your exact scalability needs.</p>
+                        <h3><i class="fas fa-magnifying-glass-chart" style="margin-right: 10px;"></i>01. Systems Discovery &amp; Blueprint</h3>
+                        <p>We begin by auditing your operational bottlenecks. Our architects author formal Entity-Relationship Diagrams (ERDs), API contracts, and security threat models tailored to your long-term growth.</p>
                     </div>
                 </div>
                 <div class="timeline-item gs-timeline">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>02. UI/UX Prototyping</h3>
-                        <p>Translating logic into stunning visual interfaces. We create high-fidelity, interactive 3D and 2D prototypes ensuring the user journey is flawless.</p>
+                        <h3><i class="fas fa-pen-nib" style="margin-right: 10px;"></i>02. High-Fidelity UI/UX Prototyping</h3>
+                        <p>Translating complex business logic into intuitive, high-contrast executive interfaces. Every component is engineered for accessibility, responsiveness, and zero cognitive friction.</p>
                     </div>
                 </div>
                 <div class="timeline-item gs-timeline">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>03. Agile Engineering</h3>
-                        <p>Rigorous, sprint-based development. Writing clean, modular, and heavily tested code across frontend, backend, and cloud integrations.</p>
+                        <h3><i class="fas fa-code" style="margin-right: 10px;"></i>03. Agile Sprint Engineering &amp; Audits</h3>
+                        <p>Disciplined, sprint-based software construction across frontend, backend, and database layers—accompanied by automated unit testing, SQL injection prevention, and load profiling.</p>
                     </div>
                 </div>
                 <div class="timeline-item gs-timeline">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>04. Deployment & Scale</h3>
-                        <p>Seamless CI/CD pipelines pushing to production. Post-launch, we monitor infrastructure to ensure 99.9% uptime as your user base expands.</p>
+                        <h3><i class="fas fa-server" style="margin-right: 10px;"></i>04. CI/CD Deployment &amp; Telemetry</h3>
+                        <p>Zero-downtime production rollouts backed by Cloudflare edge security, automated backups, and comprehensive documentation handover to your internal stakeholders.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Client Testimonials -->
+    <section id="testimonials" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge"><span class="pulse-dot"></span> Partner Endorsements</div>
+                <h2>Verified Executive Feedback</h2>
+                <p>Direct assessments from directors and technical leads who entrusted Dynextron with their core infrastructure.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="test-card spotlight-card gs-card">
+                    <div class="test-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="test-text">"Dynextron completely modernized our legacy inventory and reporting architecture. They delivered a responsive, role-governed dashboard ahead of schedule with exceptional code modularity."</p>
+                    <div class="test-author">
+                        <div class="test-avatar">JT</div>
+                        <div class="test-meta">
+                            <h4>James T.</h4>
+                            <p>Operations Director, Logistics Enterprise</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="test-card spotlight-card gs-card">
+                    <div class="test-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="test-text">"We required a mission-critical API mesh to automate our multi-department workflows. Not only was the execution flawless, but their post-deployment documentation and SLA responsiveness set a new benchmark."</p>
+                    <div class="test-author">
+                        <div class="test-avatar">SK</div>
+                        <div class="test-meta">
+                            <h4>Sarah K.</h4>
+                            <p>VP of Engineering, B2B SaaS Platform</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="test-card spotlight-card gs-card">
+                    <div class="test-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="test-text">"From the initial architectural scoping to production deployment, communication was executive-grade. They transformed complex financial requirements into a blazingly fast, secure web platform."</p>
+                    <div class="test-author">
+                        <div class="test-avatar">ML</div>
+                        <div class="test-meta">
+                            <h4>Marcus L.</h4>
+                            <p>Founder &amp; Managing Partner, FinTech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Matrix -->
     <section id="stats">
         <div class="max-w">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h4 class="counter" data-target="98">0</h4>
-                    <p>Performance Score</p>
+                    <div class="stat-value-wrap">
+                        <h4 class="counter" data-target="98">0</h4>
+                        <span class="stat-suffix">/100</span>
+                    </div>
+                    <p>Lighthouse Performance</p>
                 </div>
                 <div class="stat-item">
-                    <h4 class="counter" data-target="500">0</h4><span>+</span>
-                    <p>Commits Pushed</p>
+                    <div class="stat-value-wrap">
+                        <h4 class="counter" data-target="500">0</h4>
+                        <span class="stat-suffix">+</span>
+                    </div>
+                    <p>Production Commits</p>
                 </div>
                 <div class="stat-item">
-                    <h4 class="counter" data-target="99">0</h4><span>%</span>
-                    <p>Client Retention</p>
+                    <div class="stat-value-wrap">
+                        <h4 class="counter" data-target="99">0</h4>
+                        <span class="stat-suffix">.9%</span>
+                    </div>
+                    <p>Partner Retention Rate</p>
                 </div>
                 <div class="stat-item">
-                    <h4>24/7</h4>
-                    <p>Systems Monitoring</p>
+                    <div class="stat-value-wrap">
+                        <h4>24/7</h4>
+                    </div>
+                    <p>Telemetry &amp; Incident SLA</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FAQ & Corporate Governance Section -->
+    <section id="faq" class="section-padding">
+        <div class="max-w">
+            <div class="section-header gs-reveal">
+                <div class="badge"><span class="pulse-dot"></span> Knowledge &amp; Governance</div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Clarity on our technical stack, intellectual property transfer, and commercial engagement protocols.</p>
+            </div>
+            
+            <div class="faq-container gs-reveal">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What core technology stacks does Dynextron Services India Limited specialize in?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><br>We operate as a full-spectrum systems engineering firm. On the frontend, we architect with React.js, Next.js, and hardware-accelerated WebGL/GSAP interfaces. On the backend, we deploy Node.js, Python (FastAPI/Django), and PHP (Laravel) backed by distributed TiDB, PostgreSQL, and MySQL databases—secured via AWS, Docker, and Cloudflare Enterprise DNS.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How are commercial milestones and payment schedules structured?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><br>For fixed-scope engagements (such as our MVP Blueprint or Full-Stack Enterprise tiers), we initiate architecture upon an onboarding deposit, followed by transparent, milestone-linked disbursements tied to verifiable staging deliverables. For ongoing retainers, billing is conducted on a predictable monthly cycle.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Does our organization retain 100% Intellectual Property (IP) and source code ownership?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><br>Unconditionally. Upon completion of the final project milestone, complete intellectual property rights, database schemas, and unencrypted source code repositories are formally assigned to your corporate entity. We never impose vendor lock-in.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What post-deployment warranty and SLA maintenance options are provided?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><br>Every custom platform includes a complimentary post-launch warranty period (ranging from 1 to 6 months depending on the tier) covering bug remediation and stability monitoring. Beyond the warranty window, clients may opt into our Dedicated Engineering Retainer for continuous feature expansion and 24/7 security patching.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formal Contact & Engagement Transmission Section -->
     <section id="contact" class="section-padding">
         <div class="max-w">
             <div class="contact-layout gs-reveal">
                 <div class="contact-visual">
                     <div>
-                        <h3>Initiate <br>Connection.</h3>
-                        <p>Stop settling for off-the-shelf templates. Partner with Dynextron to engineer custom software that actively drives your revenue.</p>
+                        <span class="badge" style="background: rgba(252, 211, 77, 0.18); color: var(--dynextron-gold); border-color: rgba(252, 211, 77, 0.4);">Direct Executive Channel</span>
+                        <h3>Initiate Technical Consultation.</h3>
+                        <p>Eliminate fragile, off-the-shelf templates. Partner with Dynextron Services India Limited to architect resilient software infrastructure engineered for long-term commercial dominance.</p>
                     </div>
-                    <div>
-                        <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fdf0f9f9fad5f1ecfbf0ede1e7fafbbbf6faf8">[email&#160;protected]</a></div>
-                        <div style="color: var(--dynextron-gold);">Global Technology Operations</div>
+
+                    <div class="corporate-channels">
+                        <div class="channel-row">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <div>
+                                <div style="font-size: 0.75rem; color: #CBD5E1; text-transform: uppercase;">Official Dispatch</div>
+                                <strong class="mono">admin@dynextron.qzz.io</strong>
+                            </div>
+                        </div>
+                        <div class="channel-row">
+                            <i class="fas fa-scale-balanced"></i>
+                            <div>
+                                <div style="font-size: 0.75rem; color: #CBD5E1; text-transform: uppercase;">Corporate Jurisdiction</div>
+                                <strong>Dynextron Services India Limited (ROC Lucknow)</strong>
+                            </div>
+                        </div>
+                        <div class="channel-row">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <div style="font-size: 0.75rem; color: #CBD5E1; text-transform: uppercase;">Digital Ecosystem</div>
+                                <strong>dynextron.qzz.io &bull; seva.fwh.is</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="contact-form">
-                    <form onsubmit="event.preventDefault(); alert('Dynextron backend route triggered.');">
+                    <h4 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 8px;">Project Transmission Dossier</h4>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 28px;">All submissions are encrypted and routed directly to our principal systems architecture desk.</p>
+
+                    <form action="https://formsubmit.co/08a3ca1e4f5cd2cf73521634a03eecc6" method="POST">
+                        <input type="hidden" name="_subject" value="Secure Protocol Alert: Dynextron Services India Limited Request">
+                        <input type="hidden" name="_captcha" value="true">
                         <div class="form-grid">
                             <div class="input-box">
-                                <input type="text" id="fname" placeholder=" " required>
+                                <input type="text" id="fname" placeholder=" " name="Auth_Name" required>
                                 <label for="fname">First Name</label>
                             </div>
                             <div class="input-box">
-                                <input type="text" id="lname" placeholder=" " required>
+                                <input type="text" id="lname" placeholder=" " name="Auth_Last_Name" required>
                                 <label for="lname">Last Name</label>
                             </div>
                             <div class="input-box full">
-                                <input type="email" id="email" placeholder=" " required>
-                                <label for="email">Corporate Email</label>
+                                <input type="email" id="email" placeholder=" " name="Auth_Email" required>
+                                <label for="email">Corporate Email Address</label>
                             </div>
                             <div class="input-box full">
-                                <input type="text" id="subject" placeholder=" " required>
-                                <label for="subject">Project Scope / Subject</label>
+                                <input type="text" id="subject" placeholder=" " name="Project_Scope" required>
+                                <label for="subject">Project Scope / Architectural Domain</label>
                             </div>
                             <div class="input-box full">
-                                <textarea id="message" rows="5" placeholder=" " required></textarea>
-                                <label for="message">Technical Requirements</label>
+                                <textarea id="message" rows="5" placeholder=" " name="Payload_Data" required></textarea>
+                                <label for="message">Technical Specifications, Target Timeline &amp; Objectives</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary submit-btn">Transmit Request</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border: none;"><i class="fas fa-paper-plane"></i> Transmit Architectural Request</button>
                     </form>
                 </div>
+            </div>
+
+            <!-- Formalized System Migration & Support Notice (Replacing raw <font> tag) -->
+            <div class="system-notice-banner gs-reveal">
+                <div class="system-notice-text">
+                    <i class="fas fa-circle-info"></i>
+                    <div>
+                        <strong>Infrastructure Upgrade Advisory:</strong> We have recently transitioned our web portals to the <strong>Dynextron Services India Limited</strong> enterprise core. Should you encounter any legacy routing anomalies, please notify our engineering desk at <a href="mailto:admin@dynextron.qzz.io" style="color: var(--dynextron-purple); font-weight: 700;">admin@dynextron.qzz.io</a>.
+                    </div>
+                </div>
+                <span class="mono" style="font-size: 0.78rem; color: var(--dynextron-gold-accent); font-weight: 700;">STATUS: MONITORED</span>
             </div>
         </div>
     </section>
 
+    <!-- Architecture Specification Modal -->
+    <div class="modal-backdrop" id="archModal" onclick="if(event.target === this) closeArchModal()">
+        <div class="modal-window">
+            <button class="modal-close" onclick="closeArchModal()" aria-label="Close Modal"><i class="fas fa-times"></i></button>
+            <div class="badge" id="modalTag">SYSTEM SPECIFICATION</div>
+            <h3 id="modalTitle" style="font-size: 1.8rem; font-weight: 900; margin-bottom: 14px;">Architecture Blueprint</h3>
+            <p id="modalDesc" style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;"></p>
+            <div class="arch-spec-grid" style="margin-bottom: 28px;">
+                <div class="arch-spec-item">
+                    <span>Core Stack</span>
+                    <strong id="modalStack">React + Node + PostgreSQL</strong>
+                </div>
+                <div class="arch-spec-item">
+                    <span>Security Protocol</span>
+                    <strong id="modalSec">RBAC + JWT + TLS 1.3</strong>
+                </div>
+            </div>
+            <a href="#contact" onclick="closeArchModal()" class="btn btn-primary" style="width: 100%;">Request Full Technical Demo</a>
+        </div>
+    </div>
+
+    <!-- Enterprise Footer -->
     <footer>
         <div class="max-w">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="DynextronOPC (1).png" alt="Dynextron White Logo">
-                    <p>Dynextron Services OPC is a premier technology firm specializing in sophisticated web architecture, mobile applications, and enterprise digital transformation.</p>
+                    <a href="#" class="brand-logo" style="color: #ffffff;">
+                        <img src="DynextronOPC (1).png" alt="Dynextron White Logo" style="filter: brightness(0) invert(1);" onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex';">
+                        <div id="footer-logo-fallback" class="brand-emblem-fallback" style="display: none;">D</div>
+                        <div class="brand-text">
+                            <span class="brand-title" style="color: #ffffff;">DYNEXTRON <span style="color: var(--dynextron-gold);">INDIA LTD.</span></span>
+                            <span class="brand-subtitle">ROC Lucknow Registered</span>
+                        </div>
+                    </a>
+                    <p>Dynextron Services India Limited is a premier technology corporation specializing in high-concurrency web architecture, distributed database systems, hardware-integrated telemetry, and enterprise digital transformation.</p>
                 </div>
+
                 <div class="footer-links">
-                    <h4>Core Services</h4>
+                    <h4>Engineering Divisions</h4>
                     <ul>
-                        <li><a href="#">Frontend Engineering</a></li>
-                        <li><a href="#">Backend Architecture</a></li>
-                        <li><a href="#">Mobile App Development</a></li>
-                        <li><a href="#">Cloud Integrations</a></li>
+                        <li><a href="#services">Full-Stack Web Systems</a></li>
+                        <li><a href="#services">Native &amp; Hybrid Mobile</a></li>
+                        <li><a href="#services">Cloud &amp; TiDB Clusters</a></li>
+                        <li><a href="#services">AI Workflow Automation</a></li>
+                        <li><a href="#services">Embedded IoT &amp; POS</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-links">
-                    <h4>Company</h4>
+                    <h4>Corporate</h4>
                     <ul>
-                        <li><a href="#">About Dynextron</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="#architecture">4-Layer Architecture</a></li>
+                        <li><a href="#portfolio">Case Studies</a></li>
+                        <li><a href="#estimator">Project Estimator</a></li>
+                        <li><a href="#pricing">Investment Tiers</a></li>
+                        <li><a href="https://seva.fwh.is" target="_blank">Seva Portal</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Governance &amp; Legal</h4>
+                    <ul>
                         <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="mailto:admin@dynextron.qzz.io">Security &amp; Abuse Desk</a></li>
+                        <li><a href="#contact">Commission Engagement</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <div>&copy; 2026 Dynextron Services OPC. All rights reserved.</div>
-                <div>Engineered with precision.</div>
+                <div>&copy; 2026 Dynextron Services India Limited (Formerly Dynextron Services OPC). All rights reserved.</div>
+                <div class="mono" style="color: var(--dynextron-gold);">ENGINEERED WITH PRECISION IN INDIA // GLOBAL OPERATIONS</div>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <!-- Interactive Application Scripts -->
     <script>
-        // --- Navbar Scroll Logic ---
+        // ==========================================================================
+        // 1. SCROLL PROGRESS, STICKY NAVBAR & SPOTLIGHT CARDS
+        // ==========================================================================
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) nav.classList.add('scrolled');
             else nav.classList.remove('scrolled');
+
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + "%";
         });
 
-        // --- Number Counter Animation ---
+        // Spotlight Radial Mouse Tracking on Cards
+        document.querySelectorAll('.spotlight-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // ==========================================================================
+        // 2. DUAL THEME TOGGLE (DARK OBSIDIAN / LIGHT ALABASTER)
+        // ==========================================================================
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlEl = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            const current = htmlEl.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+
+        // Mobile Drawer Controls
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+
+        mobileMenuBtn.addEventListener('click', () => mobileDrawer.classList.add('open'));
+        closeDrawerBtn.addEventListener('click', () => mobileDrawer.classList.remove('open'));
+        function closeMobileDrawer() { mobileDrawer.classList.remove('open'); }
+
+        // ==========================================================================
+        // 3. LIVE HERO TERMINAL TELEMETRY SIMULATION
+        // ==========================================================================
+        const terminalLogs = [
+            "Verifying Cloudflare WAF & DMARC cryptographic signatures...",
+            "Synchronizing TiDB distributed ledger shards [OK - 11.2ms]",
+            "Seva POS & Membership verification node healthy...",
+            "Zero-Trust WebAuthn Passkey handshake validated...",
+            "Automated container health check passed across all pods..."
+        ];
+        let logIndex = 0;
+        setInterval(() => {
+            logIndex = (logIndex + 1) % terminalLogs.length;
+            const logEl = document.getElementById('liveTerminalLog');
+            const latEl = document.getElementById('latencyMetric');
+            if (logEl) logEl.innerText = terminalLogs[logIndex];
+            if (latEl) latEl.innerText = (10.8 + Math.random() * 1.9).toFixed(1) + "ms";
+        }, 3200);
+
+        // ==========================================================================
+        // 4. INTERACTIVE 4-LAYER ARCHITECTURE BLUEPRINT
+        // ==========================================================================
+        const archLayers = [
+            {
+                badge: "LAYER 01 // PERIMETER DEFENSE",
+                title: "Edge Network & Zero-Trust Perimeter",
+                desc: "Every packet entering a Dynextron-engineered platform is inspected at the network edge. We implement strict DNSSEC, automated DDoS mitigation, and hardware-backed WebAuthn Passkeys to eliminate credential stuffing and unauthorized access before traffic ever reaches your application servers.",
+                s1: "Cloudflare WAF + Anycast DNS",
+                s2: "FIDO2 Passkeys / JWT / RBAC",
+                s3: "Hardened SPF, DKIM & DMARC",
+                s4: "< 15ms Global Edge Handshake"
+            },
+            {
+                badge: "LAYER 02 // APPLICATION MESH",
+                title: "High-Concurrency Application & API Mesh",
+                desc: "We decouple presentation layers from core business logic. Hyper-responsive React and Next.js interfaces communicate with stateless Node.js, Python (FastAPI/Django), and PHP (Laravel) service workers engineered for horizontal scaling.",
+                s1: "RESTful & GraphQL APIs",
+                s2: "Node.js / Python / Laravel 11",
+                s3: "Redis In-Memory Caching",
+                s4: "10,000+ Concurrent Req/Sec"
+            },
+            {
+                badge: "LAYER 03 // DATA PERSISTENCE",
+                title: "Distributed Persistence & Data Integrity",
+                desc: "Enterprise operations demand zero data loss. We architect normalized relational schemas across TiDB, PostgreSQL, and MySQL clusters featuring automated read-replicas, strict ACID transactions, and encrypted off-site snapshots.",
+                s1: "TiDB / PostgreSQL / MySQL",
+                s2: "ACID Transactions & Indexing",
+                s3: "Automated Point-in-Time Backup",
+                s4: "Zero-Data-Loss RPO Architecture"
+            },
+            {
+                badge: "LAYER 04 // OBSERVABILITY & CI/CD",
+                title: "Containerized CI/CD & 24/7 Telemetry",
+                desc: "Code moves from Git repositories to production clusters via automated testing pipelines. Dockerized environments guarantee parity between staging and production, while real-time telemetry alerts our engineers to anomalies.",
+                s1: "Docker & Cloud Orchestration",
+                s2: "Automated Git CI/CD Pipelines",
+                s3: "Real-Time Uptime & Log Auditing",
+                s4: "99.98% Guaranteed Cluster Uptime"
+            }
+        ];
+
+        function selectArchLayer(idx, btnEl) {
+            document.querySelectorAll('.arch-tab-btn').forEach(b => b.classList.remove('active'));
+            btnEl.classList.add('active');
+            const data = archLayers[idx];
+            document.getElementById('archLayerBadge').innerText = data.badge;
+            document.getElementById('archLayerTitle').innerText = data.title;
+            document.getElementById('archLayerDesc').innerText = data.desc;
+            document.getElementById('archSpec1').innerText = data.s1;
+            document.getElementById('archSpec2').innerText = data.s2;
+            document.getElementById('archSpec3').innerText = data.s3;
+            document.getElementById('archSpec4').innerText = data.s4;
+        }
+
+        // ==========================================================================
+        // 5. PORTFOLIO FILTERING & ARCHITECTURE SPECIFICATION MODAL
+        // ==========================================================================
+        function filterPortfolio(category, btnEl) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btnEl.classList.add('active');
+            document.querySelectorAll('.portfolio-card').forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        const modalSpecs = {
+            crud: {
+                tag: "CASE STUDY // ANALYTICS & CRUD",
+                title: "Dynamic Enterprise CRUD & Telemetry",
+                desc: "Engineered for high-volume administrative operations. Features server-side pagination, instant CSV/Excel ledger export, role-segregated views, and immutable audit trails for every record modification.",
+                stack: "React.js + Node.js + PostgreSQL",
+                sec: "RBAC + JWT Refresh Rotation"
+            },
+            hr: {
+                tag: "CASE STUDY // WORKFORCE ERP",
+                title: "Enterprise HR, Attendance & Payroll Suite",
+                desc: "Automates institutional human resource workflows including shift scheduling, leave approvals, statutory tax deductions, and automated PDF salary slip generation.",
+                stack: "PHP 8 / Laravel + MySQL Cluster",
+                sec: "Encrypted PII + Multi-Level Approval"
+            },
+            ai: {
+                tag: "CASE STUDY // INTELLIGENT AUTOMATION",
+                title: "AI Workflow & Document Parser",
+                desc: "Eliminates manual data entry by ingesting unstructured PDFs and emails, extracting structured JSON payloads via LLM pipelines, and syncing directly with enterprise ERP webhooks.",
+                stack: "Python FastAPI + OpenAI + AWS",
+                sec: "Zero-Retention API + VPC Isolation"
+            },
+            seva: {
+                tag: "LIVE ECOSYSTEM // SEVA & POS",
+                title: "Seva & POS Verification Platform",
+                desc: "Dynextron's flagship customer verification, loyalty points ledger, store credit administration, and retail Point-of-Sale suite designed for rapid checkout and real-time balance synchronization.",
+                stack: "Full-Stack Web + TiDB/MySQL + Cloudflare",
+                sec: "Passkey Auth + Cryptographic Receipts"
+            }
+        };
+
+        function openArchModal(key) {
+            const spec = modalSpecs[key];
+            if (!spec) return;
+            document.getElementById('modalTag').innerText = spec.tag;
+            document.getElementById('modalTitle').innerText = spec.title;
+            document.getElementById('modalDesc').innerText = spec.desc;
+            document.getElementById('modalStack').innerText = spec.stack;
+            document.getElementById('modalSec').innerText = spec.sec;
+            document.getElementById('archModal').classList.add('active');
+        }
+
+        function closeArchModal() {
+            document.getElementById('archModal').classList.remove('active');
+        }
+
+        // ==========================================================================
+        // 6. INTERACTIVE PROJECT ESTIMATOR & CURRENCY SWITCHER (USD / INR)
+        // ==========================================================================
+        let currentCurrency = 'USD';
+        let estState = { domain: 500, scaleMult: 1, weeks: "3-4 Weeks", slaAdd: 0 };
+
+        function updateEstimator(btnEl, group) {
+            btnEl.parentElement.querySelectorAll('.est-opt-btn').forEach(b => b.classList.remove('selected'));
+            btnEl.classList.add('selected');
+
+            if (group === 'domain') estState.domain = parseFloat(btnEl.getAttribute('data-val'));
+            if (group === 'scale') {
+                estState.scaleMult = parseFloat(btnEl.getAttribute('data-mult'));
+                estState.weeks = btnEl.getAttribute('data-weeks');
+            }
+            if (group === 'sla') estState.slaAdd = parseFloat(btnEl.getAttribute('data-add'));
+
+            renderEstimatorOutput();
+        }
+
+        function renderEstimatorOutput() {
+            const totalUSD = Math.round((estState.domain * estState.scaleMult) + estState.slaAdd);
+            const priceEl = document.getElementById('estPriceResult');
+            if (currentCurrency === 'USD') {
+                priceEl.innerText = "$" + totalUSD.toLocaleString();
+            } else {
+                const totalINR = Math.round(totalUSD * 84);
+                priceEl.innerText = "₹" + totalINR.toLocaleString('en-IN');
+            }
+            document.getElementById('estTimelineResult').innerText = estState.weeks;
+        }
+
+        function setCurrency(curr) {
+            currentCurrency = curr;
+            document.getElementById('btnUSD').classList.toggle('active', curr === 'USD');
+            document.getElementById('btnINR').classList.toggle('active', curr === 'INR');
+
+            document.querySelectorAll('.pricing-price[data-usd]').forEach(el => {
+                el.innerText = curr === 'USD' ? el.getAttribute('data-usd') : el.getAttribute('data-inr');
+            });
+            renderEstimatorOutput();
+        }
+
+        function prefillEstimateToForm() {
+            const domainText = document.querySelector('#estDomainGroup .selected').innerText;
+            const scaleText = document.querySelector('#estScaleGroup .selected').innerText;
+            const priceText = document.getElementById('estPriceResult').innerText;
+            const subjInput = document.getElementById('subject');
+            if (subjInput) {
+                subjInput.value = `Architectural Inquiry: ${domainText} (${scaleText} - Est. ${priceText})`;
+            }
+        }
+
+        // ==========================================================================
+        // 7. COUNTERS, FAQ ACCORDION & GSAP SCROLL ANIMATIONS
+        // ==========================================================================
         const counters = document.querySelectorAll('.counter');
+        let countersExecuted = false;
         const runCounters = () => {
+            if (countersExecuted) return;
+            countersExecuted = true;
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / 50; 
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(runCounters, 30);
-                } else {
-                    counter.innerText = target;
-                }
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const inc = Math.max(1, Math.ceil(target / 45));
+                    if (count < target) {
+                        counter.innerText = Math.min(target, count + inc);
+                        setTimeout(updateCount, 28);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
             });
         };
 
-        // --- GSAP Animations ---
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                if (faq !== item) faq.classList.remove('active');
+            });
+            item.classList.toggle('active');
+        }
+
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.fromTo('.gs-fade', 
-             { y: 40, opacity: 0 }, 
-             { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power4.out", delay: 0.2 }
+            { y: 35, opacity: 0 }, 
+            { y: 0, opacity: 1, duration: 0.95, stagger: 0.15, ease: "power4.out", delay: 0.15 }
         );
 
         gsap.utils.toArray('.gs-reveal').forEach(function(elem) {
             gsap.fromTo(elem, 
-                 { y: 50, opacity: 0 }, 
-                 { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: elem, start: "top 85%" } }
+                { y: 45, opacity: 0 }, 
+                { y: 0, opacity: 1, duration: 0.9, ease: "power3.out", scrollTrigger: { trigger: elem, start: "top 86%" } }
             );
         });
 
-        gsap.fromTo('.gs-card', 
-             { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: ".services-grid", start: "top 80%" } }
-        );
+        gsap.utils.toArray(['.services-grid', '.portfolio-grid', '.pricing-grid', '.testimonials-grid']).forEach(grid => {
+            gsap.fromTo(grid.querySelectorAll('.gs-card'), 
+                { y: 45, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.75, stagger: 0.14, ease: "power3.out", scrollTrigger: { trigger: grid, start: "top 82%" } }
+            );
+        });
 
         ScrollTrigger.create({
             trigger: "#stats",
-            start: "top 80%",
+            start: "top 82%",
             onEnter: runCounters
         });
 
@@ -712,281 +3167,117 @@
                 end: "bottom center",
                 scrub: 1 
             }
-        });        
+        });
         tl.to("#timeline-progress", { height: "100%", ease: "none" });
 
         gsap.utils.toArray('.gs-timeline').forEach((item, index) => {
             gsap.fromTo(item, 
-                 { x: index % 2 === 0 ? 50 : -50, opacity: 0 },
-                { x: 0, opacity: 1, duration: 0.8, ease: "back.out(1.7)", 
-                  scrollTrigger: { trigger: item, start: "top 60%" }
+                { x: index % 2 === 0 ? 45 : -45, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.8, ease: "back.out(1.5)",
+                  scrollTrigger: { trigger: item, start: "top 68%" }
                 }
             );
         });
 
-        // --- Three.js Advanced Interactive Background ---
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        document.getElementById('canvas-container').appendChild(renderer.domElement);
-
-        const coreGeo = new THREE.IcosahedronGeometry(12, 2);
-        const coreMat = new THREE.MeshBasicMaterial({ 
-             color: 0x8B5CF6, 
-             wireframe: true, 
-             transparent: true, 
-             opacity: 0.15 
-         });
-        const coreMesh = new THREE.Mesh(coreGeo, coreMat);
-        scene.add(coreMesh);
-
-        const particlesGeo = new THREE.BufferGeometry();
-        const particlesCount = 800;
-        const posArray = new Float32Array(particlesCount * 3);
-
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 60; 
-        }
-        particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-
-        const particleMat = new THREE.PointsMaterial({
-            size: 0.15,
-            color: 0xFCD34D, 
-            transparent: true,
-            opacity: 0.6,
-            blending: THREE.AdditiveBlending
-        });
-        const particlesMesh = new THREE.Points(particlesGeo, particleMat);
-        scene.add(particlesMesh);
-
-        camera.position.z = 30;
-
-        let mouseX = 0;
-        let mouseY = 0;
-        let targetX = 0;
-        let targetY = 0;
-
-        document.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX - window.innerWidth / 2);
-            mouseY = (event.clientY - window.innerHeight / 2);
-        });
-
-        const clock = new THREE.Clock();
-
-        function animate() {
-            requestAnimationFrame(animate);
-            const elapsedTime = clock.getElapsedTime();
-
-            coreMesh.rotation.y = elapsedTime * 0.1;
-            coreMesh.rotation.x = elapsedTime * 0.05;
-
-            particlesMesh.rotation.y = elapsedTime * 0.02;
-            const positions = particlesMesh.geometry.attributes.position.array;
-            for(let i = 0; i < particlesCount; i++) {
-                const i3 = i * 3;
-                positions[i3 + 1] += Math.sin(elapsedTime + positions[i3]) * 0.005;
-            }
-            particlesMesh.geometry.attributes.position.needsUpdate = true;
-
-            targetX = mouseX * 0.002;
-            targetY = mouseY * 0.002;
+        // ==========================================================================
+        // 8. THREE.JS UNREAL-STYLE MULTI-LAYER WEBGL CORE
+        // ==========================================================================
+        window.onload = function() {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             
-            coreMesh.rotation.y += 0.05 * (targetX - coreMesh.rotation.y);
-            coreMesh.rotation.x += 0.05 * (targetY - coreMesh.rotation.x);
-            
-            camera.position.x += (mouseX * 0.01 - camera.position.x) * 0.05;
-            camera.position.y += (-mouseY * 0.01 - camera.position.y) * 0.05;
-            camera.lookAt(scene.position);
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-    </script>
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
 
-    <script type="module">
-        import { Renderer, Program, Mesh, Color, Triangle } from 'https://cdn.skypack.dev/ogl';
-
-        const VERT = `#version 300 es
-        in vec2 position;
-        void main() {
-            gl_Position = vec4(position, 0.0, 1.0);
-        }`;
-
-        const FRAG = `#version 300 es
-        precision highp float;
-        
-        uniform float uTime;
-        uniform float uAmplitude;
-        uniform vec3 uColorStops[3];
-        uniform vec2 uResolution;
-        uniform float uBlend;
-        
-        out vec4 fragColor;
-        
-        vec3 permute(vec3 x) {
-          return mod(((x * 34.0) + 1.0) * x, 289.0);
-        }
-        
-        float snoise(vec2 v){
-          const vec4 C = vec4(
-              0.211324865405187, 0.366025403784439,
-              -0.577350269189626, 0.024390243902439
-          );
-          vec2 i  = floor(v + dot(v, C.yy));
-          vec2 x0 = v - i + dot(i, C.xx);
-          vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-          vec4 x12 = x0.xyxy + C.xxzz;
-          x12.xy -= i1;
-          i = mod(i, 289.0);
-        
-          vec3 p = permute(
-               permute(i.y + vec3(0.0, i1.y, 1.0))
-             + i.x + vec3(0.0, i1.x, 1.0)
-          );
-        
-          vec3 m = max(
-               0.5 - vec3(
-                   dot(x0, x0),
-                   dot(x12.xy, x12.xy),
-                   dot(x12.zw, x12.zw)
-               ), 
-               0.0
-          );
-          m = m * m;
-          m = m * m;
-        
-          vec3 x = 2.0 * fract(p * C.www) - 1.0;
-          vec3 h = abs(x) - 0.5;
-          vec3 ox = floor(x + 0.5);
-          vec3 a0 = x - ox;
-          m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
-        
-          vec3 g;
-          g.x  = a0.x * x0.x  + h.x  * x0.y;
-          g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-          return 130.0 * dot(m, g);
-        }
-        
-        struct ColorStop {
-          vec3 color;
-          float position;
-        };
-        
-        #define COLOR_RAMP(colors, factor, finalColor) {              \
-          int index = 0;                                                \
-          for (int i = 0; i < 2; i++) {                              \
-             ColorStop currentColor = colors[i];                   \
-             bool isInBetween = currentColor.position <= factor;   \
-             index = int(mix(float(index), float(i), float(isInBetween))); \
-          }                                                             \
-          ColorStop currentColor = colors[index];                  \
-          ColorStop nextColor = colors[index + 1];                  \
-          float range = nextColor.position - currentColor.position; \
-          float lerpFactor = (factor - currentColor.position) / range; \
-          finalColor = mix(currentColor.color, nextColor.color, lerpFactor); \
-        }
-        
-        void main() {
-          vec2 uv = gl_FragCoord.xy / uResolution;
-          
-          ColorStop colors[3];
-          colors[0] = ColorStop(uColorStops[0], 0.0);
-          colors[1] = ColorStop(uColorStops[1], 0.5);
-          colors[2] = ColorStop(uColorStops[2], 1.0);
-          
-          vec3 rampColor;
-          COLOR_RAMP(colors, uv.x, rampColor);
-          
-          float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
-          height = exp(height);
-          height = (uv.y * 2.0 - height + 0.2);
-          float intensity = 0.6 * height;
-          
-          float midPoint = 0.20;
-          float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
-          
-          vec3 auroraColor = intensity * rampColor;
-          
-          fragColor = vec4(auroraColor * auroraAlpha, auroraAlpha);
-        }
-        `;
-
-        function initAurora() {
-            const ctn = document.getElementById('aurora-container');
-            if (!ctn) return;
-
-            const renderer = new Renderer({ alpha: true, premultipliedAlpha: true, antialias: true });
-            const gl = renderer.gl;
-            gl.clearColor(0, 0, 0, 0);
-            gl.enable(gl.BLEND);
-            gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-            gl.canvas.style.backgroundColor = 'transparent';
-            gl.canvas.style.width = '100%';
-            gl.canvas.style.height = '100%';
-
-            // Palette mapped to your brand CSS root variables
-            const colorStops = ['#6D28D9', '#FCD34D', '#8B5CF6'];
-            const colorStopsArray = colorStops.map(hex => {
-                const c = new Color(hex);
-                return [c.r, c.g, c.b];
+            // Outer Royal Purple Geodesic Wireframe Core
+            const coreGeo = new THREE.IcosahedronGeometry(13, 2);
+            const coreMat = new THREE.MeshBasicMaterial({ 
+                color: 0x8B5CF6, 
+                wireframe: true, 
+                transparent: true, 
+                opacity: 0.16 
             });
+            const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+            scene.add(coreMesh);
 
-            let program;
+            // Inner Imperial Gold Orbital Ring
+            const ringGeo = new THREE.TorusGeometry(18, 0.08, 16, 100);
+            const ringMat = new THREE.MeshBasicMaterial({
+                color: 0xFCD34D,
+                transparent: true,
+                opacity: 0.28
+            });
+            const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+            ringMesh.rotation.x = Math.PI / 2.6;
+            scene.add(ringMesh);
 
-            function resize() {
-                const width = ctn.offsetWidth;
-                const height = ctn.offsetHeight;
-                renderer.setSize(width, height);
-                if (program) {
-                    program.uniforms.uResolution.value = [width, height];
-                }
+            // Golden & Purple Nebula Particle Field
+            const particlesGeo = new THREE.BufferGeometry();
+            const particlesCount = 950;
+            const posArray = new Float32Array(particlesCount * 3);
+
+            for (let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 70;
             }
-            window.addEventListener('resize', resize);
+            particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
-            const geometry = new Triangle(gl);
-            if (geometry.attributes.uv) delete geometry.attributes.uv;
+            const particleMat = new THREE.PointsMaterial({
+                size: 0.16,
+                color: 0xFCD34D, 
+                transparent: true,
+                opacity: 0.65,
+                blending: THREE.AdditiveBlending
+            });
+            const particlesMesh = new THREE.Points(particlesGeo, particleMat);
+            scene.add(particlesMesh);
 
-            const amplitude = 1.0;
-            const blend = 0.5;
-            const speed = 0.5; // Translated speed prop
+            camera.position.z = 32;
 
-            program = new Program(gl, {
-                vertex: VERT,
-                fragment: FRAG,
-                uniforms: {
-                    uTime: { value: 0 },
-                    uAmplitude: { value: amplitude },
-                    uColorStops: { value: colorStopsArray },
-                    uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
-                    uBlend: { value: blend }
-                }
+            let mouseX = 0;
+            let mouseY = 0;
+
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX - window.innerWidth / 2);
+                mouseY = (event.clientY - window.innerHeight / 2);
             });
 
-            const mesh = new Mesh(gl, { geometry, program });
-            ctn.appendChild(gl.canvas);
-            resize();
+            const clock = new THREE.Clock();
 
-            let animateId = 0;
-            const update = t => {
-                animateId = requestAnimationFrame(update);
-                program.uniforms.uTime.value = (t * 0.01) * speed * 0.1;
-                renderer.render({ scene: mesh });
-            };
-            animateId = requestAnimationFrame(update);
-        }
+            function animate() {
+                requestAnimationFrame(animate);
+                const elapsedTime = clock.getElapsedTime();
 
-        initAurora();
+                coreMesh.rotation.y = elapsedTime * 0.11;
+                coreMesh.rotation.x = elapsedTime * 0.05;
+
+                ringMesh.rotation.z = -elapsedTime * 0.15;
+                ringMesh.rotation.y = Math.sin(elapsedTime * 0.3) * 0.25;
+
+                particlesMesh.rotation.y = elapsedTime * 0.025;
+
+                const targetX = mouseX * 0.0015;
+                const targetY = mouseY * 0.0015;
+                
+                coreMesh.rotation.y += 0.05 * (targetX - coreMesh.rotation.y);
+                coreMesh.rotation.x += 0.05 * (targetY - coreMesh.rotation.x);
+                
+                camera.position.x += (mouseX * 0.008 - camera.position.x) * 0.05;
+                camera.position.y += (-mouseY * 0.008 - camera.position.y) * 0.05;
+                camera.lookAt(scene.position);
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        };
     </script>
-
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"ee7693b48a444aaf94f5b34d18d05f38","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
