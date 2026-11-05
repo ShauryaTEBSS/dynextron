@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate Notices | Dynextron Services India Limited</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -17,8 +16,7 @@
                     colors: {
                         corporate: {
                             blue: '#0A2540',
-                            light: '#F8FAFC',
-                            accent: '#0066CC'
+                            accent: '#0055A4'
                         }
                     }
                 }
@@ -28,44 +26,37 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC;
+            background-color: #F4F7FA;
         }
-        /* Custom scrollbar for the table wrapper */
+        /* Formal thin scrollbar */
         .table-container::-webkit-scrollbar {
-            height: 8px;
+            height: 6px;
         }
         .table-container::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-            border-radius: 4px;
+            background: #E2E8F0; 
         }
         .table-container::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 4px;
-        }
-        .table-container::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
+            background: #94A3B8; 
         }
     </style>
 </head>
 <body class="text-slate-800 antialiased flex flex-col min-h-screen">
 
     <!-- Header Section -->
-    <header class="bg-corporate-blue text-white shadow-md sticky top-0 z-40">
+    <header class="bg-corporate-blue text-white border-b-4 border-corporate-accent sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <!-- Abstract Corporate Logo -->
-                <svg class="w-8 h-8 text-blue-300" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
+            <div class="flex items-center gap-4">
+                <!-- Live Corporate Logo -->
+                <img src="https://dynextron.in/logo.png" alt="Dynextron Logo" class="h-10 w-auto bg-white p-1 rounded-sm">
                 <div>
-                    <h1 class="text-xl font-bold tracking-wide">DYNEXTRON</h1>
-                    <p class="text-xs text-blue-200 tracking-wider">SERVICES INDIA LIMITED</p>
+                    <h1 class="text-lg font-bold tracking-widest uppercase m-0 leading-tight">Dynextron</h1>
+                    <p class="text-[10px] text-blue-200 tracking-[0.2em] uppercase m-0">Services India Limited</p>
                 </div>
             </div>
             <nav class="hidden md:flex gap-6 text-sm font-medium">
                 <a href="#" class="hover:text-blue-300 transition">Home</a>
                 <a href="#" class="hover:text-blue-300 transition">About Us</a>
-                <a href="#" class="text-blue-300 border-b-2 border-blue-300 pb-1">Notices</a>
+                <a href="#" class="text-white border-b-2 border-white pb-1">Notices</a>
                 <a href="#" class="hover:text-blue-300 transition">Contact</a>
             </nav>
         </div>
@@ -74,255 +65,159 @@
     <!-- Main Content -->
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         
-        <!-- Page Title & Description -->
-        <div class="mb-8">
-            <h2 class="text-3xl font-bold text-corporate-blue mb-2">Corporate Notices & Announcements</h2>
-            <p class="text-slate-600">Access official notifications, board meeting updates, financial results, and regulatory compliance documents.</p>
+        <div class="mb-6 border-b border-slate-300 pb-4">
+            <h2 class="text-2xl font-semibold text-corporate-blue mb-1">Regulatory & Corporate Notices</h2>
+            <p class="text-sm text-slate-600">Official notifications, financial results, and compliance documents.</p>
         </div>
 
         <!-- Table Card -->
-        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-            
-            <!-- Table Wrapper for horizontal scrolling on mobile -->
+        <div class="bg-white shadow-sm border border-slate-300">
             <div class="table-container overflow-x-auto w-full">
-                <table class="w-full text-left border-collapse whitespace-nowrap min-w-[800px]">
+                <table class="w-full text-left border-collapse whitespace-nowrap min-w-[900px]">
                     <thead>
-                        <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 text-sm uppercase tracking-wider">
-                            <th class="py-4 px-6 font-semibold">Notice ID</th>
-                            <th class="py-4 px-6 font-semibold">Publication Date</th>
-                            <th class="py-4 px-6 font-semibold">Category</th>
-                            <th class="py-4 px-6 font-semibold">Title of Notice</th>
-                            <th class="py-4 px-6 font-semibold">Endorsed By</th>
-                            <th class="py-4 px-6 font-semibold text-center">Action</th>
+                        <tr class="bg-slate-100 border-b-2 border-slate-300 text-slate-700 text-xs uppercase tracking-wider font-semibold">
+                            <th class="py-3 px-4 border-r border-slate-200 w-32">Notice ID</th>
+                            <th class="py-3 px-4 border-r border-slate-200 w-32">Date</th>
+                            <th class="py-3 px-4 border-r border-slate-200 w-40">Category</th>
+                            <th class="py-3 px-4 border-r border-slate-200">Subject / Title</th>
+                            <th class="py-3 px-4 border-r border-slate-200 w-48">Endorsed By</th>
+                            <th class="py-3 px-4 text-center w-24">Document</th>
                         </tr>
                     </thead>
-                    <tbody id="table-body" class="text-sm divide-y divide-slate-100">
-                        <!-- Rows will be injected here via JavaScript -->
+                    <tbody id="table-body" class="text-sm divide-y divide-slate-200">
+                        <!-- Rows injected via JS -->
                     </tbody>
                 </table>
             </div>
 
             <!-- Pagination Footer -->
-            <div class="bg-slate-50 border-t border-slate-200 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="text-sm text-slate-600">
-                    Showing <span id="page-info-start" class="font-medium">0</span> to <span id="page-info-end" class="font-medium">0</span> of <span id="page-info-total" class="font-medium">0</span> notices
+            <div class="bg-slate-50 border-t border-slate-300 px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-xs text-slate-600">
+                    Showing <span id="page-info-start" class="font-semibold">0</span> to <span id="page-info-end" class="font-semibold">0</span> of <span id="page-info-total" class="font-semibold">0</span> records
                 </div>
-                <div class="flex items-center gap-2" id="pagination-controls">
-                    <!-- Pagination buttons will be injected here -->
+                <div class="flex items-center gap-1" id="pagination-controls">
+                    <!-- Buttons injected via JS -->
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+    <footer class="bg-slate-800 text-slate-400 py-6 text-center text-xs mt-auto">
         <div class="max-w-7xl mx-auto px-4">
             <p>&copy; 2026 Dynextron Services India Limited. All rights reserved.</p>
-            <p class="mt-2 text-xs">This portal is maintained for regulatory compliance and stakeholder information purposes.</p>
         </div>
     </footer>
 
-    <!-- Custom Modal for PDF Viewer (Replaces alert()) -->
-    <div id="pdf-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900 bg-opacity-50 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transform scale-95 transition-transform duration-200" id="pdf-modal-content">
-            <div class="border-b border-slate-200 px-6 py-4 flex justify-between items-center bg-slate-50 rounded-t-lg">
-                <h3 class="text-lg font-semibold text-corporate-blue flex items-center gap-2">
-                    <!-- PDF Icon -->
-                    <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M11.362 2c4.156 0 2.638 6 2.638 6s6-1.65 6 2.457v11.543h-16v-20h7.362zm.827-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
-                    Document Viewer
-                </h3>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <div class="px-6 py-8 text-center">
-                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                </div>
-                <p class="text-slate-700 mb-2">You are about to view the document:</p>
-                <p id="modal-doc-id" class="font-bold text-corporate-blue mb-4">NOT-000</p>
-                <p class="text-sm text-slate-500">In a live environment, this would open the PDF file in a new tab or trigger a download.</p>
-            </div>
-            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end gap-3 rounded-b-lg">
-                <button onclick="closeModal()" class="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-md hover:bg-slate-50 transition">Close</button>
-                <button onclick="closeModal()" class="px-4 py-2 text-sm font-medium text-white bg-corporate-accent rounded-md hover:bg-blue-700 transition shadow-sm">Acknowledge</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Application Logic -->
     <script>
-        // Realistic Mock Data for 18 items to demonstrate pagination
+        // Data Array - Add your notices here. Ensure 'file' matches the exact PDF name in your /notices/ folder.
         const noticesData = [
-            { id: "DSIL-2026-045", date: "03 Nov 2026", category: "Financial Results", title: "Unaudited Financial Results for Q2 FY 2026-27", endorsedBy: "Chief Financial Officer" },
-            { id: "DSIL-2026-044", date: "28 Oct 2026", category: "Compliance", title: "Intimation of Closure of Trading Window", endorsedBy: "Company Secretary" },
-            { id: "DSIL-2026-043", date: "15 Oct 2026", category: "Board Meeting", title: "Notice of Board Meeting to consider Q2 Results", endorsedBy: "Board of Directors" },
-            { id: "DSIL-2026-042", date: "02 Oct 2026", category: "General", title: "Updates on Expansion of Northern Operations", endorsedBy: "Managing Director" },
-            { id: "DSIL-2026-041", date: "25 Sep 2026", category: "AGM", title: "Minutes of the 12th Annual General Meeting", endorsedBy: "Company Secretary" },
-            { id: "DSIL-2026-040", date: "10 Sep 2026", category: "AGM", title: "Voting Results of the 12th Annual General Meeting", endorsedBy: "Scrutinizer" },
-            { id: "DSIL-2026-039", date: "20 Aug 2026", category: "AGM", title: "Notice of the 12th Annual General Meeting", endorsedBy: "Board of Directors" },
-            { id: "DSIL-2026-038", date: "05 Aug 2026", category: "Financial Results", title: "Annual Report for FY 2025-26", endorsedBy: "Chief Financial Officer" },
-            { id: "DSIL-2026-037", date: "28 Jul 2026", category: "Financial Results", title: "Audited Financial Results for Q1 FY 2026-27", endorsedBy: "Chief Financial Officer" },
-            { id: "DSIL-2026-036", date: "15 Jul 2026", category: "Board Meeting", title: "Notice of Board Meeting to consider Q1 Results", endorsedBy: "Company Secretary" },
-            { id: "DSIL-2026-035", date: "30 Jun 2026", category: "Compliance", title: "Shareholding Pattern for Quarter ended Jun 2026", endorsedBy: "Compliance Officer" },
-            { id: "DSIL-2026-034", date: "25 Jun 2026", category: "Compliance", title: "Intimation of Closure of Trading Window", endorsedBy: "Company Secretary" },
-            { id: "DSIL-2026-033", date: "10 Jun 2026", category: "General", title: "Appointment of New Independent Director", endorsedBy: "Board of Directors" },
-            { id: "DSIL-2026-032", date: "20 May 2026", category: "Compliance", title: "Related Party Transactions for H2 FY 2025-26", endorsedBy: "Compliance Officer" },
-            { id: "DSIL-2026-031", date: "05 May 2026", category: "Financial Results", title: "Audited Financial Results for Q4 & FY 2025-26", endorsedBy: "Chief Financial Officer" },
-            { id: "DSIL-2026-030", date: "20 Apr 2026", category: "Board Meeting", title: "Notice of Board Meeting for Annual Results", endorsedBy: "Company Secretary" },
-            { id: "DSIL-2026-029", date: "10 Apr 2026", category: "General", title: "Press Release: Q4 Business Updates", endorsedBy: "Public Relations" },
-            { id: "DSIL-2026-028", date: "31 Mar 2026", category: "Compliance", title: "Intimation of Closure of Trading Window", endorsedBy: "Company Secretary" }
+            { id: "DSIL-2026-045", date: "03 Nov 2026", category: "Financial Results", title: "Unaudited Financial Results for Q2 FY 2026-27", endorsedBy: "Chief Financial Officer", file: "DSIL-2026-045.pdf" },
+            { id: "DSIL-2026-044", date: "28 Oct 2026", category: "Compliance", title: "Intimation of Closure of Trading Window", endorsedBy: "Company Secretary", file: "DSIL-2026-044.pdf" },
+            { id: "DSIL-2026-043", date: "15 Oct 2026", category: "Board Meeting", title: "Notice of Board Meeting to consider Q2 Results", endorsedBy: "Board of Directors", file: "DSIL-2026-043.pdf" },
+            { id: "DSIL-2026-042", date: "02 Oct 2026", category: "General", title: "Updates on Expansion of Northern Operations", endorsedBy: "Managing Director", file: "DSIL-2026-042.pdf" },
+            { id: "DSIL-2026-041", date: "25 Sep 2026", category: "AGM", title: "Minutes of the 12th Annual General Meeting", endorsedBy: "Company Secretary", file: "DSIL-2026-041.pdf" },
+            { id: "DSIL-2026-040", date: "10 Sep 2026", category: "AGM", title: "Voting Results of the 12th Annual General Meeting", endorsedBy: "Scrutinizer", file: "DSIL-2026-040.pdf" },
+            { id: "DSIL-2026-039", date: "20 Aug 2026", category: "AGM", title: "Notice of the 12th Annual General Meeting", endorsedBy: "Board of Directors", file: "DSIL-2026-039.pdf" },
+            { id: "DSIL-2026-038", date: "05 Aug 2026", category: "Financial Results", title: "Annual Report for FY 2025-26", endorsedBy: "Chief Financial Officer", file: "DSIL-2026-038.pdf" },
+            { id: "DSIL-2026-037", date: "28 Jul 2026", category: "Financial Results", title: "Audited Financial Results for Q1 FY 2026-27", endorsedBy: "Chief Financial Officer", file: "DSIL-2026-037.pdf" },
+            { id: "DSIL-2026-036", date: "15 Jul 2026", category: "Board Meeting", title: "Notice of Board Meeting to consider Q1 Results", endorsedBy: "Company Secretary", file: "DSIL-2026-036.pdf" },
+            { id: "DSIL-2026-035", date: "30 Jun 2026", category: "Compliance", title: "Shareholding Pattern for Quarter ended Jun 2026", endorsedBy: "Compliance Officer", file: "DSIL-2026-035.pdf" },
+            { id: "DSIL-2026-034", date: "25 Jun 2026", category: "Compliance", title: "Intimation of Closure of Trading Window", endorsedBy: "Company Secretary", file: "DSIL-2026-034.pdf" }
         ];
 
-        // Pagination Configuration
         let currentPage = 1;
         const rowsPerPage = 10;
         const totalPages = Math.ceil(noticesData.length / rowsPerPage);
 
-        // DOM Elements
         const tableBody = document.getElementById('table-body');
         const paginationControls = document.getElementById('pagination-controls');
         const infoStart = document.getElementById('page-info-start');
         const infoEnd = document.getElementById('page-info-end');
         const infoTotal = document.getElementById('page-info-total');
 
-        // Render Table Function
         function renderTable(page) {
             tableBody.innerHTML = '';
             
-            // Calculate slice bounds
             const startIndex = (page - 1) * rowsPerPage;
             const endIndex = Math.min(startIndex + rowsPerPage, noticesData.length);
             const paginatedItems = noticesData.slice(startIndex, endIndex);
 
-            // Update Info text
             infoStart.innerText = noticesData.length === 0 ? 0 : startIndex + 1;
             infoEnd.innerText = endIndex;
             infoTotal.innerText = noticesData.length;
 
-            // Generate rows
             paginatedItems.forEach(item => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-blue-50 transition-colors duration-150 group";
+                tr.className = "hover:bg-slate-50 transition-colors";
                 
                 tr.innerHTML = `
-                    <td class="py-4 px-6 font-medium text-corporate-blue">${item.id}</td>
-                    <td class="py-4 px-6">${item.date}</td>
-                    <td class="py-4 px-6">
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getCategoryBadgeColor(item.category)}">
+                    <td class="py-3 px-4 border-r border-slate-200 font-medium text-corporate-blue">${item.id}</td>
+                    <td class="py-3 px-4 border-r border-slate-200 text-slate-600">${item.date}</td>
+                    <td class="py-3 px-4 border-r border-slate-200">
+                        <span class="inline-block px-2 py-0.5 border rounded text-[11px] font-semibold uppercase tracking-wide ${getCategoryBadgeColor(item.category)}">
                             ${item.category}
                         </span>
                     </td>
-                    <td class="py-4 px-6 text-slate-700 group-hover:text-corporate-blue transition-colors">${item.title}</td>
-                    <td class="py-4 px-6 text-slate-500">${item.endorsedBy}</td>
-                    <td class="py-4 px-6 text-center">
-                        <button onclick="openModal('${item.id}')" class="inline-flex items-center justify-center p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1" title="View PDF">
-                            <!-- PDF Icon SVG -->
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <td class="py-3 px-4 border-r border-slate-200 text-slate-800">${item.title}</td>
+                    <td class="py-3 px-4 border-r border-slate-200 text-slate-600 text-xs">${item.endorsedBy}</td>
+                    <td class="py-3 px-4 text-center">
+                        <a href="./notices/${item.file}" target="_blank" class="inline-block text-red-600 hover:text-red-800 transition" title="Download PDF">
+                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M11.362 2c4.156 0 2.638 6 2.638 6s6-1.65 6 2.457v11.543h-16v-20h7.362zm.827-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/>
                             </svg>
-                        </button>
+                        </a>
                     </td>
                 `;
                 tableBody.appendChild(tr);
             });
         }
 
-        // Helper function to color code categories
         function getCategoryBadgeColor(category) {
             switch(category) {
-                case 'Financial Results': return 'bg-emerald-100 text-emerald-800';
-                case 'Compliance': return 'bg-amber-100 text-amber-800';
-                case 'Board Meeting': return 'bg-purple-100 text-purple-800';
-                case 'AGM': return 'bg-blue-100 text-blue-800';
-                default: return 'bg-slate-100 text-slate-800';
+                case 'Financial Results': return 'bg-emerald-50 text-emerald-700 border-emerald-200';
+                case 'Compliance': return 'bg-amber-50 text-amber-700 border-amber-200';
+                case 'Board Meeting': return 'bg-purple-50 text-purple-700 border-purple-200';
+                case 'AGM': return 'bg-blue-50 text-blue-700 border-blue-200';
+                default: return 'bg-slate-50 text-slate-700 border-slate-200';
             }
         }
 
-        // Render Pagination Controls
         function renderPagination() {
             paginationControls.innerHTML = '';
 
-            // Previous Button
             const prevBtn = document.createElement('button');
-            prevBtn.className = `px-3 py-1.5 border rounded-md text-sm font-medium transition ${currentPage === 1 ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50' : 'border-slate-300 text-slate-700 bg-white hover:bg-slate-50'}`;
-            prevBtn.innerText = 'Previous';
+            prevBtn.className = `px-2 py-1 border rounded text-xs font-medium ${currentPage === 1 ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50' : 'border-slate-300 text-slate-700 bg-white hover:bg-slate-100'}`;
+            prevBtn.innerText = 'Prev';
             prevBtn.disabled = currentPage === 1;
-            prevBtn.onclick = () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    updateView();
-                }
-            };
+            prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; updateView(); } };
             paginationControls.appendChild(prevBtn);
 
-            // Page Numbers
             for (let i = 1; i <= totalPages; i++) {
                 const pageBtn = document.createElement('button');
-                pageBtn.className = `w-8 h-8 flex items-center justify-center border rounded-md text-sm font-medium transition ${currentPage === i ? 'bg-corporate-blue text-white border-corporate-blue' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'}`;
+                pageBtn.className = `w-6 h-6 flex items-center justify-center border rounded text-xs font-medium ${currentPage === i ? 'bg-corporate-blue text-white border-corporate-blue' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'}`;
                 pageBtn.innerText = i;
-                pageBtn.onclick = () => {
-                    currentPage = i;
-                    updateView();
-                };
+                pageBtn.onclick = () => { currentPage = i; updateView(); };
                 paginationControls.appendChild(pageBtn);
             }
 
-            // Next Button
             const nextBtn = document.createElement('button');
-            nextBtn.className = `px-3 py-1.5 border rounded-md text-sm font-medium transition ${currentPage === totalPages ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50' : 'border-slate-300 text-slate-700 bg-white hover:bg-slate-50'}`;
+            nextBtn.className = `px-2 py-1 border rounded text-xs font-medium ${currentPage === totalPages ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50' : 'border-slate-300 text-slate-700 bg-white hover:bg-slate-100'}`;
             nextBtn.innerText = 'Next';
             nextBtn.disabled = currentPage === totalPages;
-            nextBtn.onclick = () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    updateView();
-                }
-            };
+            nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; updateView(); } };
             paginationControls.appendChild(nextBtn);
         }
 
-        // Update Table & Pagination
         function updateView() {
             renderTable(currentPage);
             renderPagination();
         }
 
-        // --- Modal Logic (Replacing alert()) ---
-        const modal = document.getElementById('pdf-modal');
-        const modalContent = document.getElementById('pdf-modal-content');
-        const modalDocId = document.getElementById('modal-doc-id');
-
-        function openModal(id) {
-            modalDocId.innerText = id;
-            modal.classList.remove('hidden');
-            // Slight delay to allow transition to apply
-            setTimeout(() => {
-                modalContent.classList.remove('scale-95');
-                modalContent.classList.add('scale-100');
-            }, 10);
-        }
-
-        function closeModal() {
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 200); // Wait for transition before hiding completely
-        }
-
-        // Close modal on outside click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Initialize application on load
         window.onload = function() {
             updateView();
         }
     </script>
 </body>
 </html>
-```
