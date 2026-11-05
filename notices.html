@@ -5,48 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate Notices | Dynextron Services India Limited</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        corporate: {
-                            blue: '#0A2540',
-                            accent: '#0055A4'
-                        }
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { corporate: { blue: '#0A2540', accent: '#0055A4' } }
                 }
             }
         }
     </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F4F7FA;
+        body { font-family: 'Inter', sans-serif; background-color: #F4F7FA; }
+        .table-container::-webkit-scrollbar { height: 6px; }
+        .table-container::-webkit-scrollbar-track { background: #E2E8F0; }
+        .table-container::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 3px; }
+        
+        /* Print Styles */
+        @media print {
+            body { background-color: white; }
+            .no-print { display: none !important; }
+            .print-full { width: 100% !important; max-width: none !important; }
+            table { border: 1px solid #cbd5e1; }
+            th, td { border: 1px solid #cbd5e1 !important; padding: 8px !important; }
         }
-        /* Formal thin scrollbar */
-        .table-container::-webkit-scrollbar {
-            height: 6px;
+        
+        /* Toast Animation */
+        @keyframes slideUp {
+            from { bottom: -50px; opacity: 0; }
+            to { bottom: 20px; opacity: 1; }
         }
-        .table-container::-webkit-scrollbar-track {
-            background: #E2E8F0; 
-        }
-        .table-container::-webkit-scrollbar-thumb {
-            background: #94A3B8; 
-        }
+        .toast-animate { animation: slideUp 0.3s ease-out forwards; }
     </style>
 </head>
-<body class="text-slate-800 antialiased flex flex-col min-h-screen">
+<body class="text-slate-800 antialiased flex flex-col min-h-screen relative">
 
     <!-- Header Section -->
-    <header class="bg-corporate-blue text-white border-b-4 border-corporate-accent sticky top-0 z-40">
+    <header class="bg-corporate-blue text-white border-b-4 border-corporate-accent sticky top-0 z-40 no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <!-- Live Corporate Logo -->
                 <img src="https://dynextron.in/logo.png" alt="Dynextron Logo" class="h-10 w-auto bg-white p-1 rounded-sm">
                 <div>
                     <h1 class="text-lg font-bold tracking-widest uppercase m-0 leading-tight">Dynextron</h1>
@@ -63,35 +61,87 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full print-full">
         
-        <div class="mb-6 border-b border-slate-300 pb-4">
-            <h2 class="text-2xl font-semibold text-corporate-blue mb-1">Regulatory & Corporate Notices</h2>
-            <p class="text-sm text-slate-600">Official notifications, financial results, and compliance documents.</p>
+        <div class="mb-6 border-b border-slate-300 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h2 class="text-2xl font-semibold text-corporate-blue mb-1">Regulatory & Corporate Notices</h2>
+                <p class="text-sm text-slate-600">Official notifications, financial results, and compliance documents.</p>
+            </div>
+            <!-- Utility Buttons -->
+            <div class="flex gap-2 no-print">
+                <button onclick="window.print()" class="flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-300 text-slate-700 text-sm font-medium rounded hover:bg-slate-50 transition shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    Print
+                </button>
+                <button onclick="exportToCSV()" class="flex items-center gap-2 px-3 py-1.5 bg-corporate-blue text-white text-sm font-medium rounded hover:bg-blue-900 transition shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Export CSV
+                </button>
+            </div>
+        </div>
+
+        <!-- Toolbar (Search & Filters) -->
+        <div class="bg-white p-4 rounded-t-md border border-slate-300 border-b-0 flex flex-col md:flex-row gap-4 no-print">
+            <!-- Search -->
+            <div class="relative flex-grow">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg class="h-4 w-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <input type="text" id="search-input" placeholder="Search notices by ID, title, or endorser..." class="pl-10 w-full border border-slate-300 rounded-md py-2 text-sm focus:outline-none focus:ring-1 focus:ring-corporate-blue focus:border-corporate-blue transition">
+            </div>
+            <!-- Filters -->
+            <div class="flex gap-3">
+                <select id="category-filter" class="border border-slate-300 rounded-md py-2 px-3 text-sm focus:outline-none focus:ring-1 focus:ring-corporate-blue text-slate-700 bg-white">
+                    <option value="All">All Categories</option>
+                    <option value="Financial Results">Financial Results</option>
+                    <option value="Compliance">Compliance</option>
+                    <option value="Board Meeting">Board Meeting</option>
+                    <option value="AGM">AGM</option>
+                    <option value="General">General</option>
+                </select>
+                <select id="year-filter" class="border border-slate-300 rounded-md py-2 px-3 text-sm focus:outline-none focus:ring-1 focus:ring-corporate-blue text-slate-700 bg-white">
+                    <option value="All">All Years</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                </select>
+            </div>
         </div>
 
         <!-- Table Card -->
-        <div class="bg-white shadow-sm border border-slate-300">
+        <div class="bg-white shadow-sm border border-slate-300 rounded-b-md">
             <div class="table-container overflow-x-auto w-full">
-                <table class="w-full text-left border-collapse whitespace-nowrap min-w-[900px]">
+                <table class="w-full text-left border-collapse whitespace-nowrap min-w-[950px]">
                     <thead>
-                        <tr class="bg-slate-100 border-b-2 border-slate-300 text-slate-700 text-xs uppercase tracking-wider font-semibold">
-                            <th class="py-3 px-4 border-r border-slate-200 w-32">Notice ID</th>
-                            <th class="py-3 px-4 border-r border-slate-200 w-32">Date</th>
+                        <tr class="bg-slate-100 border-b-2 border-slate-300 text-slate-700 text-xs uppercase tracking-wider font-semibold select-none">
+                            <th class="py-3 px-4 border-r border-slate-200 w-32 cursor-pointer hover:bg-slate-200 transition group" onclick="handleSort('id')">
+                                <div class="flex justify-between items-center">Notice ID <span class="text-slate-400 group-hover:text-slate-600" id="sort-icon-id">↕</span></div>
+                            </th>
+                            <th class="py-3 px-4 border-r border-slate-200 w-36 cursor-pointer hover:bg-slate-200 transition group" onclick="handleSort('dateObj')">
+                                <div class="flex justify-between items-center">Date <span class="text-slate-400 group-hover:text-slate-600" id="sort-icon-dateObj">↕</span></div>
+                            </th>
                             <th class="py-3 px-4 border-r border-slate-200 w-40">Category</th>
-                            <th class="py-3 px-4 border-r border-slate-200">Subject / Title</th>
+                            <th class="py-3 px-4 border-r border-slate-200 cursor-pointer hover:bg-slate-200 transition group" onclick="handleSort('title')">
+                                <div class="flex justify-between items-center">Subject / Title <span class="text-slate-400 group-hover:text-slate-600" id="sort-icon-title">↕</span></div>
+                            </th>
                             <th class="py-3 px-4 border-r border-slate-200 w-48">Endorsed By</th>
-                            <th class="py-3 px-4 text-center w-24">Document</th>
+                            <th class="py-3 px-4 text-center w-28 no-print">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="table-body" class="text-sm divide-y divide-slate-200">
                         <!-- Rows injected via JS -->
                     </tbody>
                 </table>
+                <!-- Empty State -->
+                <div id="empty-state" class="hidden py-12 text-center">
+                    <svg class="mx-auto h-12 w-12 text-slate-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <h3 class="text-sm font-medium text-slate-900">No notices found</h3>
+                    <p class="mt-1 text-sm text-slate-500">Try adjusting your search or filters.</p>
+                </div>
             </div>
 
             <!-- Pagination Footer -->
-            <div class="bg-slate-50 border-t border-slate-300 px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="bg-slate-50 border-t border-slate-300 px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-4 no-print rounded-b-md">
                 <div class="text-xs text-slate-600">
                     Showing <span id="page-info-start" class="font-semibold">0</span> to <span id="page-info-end" class="font-semibold">0</span> of <span id="page-info-total" class="font-semibold">0</span> records
                 </div>
@@ -103,16 +153,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-400 py-6 text-center text-xs mt-auto">
+    <footer class="bg-slate-800 text-slate-400 py-6 text-center text-xs mt-auto no-print">
         <div class="max-w-7xl mx-auto px-4">
             <p>&copy; 2026 Dynextron Services India Limited. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Application Logic -->
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed hidden left-1/2 transform -translate-x-1/2 bg-slate-800 text-white px-4 py-2 rounded shadow-lg text-sm z-50 font-medium flex items-center gap-2">
+        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span id="toast-message">Link copied to clipboard!</span>
+    </div>
+
     <script>
-        // Data Array - Add your notices here. Ensure 'file' matches the exact PDF name in your /notices/ folder.
-        const noticesData = [
+        // Data Array - Expanded with 2025 data for year filtering
+        const rawNoticesData = [
             { id: "DSIL-2026-045", date: "03 Nov 2026", category: "Financial Results", title: "Unaudited Financial Results for Q2 FY 2026-27", endorsedBy: "Chief Financial Officer", file: "DSIL-2026-045.pdf" },
             { id: "DSIL-2026-044", date: "28 Oct 2026", category: "Compliance", title: "Intimation of Closure of Trading Window", endorsedBy: "Company Secretary", file: "DSIL-2026-044.pdf" },
             { id: "DSIL-2026-043", date: "15 Oct 2026", category: "Board Meeting", title: "Notice of Board Meeting to consider Q2 Results", endorsedBy: "Board of Directors", file: "DSIL-2026-043.pdf" },
@@ -120,58 +175,125 @@
             { id: "DSIL-2026-041", date: "25 Sep 2026", category: "AGM", title: "Minutes of the 12th Annual General Meeting", endorsedBy: "Company Secretary", file: "DSIL-2026-041.pdf" },
             { id: "DSIL-2026-040", date: "10 Sep 2026", category: "AGM", title: "Voting Results of the 12th Annual General Meeting", endorsedBy: "Scrutinizer", file: "DSIL-2026-040.pdf" },
             { id: "DSIL-2026-039", date: "20 Aug 2026", category: "AGM", title: "Notice of the 12th Annual General Meeting", endorsedBy: "Board of Directors", file: "DSIL-2026-039.pdf" },
-            { id: "DSIL-2026-038", date: "05 Aug 2026", category: "Financial Results", title: "Annual Report for FY 2025-26", endorsedBy: "Chief Financial Officer", file: "DSIL-2026-038.pdf" },
-            { id: "DSIL-2026-037", date: "28 Jul 2026", category: "Financial Results", title: "Audited Financial Results for Q1 FY 2026-27", endorsedBy: "Chief Financial Officer", file: "DSIL-2026-037.pdf" },
-            { id: "DSIL-2026-036", date: "15 Jul 2026", category: "Board Meeting", title: "Notice of Board Meeting to consider Q1 Results", endorsedBy: "Company Secretary", file: "DSIL-2026-036.pdf" },
-            { id: "DSIL-2026-035", date: "30 Jun 2026", category: "Compliance", title: "Shareholding Pattern for Quarter ended Jun 2026", endorsedBy: "Compliance Officer", file: "DSIL-2026-035.pdf" },
-            { id: "DSIL-2026-034", date: "25 Jun 2026", category: "Compliance", title: "Intimation of Closure of Trading Window", endorsedBy: "Company Secretary", file: "DSIL-2026-034.pdf" }
+            { id: "DSIL-25-012", date: "15 Dec 2025", category: "Financial Results", title: "Q3 FY 2025-26 Performance Update", endorsedBy: "Chief Financial Officer", file: "DSIL-25-012.pdf" },
+            { id: "DSIL-25-011", date: "05 Nov 2025", category: "General", title: "New Corporate Headquarters Relocation", endorsedBy: "Managing Director", file: "DSIL-25-011.pdf" }
         ];
 
+        // Process data to add real Date objects for accurate sorting & "New" badges
+        const noticesData = rawNoticesData.map(item => {
+            return { ...item, dateObj: new Date(item.date) };
+        });
+
+        // State Variables
+        let filteredData = [...noticesData];
         let currentPage = 1;
         const rowsPerPage = 10;
-        const totalPages = Math.ceil(noticesData.length / rowsPerPage);
+        let currentSort = { column: 'dateObj', asc: false };
 
+        // DOM Elements
         const tableBody = document.getElementById('table-body');
-        const paginationControls = document.getElementById('pagination-controls');
-        const infoStart = document.getElementById('page-info-start');
-        const infoEnd = document.getElementById('page-info-end');
-        const infoTotal = document.getElementById('page-info-total');
+        const emptyState = document.getElementById('empty-state');
+        const searchInput = document.getElementById('search-input');
+        const categoryFilter = document.getElementById('category-filter');
+        const yearFilter = document.getElementById('year-filter');
 
-        function renderTable(page) {
+        // Check if date is within last 30 days
+        function isRecent(dateObj) {
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+            return dateObj >= thirtyDaysAgo;
+        }
+
+        function renderTable() {
             tableBody.innerHTML = '';
             
-            const startIndex = (page - 1) * rowsPerPage;
-            const endIndex = Math.min(startIndex + rowsPerPage, noticesData.length);
-            const paginatedItems = noticesData.slice(startIndex, endIndex);
+            if (filteredData.length === 0) {
+                emptyState.classList.remove('hidden');
+                document.getElementById('pagination-controls').innerHTML = '';
+                document.getElementById('page-info-start').innerText = 0;
+                document.getElementById('page-info-end').innerText = 0;
+                document.getElementById('page-info-total').innerText = 0;
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
 
-            infoStart.innerText = noticesData.length === 0 ? 0 : startIndex + 1;
-            infoEnd.innerText = endIndex;
-            infoTotal.innerText = noticesData.length;
+            const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+            if (currentPage > totalPages) currentPage = totalPages;
+
+            const startIndex = (currentPage - 1) * rowsPerPage;
+            const endIndex = Math.min(startIndex + rowsPerPage, filteredData.length);
+            const paginatedItems = filteredData.slice(startIndex, endIndex);
+
+            document.getElementById('page-info-start').innerText = startIndex + 1;
+            document.getElementById('page-info-end').innerText = endIndex;
+            document.getElementById('page-info-total').innerText = filteredData.length;
 
             paginatedItems.forEach(item => {
                 const tr = document.createElement('tr');
                 tr.className = "hover:bg-slate-50 transition-colors";
                 
+                const newBadge = isRecent(item.dateObj) ? `<span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-red-100 text-red-700 uppercase no-print">New</span>` : '';
+
                 tr.innerHTML = `
-                    <td class="py-3 px-4 border-r border-slate-200 font-medium text-corporate-blue">${item.id}</td>
-                    <td class="py-3 px-4 border-r border-slate-200 text-slate-600">${item.date}</td>
+                    <td class="py-3 px-4 border-r border-slate-200 font-medium text-corporate-blue">
+                        ${item.id}
+                    </td>
+                    <td class="py-3 px-4 border-r border-slate-200 text-slate-600 whitespace-nowrap">
+                        ${item.date} ${newBadge}
+                    </td>
                     <td class="py-3 px-4 border-r border-slate-200">
                         <span class="inline-block px-2 py-0.5 border rounded text-[11px] font-semibold uppercase tracking-wide ${getCategoryBadgeColor(item.category)}">
                             ${item.category}
                         </span>
                     </td>
-                    <td class="py-3 px-4 border-r border-slate-200 text-slate-800">${item.title}</td>
+                    <td class="py-3 px-4 border-r border-slate-200 text-slate-800 break-words whitespace-normal min-w-[250px]">${item.title}</td>
                     <td class="py-3 px-4 border-r border-slate-200 text-slate-600 text-xs">${item.endorsedBy}</td>
-                    <td class="py-3 px-4 text-center">
-                        <a href="./notices/${item.file}" target="_blank" class="inline-block text-red-600 hover:text-red-800 transition" title="Download PDF">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M11.362 2c4.156 0 2.638 6 2.638 6s6-1.65 6 2.457v11.543h-16v-20h7.362zm.827-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/>
-                            </svg>
-                        </a>
+                    <td class="py-3 px-4 text-center no-print">
+                        <div class="flex items-center justify-center gap-3">
+                            <button onclick="copyToClipboard('${item.id}')" class="text-slate-400 hover:text-corporate-blue transition" title="Copy Notice ID">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                            <a href="./notices/${item.file}" target="_blank" class="text-red-600 hover:text-red-800 transition" title="View PDF">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.362 2c4.156 0 2.638 6 2.638 6s6-1.65 6 2.457v11.543h-16v-20h7.362zm.827-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
+                            </a>
+                        </div>
                     </td>
                 `;
                 tableBody.appendChild(tr);
             });
+
+            renderPagination();
+            updateSortIcons();
+        }
+
+        function renderPagination() {
+            const controls = document.getElementById('pagination-controls');
+            controls.innerHTML = '';
+            const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+            if (totalPages <= 1) return;
+
+            const prevBtn = document.createElement('button');
+            prevBtn.className = `px-2 py-1 border rounded text-xs font-medium ${currentPage === 1 ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50' : 'border-slate-300 text-slate-700 bg-white hover:bg-slate-100'}`;
+            prevBtn.innerText = 'Prev';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderTable(); } };
+            controls.appendChild(prevBtn);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `w-6 h-6 flex items-center justify-center border rounded text-xs font-medium ${currentPage === i ? 'bg-corporate-blue text-white border-corporate-blue' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'}`;
+                pageBtn.innerText = i;
+                pageBtn.onclick = () => { currentPage = i; renderTable(); };
+                controls.appendChild(pageBtn);
+            }
+
+            const nextBtn = document.createElement('button');
+            nextBtn.className = `px-2 py-1 border rounded text-xs font-medium ${currentPage === totalPages ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50' : 'border-slate-300 text-slate-700 bg-white hover:bg-slate-100'}`;
+            nextBtn.innerText = 'Next';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; renderTable(); } };
+            controls.appendChild(nextBtn);
         }
 
         function getCategoryBadgeColor(category) {
@@ -184,40 +306,121 @@
             }
         }
 
-        function renderPagination() {
-            paginationControls.innerHTML = '';
+        // Search & Filter Logic
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase();
+            const category = categoryFilter.value;
+            const year = yearFilter.value;
 
-            const prevBtn = document.createElement('button');
-            prevBtn.className = `px-2 py-1 border rounded text-xs font-medium ${currentPage === 1 ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50' : 'border-slate-300 text-slate-700 bg-white hover:bg-slate-100'}`;
-            prevBtn.innerText = 'Prev';
-            prevBtn.disabled = currentPage === 1;
-            prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; updateView(); } };
-            paginationControls.appendChild(prevBtn);
+            filteredData = noticesData.filter(item => {
+                const matchesSearch = item.title.toLowerCase().includes(query) || 
+                                      item.id.toLowerCase().includes(query) || 
+                                      item.endorsedBy.toLowerCase().includes(query);
+                const matchesCategory = category === 'All' || item.category === category;
+                const itemYear = item.dateObj.getFullYear().toString();
+                const matchesYear = year === 'All' || itemYear === year;
 
-            for (let i = 1; i <= totalPages; i++) {
-                const pageBtn = document.createElement('button');
-                pageBtn.className = `w-6 h-6 flex items-center justify-center border rounded text-xs font-medium ${currentPage === i ? 'bg-corporate-blue text-white border-corporate-blue' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'}`;
-                pageBtn.innerText = i;
-                pageBtn.onclick = () => { currentPage = i; updateView(); };
-                paginationControls.appendChild(pageBtn);
+                return matchesSearch && matchesCategory && matchesYear;
+            });
+
+            // Re-apply current sort
+            sortData(currentSort.column, currentSort.asc);
+            currentPage = 1;
+            renderTable();
+        }
+
+        // Sorting Logic
+        function handleSort(column) {
+            if (currentSort.column === column) {
+                currentSort.asc = !currentSort.asc;
+            } else {
+                currentSort.column = column;
+                currentSort.asc = true; // Default to ascending on new column click
             }
-
-            const nextBtn = document.createElement('button');
-            nextBtn.className = `px-2 py-1 border rounded text-xs font-medium ${currentPage === totalPages ? 'border-slate-200 text-slate-400 cursor-not-allowed bg-slate-50' : 'border-slate-300 text-slate-700 bg-white hover:bg-slate-100'}`;
-            nextBtn.innerText = 'Next';
-            nextBtn.disabled = currentPage === totalPages;
-            nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; updateView(); } };
-            paginationControls.appendChild(nextBtn);
+            sortData(currentSort.column, currentSort.asc);
+            renderTable();
         }
 
-        function updateView() {
-            renderTable(currentPage);
-            renderPagination();
+        function sortData(column, asc) {
+            filteredData.sort((a, b) => {
+                let valA = a[column];
+                let valB = b[column];
+                
+                if (column === 'dateObj') {
+                    return asc ? valA - valB : valB - valA;
+                }
+                
+                if (typeof valA === 'string') {
+                    return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+                return 0;
+            });
         }
 
-        window.onload = function() {
-            updateView();
+        function updateSortIcons() {
+            ['id', 'dateObj', 'title'].forEach(col => {
+                const icon = document.getElementById(`sort-icon-${col}`);
+                if (icon) {
+                    if (currentSort.column === col) {
+                        icon.innerText = currentSort.asc ? '↑' : '↓';
+                        icon.className = 'text-corporate-blue font-bold';
+                    } else {
+                        icon.innerText = '↕';
+                        icon.className = 'text-slate-400 group-hover:text-slate-600';
+                    }
+                }
+            });
         }
+
+        // Export to CSV
+        function exportToCSV() {
+            if (filteredData.length === 0) return;
+            
+            const headers = ['Notice ID', 'Publication Date', 'Category', 'Title', 'Endorsed By'];
+            const csvRows = [headers.join(',')];
+            
+            filteredData.forEach(item => {
+                // Escape quotes in title
+                const title = `"${item.title.replace(/"/g, '""')}"`;
+                csvRows.push(`${item.id},${item.date},${item.category},${title},${item.endorsedBy}`);
+            });
+            
+            const csvData = csvRows.join('\n');
+            const blob = new Blob([csvData], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('hidden', '');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'Dynextron_Notices.csv');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // Copy to Clipboard (Share feature)
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('hidden');
+                toast.classList.add('toast-animate');
+                
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                    toast.classList.remove('toast-animate');
+                }, 3000);
+            });
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', applyFilters);
+        categoryFilter.addEventListener('change', applyFilters);
+        yearFilter.addEventListener('change', applyFilters);
+
+        // Initialization
+        window.onload = () => {
+            sortData('dateObj', false); // Default sort by date descending
+            renderTable();
+        };
     </script>
 </body>
 </html>
