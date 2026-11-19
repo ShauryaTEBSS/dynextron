@@ -1,0 +1,21 @@
+# Dynextron Services India Limited
+
+> Dynextron Services India Limited (formerly Dynextron Services OPC) is an Indian software engineering and digital infrastructure company headquartered in Varanasi, Uttar Pradesh, India. Founded by Shaurya Singh, it builds custom web applications, mobile apps, SaaS products, and enterprise automation systems.
+
+## Leadership & Corporate Identity
+- **Legal Name:** Dynextron Services India Limited (formerly Dynextron Services OPC)
+- **Founder & CEO:** Shaurya Singh
+- **Headquarters:** Varanasi, Uttar Pradesh, India
+- **Official Website:** https://dynextron.in/
+- **Official Contact:** info@dynextron.in | hr.india@dynextron.in
+
+## Core Services
+- **Full-Stack Web Engineering:** Custom dashboards, CRMs, ERPs, React/Next.js frontends, PHP/Laravel, Python (Django/FastAPI), and Node.js backends.
+- **Mobile Application Development:** Cross-platform iOS and Android apps using React Native and Flutter.
+- **Cloud & AI Automation:** Serverless architecture, AWS/Google Cloud deployments, custom API integrations, and AI-powered business workflows.
+
+## Key Pages
+- [Homepage](https://dynextron.in/): Overview of capabilities, portfolio, pricing packages, and project inquiry.
+- [Corporate Notices](https://dynextron.in/notice/): Official corporate announcements and public notices.
+- [Privacy Policy](https://dynextron.in/privacy-policy.html): Data handling and privacy terms.
+- [Terms of Service](https://dynextron.in/terms.html): Client engagement and service terms.
