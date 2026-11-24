@@ -1,0 +1,10 @@
+ABC_Library/
+├── index.html
+├── catalog.html
+├── media.html
+├── membership.html
+├── style.css
+├── library.jpg          (any library photo)
+├── reading_room.jpg     (any reading room photo)
+├── audiobook.mp3        (any short MP3 file)
+└── library_tour.mp4     (any short MP4 video)
