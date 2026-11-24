@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ABC Library - Membership Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>ABC LIBRARY</h1>
+        <p><i>Become a Member Today</i></p>
+    </div>
+
+    <table class="nav-table">
+        <tr>
+            <td><a href="index.html">Home</a></td>
+            <td><a href="catalog.html">Book Catalogue</a></td>
+            <td><a href="media.html">Audio &amp; Video Corner</a></td>
+            <td><a href="membership.html">Membership Form</a></td>
+        </tr>
+    </table>
+
+    <div class="container">
+        <h2>Library Membership Registration Form</h2>
+        <p>Fill out the form below to apply for your <b>ABC Library Card</b>. Fields marked with <u>*</u> are mandatory.</p>
+
+        <form name="membershipForm" id="membershipForm" action="#" method="post">
+            <table width="100%" cellpadding="10" cellspacing="0">
+                <tr>
+                    <td width="30%" valign="middle"><b>Full Name *:</b></td>
+                    <td width="70%">
+                        <input type="text" name="fullname" id="fullname" placeholder="Enter your full name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle"><b>Email Address *:</b></td>
+                    <td>
+                        <input type="email" name="email" id="email" placeholder="student@example.com" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle"><b>Date of Birth:</b></td>
+                    <td>
+                        <input type="date" name="dob" id="dob">
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle"><b>Membership Type:</b></td>
+                    <td>
+                        <input type="radio" name="mtype" value="Student" checked> Student (Free) &nbsp;&nbsp;
+                        <input type="radio" name="mtype" value="Teacher"> Teacher &nbsp;&nbsp;
+                        <input type="radio" name="mtype" value="Guest"> Guest Member
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle"><b>Class / Category:</b></td>
+                    <td>
+                        <select name="category" id="category">
+                            <option value="class9">Class 9</option>
+                            <option value="class10" selected>Class 10</option>
+                            <option value="class11">Class 11</option>
+                            <option value="class12">Class 12</option>
+                            <option value="faculty">Faculty / Staff</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><b>Preferred Genres:</b></td>
+                    <td>
+                        <input type="checkbox" name="genre" value="Science"> Science &amp; Tech<br>
+                        <input type="checkbox" name="genre" value="Fiction"> Fiction &amp; Literature<br>
+                        <input type="checkbox" name="genre" value="History"> History &amp; Biography<br>
+                        <input type="checkbox" name="genre" value="Reference"> CBSE Board Reference
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><b>Residential Address:</b></td>
+                    <td>
+                        <textarea name="address" id="address" rows="4" placeholder="Enter your full address"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Register Now" class="btn">
+                        &nbsp;
+                        <input type="reset" value="Clear Form" class="btn-reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 ABC Library | Need help? Email <a href="mailto:librarian@abclibrary.edu.in">librarian@abclibrary.edu.in</a></p>
+    </div>
+
+</body>
+</html>
