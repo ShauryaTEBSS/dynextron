@@ -1,92 +1,93 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>ABC Library - Home</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Anchor for Back to Top -->
-    <a name="top" id="top"></a>
+<a name="top"></a>
 
-    <!-- Header -->
-    <div class="header">
-        <h1>ABC LIBRARY</h1>
-        <p><i>"A room without books is like a body without a soul."</i></p>
-    </div>
+<table width="90%" align="center" border="1" cellpadding="10">
+    <tr>
+        <td colspan="2" align="center" id="banner">
+            <b><u>ABC LIBRARY</u></b><br>
+            <i>"A Gateway to Knowledge and Imagination"</i>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center" id="navbar">
+            <a href="index.html">Home</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="catalogue.html">Book Catalogue</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="media.html">Audio &amp; Video Corner</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="register.html">Membership Form</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="#rules">Library Rules</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" id="newsbar">
+            <marquee direction="left">
+                <b>Notice:</b> New CBSE Class 10 Reference Books have arrived! Library timings: Monday to Saturday, 8:00 AM to 6:00 PM.
+            </marquee>
+        </td>
+    </tr>
+    <tr>
+        <!-- Left Sidebar -->
+        <td width="28%" valign="top" id="sidebar">
+            <b><u>Quick Links</u></b><br><br>
+            <ul>
+                <li><a href="catalogue.html">Browse Books</a></li>
+                <li><a href="media.html">Listen to Audiobooks</a></li>
+                <li><a href="register.html">Apply for Library Card</a></li>
+                <li><a href="#rules">Read Borrowing Rules</a></li>
+            </ul>
+            <br>
+            <b><u>Library Timings</u></b>
+            <p>
+                <b>Mon - Fri:</b> 8:00 AM - 6:00 PM<br>
+                <b>Saturday:</b> 9:00 AM - 4:00 PM<br>
+                <b>Sunday:</b> <i>Closed</i>
+            </p>
+        </td>
+        <td width="72%" valign="top" id="content">
+            <b><u>Welcome to ABC Library</u></b>
+            <p align="justify">
+                Welcome to <b>ABC Library</b>, a peaceful learning space for students, teachers, and avid readers.
+                We offer a wide collection of <i>textbooks, fiction, biographies, encyclopedias,</i> and digital study materials.
+            </p>
 
-    <!-- Navigation Bar -->
-    <table class="nav-table">
-        <tr>
-            <td><a href="index.html">Home</a></td>
-            <td><a href="catalog.html">Book Catalogue</a></td>
-            <td><a href="media.html">Audio &amp; Video Corner</a></td>
-            <td><a href="membership.html">Membership Form</a></td>
-        </tr>
-    </table>
+            <p align="center">
+                <img src="library.jpg" width="420" height="230" alt="ABC Library Reading Hall">
+            </p>
 
-    <!-- Marquee Announcement -->
-    <div class="notice-bar">
-        <marquee behavior="scroll" direction="left" scrollamount="6">
-            <b>Latest Update:</b> New CBSE Class 10 Reference Books &amp; Science Encyclopedias are now available! | Annual Book Fair starts next Monday at 9:00 AM.
-        </marquee>
-    </div>
+            <b><u>Facilities Available (Unordered List)</u></b>
+            <ul>
+                <li>Air-conditioned silent reading hall</li>
+                <li>Over 10,000 printed books and magazines</li>
+                <li>Dedicated Audio-Visual learning corner</li>
+                <li>Free Wi-Fi for academic research</li>
+            </ul>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h2>Welcome to ABC Library</h2>
+            <br>
+            <a name="rules"></a>
+            <b id="rules"><u>Library Rules (Ordered List)</u></b>
+            <ol>
+                <li>Maintain complete silence inside the reading hall.</li>
+                <li>A member can borrow a maximum of <b>2 books</b> for <b>14 days</b>.</li>
+                <li>Handle all books and digital equipment with care.</li>
+                <li>Return borrowed books on time to avoid a late fine of Rs. 5 per day.</li>
+            </ol>
 
-        <table width="100%" cellpadding="10" cellspacing="0">
-            <tr>
-                <td width="40%" align="center" valign="top">
-                    <img src="library.jpg" alt="ABC Library Hall" width="320" height="220" class="featured-img">
-                </td>
-                <td width="60%" align="left" valign="top">
-                    <p>
-                        Welcome to <b>ABC Library</b>, your gateway to knowledge, imagination, and academic excellence. 
-                        Established in <u>2010</u>, our library houses over <b>15,000+ books</b>, journals, newspapers, and digital study resources.
-                    </p>
-                    <p>
-                        Whether you are preparing for <i>Board Examinations</i>, exploring classic literature, or diving into robotics and coding, 
-                        you will find a quiet and inspiring space here.<br><br>
-                        <a href="#rules"><b>Jump to Library Rules &darr;</b></a>
-                    </p>
-                </td>
-            </tr>
-        </table>
-
-        <br>
-
-        <!-- Unordered List -->
-        <h2>Key Facilities</h2>
-        <ul type="square">
-            <li><b>Quiet Reading Hall:</b> Air-conditioned seating for 120 students.</li>
-            <li><b>Reference Section:</b> NCERT solutions, encyclopedias, and competitive exam guides.</li>
-            <li><b>Digital Archive:</b> Access to e-books, audiobooks, and educational documentaries.</li>
-            <li><b>High-Speed Wi-Fi:</b> Free internet access for registered members.</li>
-        </ul>
-
-        <br>
-
-        <!-- Ordered List with Internal Bookmark -->
-        <h2 id="rules">Library Rules &amp; Regulations</h2>
-        <ol type="1">
-            <li>Maintain <b>strict silence</b> inside the reading hall at all times.</li>
-            <li>Each student can issue a maximum of <u>2 books</u> for 14 days.</li>
-            <li>A late fine of <b>&#8377;5 per day</b> is charged after the due date.</li>
-            <li>Do not tear, fold, or write inside library books.</li>
-            <li>Always carry your <i>Library Membership Card</i> while borrowing books.</li>
-        </ol>
-
-        <p align="right">
-            <a href="#top"><b>&uarr; Back to Top</b></a>
-        </p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2026 ABC Library | Contact: <a href="mailto:info@abclibrary.edu.in">info@abclibrary.edu.in</a></p>
-    </div>
-
+            <p align="right">
+                <a href="#top"><b>Back to Top</b></a>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center" id="footer">
+            <b>ABC Library</b> | Class 10 CBSE Internal Assessment Project<br>
+            <i>Contact: abclibrary@example.com</i>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
