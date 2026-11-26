@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>ABC Library - Membership Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table width="90%" align="center" border="1" cellpadding="10">
+    <tr>
+        <td align="center" id="banner">
+            <b><u>ABC LIBRARY - MEMBERSHIP FORM</u></b><br>
+            <i>Join Our Reading Community Today</i>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" id="navbar">
+            <a href="index.html">Home</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="catalogue.html">Book Catalogue</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="media.html">Audio &amp; Video Corner</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="register.html">Membership Form</a>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" id="content">
+            <p align="center">
+                <b><u>New Member Registration</u></b><br>
+                <i>Please fill in your details carefully to issue your library card.</i>
+            </p>
+
+            <form name="libraryForm" id="libraryForm" action="index.html">
+                <table width="70%" align="center" border="1" cellpadding="10">
+                    <tr>
+                        <td width="35%" valign="middle"><b>Full Name:</b></td>
+                        <td width="65%">
+                            <input type="text" name="student_name" id="student_name" size="35">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="middle"><b>Class &amp; Section:</b></td>
+                        <td>
+                            <input type="text" name="student_class" id="student_class" size="20">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="middle"><b>Email Address:</b></td>
+                        <td>
+                            <input type="email" name="student_email" id="student_email" size="35">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><b>Gender:</b></td>
+                        <td>
+                            <input type="radio" name="gender" value="Male"> Male<br>
+                            <input type="radio" name="gender" value="Female"> Female<br>
+                            <input type="radio" name="gender" value="Other"> Other
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"><b>Favourite Genres:</b></td>
+                        <td>
+                            <input type="checkbox" name="genre" value="Science"> Science &amp; Tech<br>
+                            <input type="checkbox" name="genre" value="Fiction"> Literature &amp; Fiction<br>
+                            <input type="checkbox" name="genre" value="Biography"> Biographies
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Register Now">
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="reset" value="Clear Form">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" id="footer">
+            <b>ABC Library</b> | All Rights Reserved
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
